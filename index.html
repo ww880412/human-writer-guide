@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
+<meta name="theme-color" content="#f6f7f9">
+<title>从素材到定稿 · Human Writer</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer>
+</script>
+</head>
+<body>
+<a href="#main" class="skip">跳到正文</a>
+<header class="header">
+<div class="wrap">
+<a class="brand" href="index.html">
+<b aria-hidden="true">h.</b>
+<span>Human Writer<small>写作，由你定稿</small>
+</span>
+</a>
+<nav aria-label="主导航">
+<a href="index.html" aria-current="page">概览</a>
+<a href="guide.html">使用指南</a>
+<a href="architecture.html">架构与边界</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="hero wrap">
+<div>
+<p class="eyebrow">Codex 写作插件 / 0.2.0</p>
+<h1>把材料写成稿，<br>把决定留给你。</h1>
+<p class="lead">从一个题目，或一篇已有稿件开始。让 agent 整理素材、搭框架、写稿和自查；哪些意见值得改、什么时候定稿，由你决定。</p>
+<div class="actions">
+<a class="button" href="downloads/human-writer-codex.zip" download>下载 Codex 插件 ↓</a>
+<a href="guide.html#install">安装指南 →</a>
+</div>
+<p class="note">适配 Codex · 本机文件 · 可替换写作技能<br>新选题、框架、写稿技能开放试用。<a href="guide.html#release">查看本版范围</a>
+</p>
+</div>
+<div class="sheet">
+<div class="sheet-head">
+<span>一份材料的写作过程</span>
+<span class="pill">作者参与</span>
+</div>
+<ol class="journey">
+<li>
+<div>
+<strong>说清题目，放入素材</strong>
+<small>先确定读者、目的与已有事实</small>
+</div>
+</li>
+<li>
+<div class="gate">
+<strong>先看框架，再开始写</strong>
+<small>确认框架，或重新梳理</small>
+</div>
+</li>
+<li>
+<div>
+<strong>写稿、自查、按意见润色</strong>
+<small>缺失信息标为待补，由你选择采纳意见</small>
+</div>
+</li>
+<li>
+<div class="gate">
+<strong>只定稿，还是再补一点</strong>
+<small>继续修改或补充内容，保留版本记录</small>
+</div>
+</li>
+</ol>
+<p class="note">已有稿件可从自查开始。关卡等你回答，沉默不算同意。</p>
+</div>
+</section>
+<div class="wrap">
+<div class="strip">
+<div>
+<strong>从题目起稿 / 从旧稿修改</strong>
+<p>两种入口，汇入同一条定稿流程</p>
+</div>
+<div>
+<strong>5 个可用阶段 · 7 个技能</strong>
+<p>选题、框架、写稿、自查与润色</p>
+</div>
+<div>
+<strong>进度保存在本机</strong>
+<p>换会话可打开作品，继续处理</p>
+</div>
+</div>
+<section class="section" id="start">
+<div class="section-head">
+<div>
+<p class="eyebrow">从你的材料开始</p>
+<h2>现在，你手里有什么？</h2>
+</div>
+<p>在 Codex 中打开专用目录。文件是作品，聊天负责推进和做决定。</p>
+</div>
+<div class="cols">
+<article class="route">
+<span class="label">01 / NEW</span>
+<h3>有题目和零散素材</h3>
+<p>比如季度业务盘点、项目复盘或内部汇报。先确认目的和结构，再扩成正文。</p>
+<pre data-copy>
+<code>$human-writer new 三季度业务盘点</code>
+</pre>
+<ol>
+<li>将数据、笔记放入作品的 <code>materials/</code>。</li>
+<li>让 Human Writer 处理当前作品。</li>
+<li>回答选题问题，在卡片中确认框架。</li>
+</ol>
+<a href="guide.html#new">看完整起稿步骤 →</a>
+</article>
+<article class="route">
+<span class="label">02 / IMPORT</span>
+<h3>已经写好一篇稿件</h3>
+<p>从自查开始，自己决定哪些意见要改，再看润色结果。导入文件作为只读来源保留。</p>
+<pre data-copy>
+<code>$human-writer import source.md</code>
+</pre>
+<ol>
+<li>将稿件放在当前项目目录中。</li>
+<li>导入后，在 <code>works/&lt;slug&gt;/draft.md</code> 继续。</li>
+<li>选择采纳意见、继续修改或只定稿。</li>
+</ol>
+<a href="guide.html#import">看修改与采纳步骤 →</a>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="section-head">
+<div>
+<p class="eyebrow">你与 agent 的分工</p>
+<h2>自动走步骤，关键处停下来。</h2>
+</div>
+</div>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th>过程</th>
+<th>agent 做什么</th>
+<th>你决定什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>选题与框架</th>
+<td>整理读者、目的、材料和章节结构</td>
+<td>框架确认后才进入写稿</td>
+</tr>
+<tr>
+<th>正文与自查</th>
+<td>按素材写稿；把问题列成报告</td>
+<td>全部采纳、只改表达、只改高严重度，或输入编号</td>
+</tr>
+<tr>
+<th>润色与复查</th>
+<td>按选中的意见改稿；每轮至多自动复查一次</td>
+<td>继续修改、补充内容，或只定稿</td>
+</tr>
+<tr>
+<th>遇到冲突</th>
+<td>保留作者内容，给出候选稿或新产物文件</td>
+<td>采用候选、保留当前稿，或手工处理</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="note" style="margin-top:18px">报告不保证事实正确；重要事实仍须你核对。<a href="architecture.html#limits">查看文件保护和验证边界</a>。</p>
+</section>
+<section class="section">
+<div class="section-head">
+<div>
+<p class="eyebrow">可替换的方法</p>
+<h2>换写法，沿用同一套流程。</h2>
+</div>
+<p>流程负责作品和关卡，技能负责怎么写。一次指定或绑定到当前作品都可以。</p>
+</div>
+<div class="cols">
+<div>
+<h3>选题、框架、写稿 <span class="pill">试用</span>
+</h3>
+<p>默认使用 material-brief、material-outline、material-draft；框架也可用 pyramid-long-form，写稿也可用 md-report-summary。</p>
+<p class="note">试用表示通过结构检查、已有样本运行，但真实材料的写作效果仍需持续观察。</p>
+</div>
+<div>
+<h3>自查与润色</h3>
+<p>dbs-ai-check 提供自查方法，humanizer-zh 负责中文润色。插件保存采纳决定和版本，技能不会全局安装。</p>
+<p class="note">dbs-ai-check 使用 CC BY-NC 4.0，含非商业使用限制。<a href="guide.html#sources">各组件许可分别适用</a>。</p>
+</div>
+</div>
+<a href="guide.html#skills">查看技能与切换方式 →</a>
+</section>
+</div>
+<section class="band">
+<div class="wrap cols">
+<div>
+<p class="eyebrow">开始使用</p>
+<h2>下载，安装，开一份材料。</h2>
+<p>包内含本机指南、依赖快照和文件校验清单。当前发布面向 Codex；配图、排版、二次发布留待后续。</p>
+</div>
+<div>
+<a class="button" href="downloads/human-writer-codex.zip" download>下载 0.2.0 · ZIP</a>
+<p class="note" style="margin-top:14px">
+<a href="downloads/human-writer-codex.zip.sha256">SHA-256 校验文件</a> · <a href="guide.html#install">安装与更新</a>
+</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="wrap">
+<p>Human Writer · 0.2.0 · 2026-10-08</p>
+<div>
+<a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
+</div>
+</footer>
+</body>
+</html>

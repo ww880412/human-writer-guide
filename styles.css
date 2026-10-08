@@ -1,0 +1,449 @@
+:root{
+  --ink:#111827;
+  --muted:#556173;
+  --line:#d8dee8;
+  --paper:#f6f7f9;
+  --accent:#2563eb;
+  --green:#0f766e}
+  *{
+    box-sizing:border-box}
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:90px}
+      body{
+        margin:0;
+        background:var(--paper);
+        color:var(--ink);
+        font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}
+        a{
+          color:var(--accent);
+          text-decoration:none}
+          a:hover{
+            text-decoration:underline}
+            a:focus-visible,button:focus-visible,summary:focus-visible{
+              outline:3px solid var(--accent);
+              outline-offset:4px}
+              button,a{
+                touch-action:manipulation}
+                .wrap{
+                  max-width:1180px;
+                  margin:auto;
+                  padding:0 32px}
+                  .header{
+                    background:#fff;
+                    border-bottom:1px solid var(--line)}
+                    .header .wrap{
+                      display:flex;
+                      align-items:center;
+                      justify-content:space-between;
+                      gap:24px;
+                      min-height:88px}
+                      .brand{
+                        display:flex;
+                        align-items:center;
+                        gap:12px;
+                        font-weight:700;
+                        color:var(--ink);
+                        line-height:1.3}
+                        .brand b{
+                          font-family:Georgia,serif;
+                          font-size:29px;
+                          background:var(--ink);
+                          color:#fff;
+                          padding:4px 11px;
+                          border-radius:6px}
+                          .brand small{
+                            display:block;
+                            color:var(--muted);
+                            font-size:12px;
+                            font-weight:400;
+                            letter-spacing:1.5px;
+                            margin-top:4px}
+                            nav{
+                              display:flex;
+                              flex-wrap:wrap;
+                              gap:24px;
+                              font-size:14px}
+                              nav a{
+                                color:var(--muted)}
+                                nav [aria-current]{
+                                  color:var(--ink);
+                                  font-weight:700}
+                                  .skip{
+                                    position:absolute;
+                                    left:12px;
+                                    top:-80px;
+                                    background:white;
+                                    padding:8px;
+                                    z-index:9}
+                                    .skip:focus{
+                                      top:8px}
+                                      .hero{
+                                        display:grid;
+                                        grid-template-columns:1.1fr 1fr;
+                                        gap:72px;
+                                        padding-top:72px;
+                                        padding-bottom:64px}
+                                        .eyebrow{
+                                          font-size:12px;
+                                          font-weight:700;
+                                          letter-spacing:2px;
+                                          color:var(--green);
+                                          text-transform:uppercase;
+                                          margin:0 0 16px}
+                                          h1,h2,h3{
+                                            line-height:1.3;
+                                            letter-spacing:-.025em;
+                                            margin:0 0 20px}
+                                            h1{
+                                              font-size:48px;
+                                              font-weight:650}
+                                              h2{
+                                                font-size:30px}
+                                                h3{
+                                                  font-size:19px}
+                                                  p{
+                                                    margin:0 0 18px}
+                                                    .lead{
+                                                      font-size:18px;
+                                                      color:var(--muted);
+                                                      max-width:660px}
+                                                      .actions{
+                                                        display:flex;
+                                                        align-items:center;
+                                                        gap:20px;
+                                                        flex-wrap:wrap;
+                                                        margin:26px 0 14px}
+                                                        .button{
+                                                          display:inline-flex;
+                                                          justify-content:center;
+                                                          align-items:center;
+                                                          background:var(--accent);
+                                                          color:white;
+                                                          border:1px solid var(--accent);
+                                                          border-radius:6px;
+                                                          min-height:46px;
+                                                          padding:10px 20px;
+                                                          font-size:15px;
+                                                          font-weight:600}
+                                                          .button:hover{
+                                                            background:#1d4ed8;
+                                                            text-decoration:none}
+                                                            .button.secondary{
+                                                              background:white;
+                                                              color:var(--ink);
+                                                              border-color:var(--line)}
+                                                              .note{
+                                                                font-size:14px;
+                                                                color:var(--muted)}
+                                                                .pill{
+                                                                  display:inline-block;
+                                                                  color:var(--green);
+                                                                  background:#e4f2ee;
+                                                                  font-size:12px;
+                                                                  padding:2px 8px;
+                                                                  border-radius:4px}
+                                                                  .sheet{
+                                                                    background:#fff;
+                                                                    border:1px solid var(--line);
+                                                                    border-radius:8px;
+                                                                    padding:28px;
+                                                                    box-shadow:0 8px 24px #11182706}
+                                                                    .sheet-head{
+                                                                      display:flex;
+                                                                      justify-content:space-between;
+                                                                      border-bottom:1px solid var(--line);
+                                                                      padding-bottom:16px;
+                                                                      margin-bottom:12px;
+                                                                      font-size:13px;
+                                                                      color:var(--muted)}
+                                                                      .journey{
+                                                                        list-style:none;
+                                                                        margin:0;
+                                                                        padding:0;
+                                                                        counter-reset:step}
+                                                                        .journey li{
+                                                                          display:flex;
+                                                                          gap:16px;
+                                                                          padding:12px 0;
+                                                                          align-items:flex-start}
+                                                                          .journey li:before{
+                                                                            counter-increment:step;
+                                                                            content:'0' counter(step);
+                                                                            font:14px/28px ui-monospace,monospace;
+                                                                            color:var(--green)}
+                                                                            .journey strong{
+                                                                              display:block;
+                                                                              font-size:16px}
+                                                                              .journey small{
+                                                                                color:var(--muted);
+                                                                                font-size:14px}
+                                                                                .journey .gate{
+                                                                                  border-left:2px solid var(--green);
+                                                                                  padding-left:12px}
+                                                                                  .strip{
+                                                                                    border-top:1px solid var(--line);
+                                                                                    border-bottom:1px solid var(--line);
+                                                                                    display:grid;
+                                                                                    grid-template-columns:repeat(3,1fr);
+                                                                                    gap:32px;
+                                                                                    padding:22px 0}
+                                                                                    .strip strong{
+                                                                                      font-size:16px;
+                                                                                      display:block}
+                                                                                      .strip p{
+                                                                                        font-size:14px;
+                                                                                        margin:0;
+                                                                                        color:var(--muted)}
+                                                                                        .section{
+                                                                                          padding-top:64px;
+                                                                                          padding-bottom:64px;
+                                                                                          border-bottom:1px solid var(--line)}
+                                                                                          .section-head{
+                                                                                            display:flex;
+                                                                                            align-items:flex-end;
+                                                                                            justify-content:space-between;
+                                                                                            gap:32px;
+                                                                                            margin-bottom:28px}
+                                                                                            .section-head h2{
+                                                                                              margin-bottom:0}
+                                                                                              .section-head p{
+                                                                                                margin:0;
+                                                                                                color:var(--muted);
+                                                                                                max-width:470px}
+                                                                                                .cols{
+                                                                                                  display:grid;
+                                                                                                  grid-template-columns:repeat(2,1fr);
+                                                                                                  gap:32px}
+                                                                                                  .route{
+                                                                                                    padding:28px;
+                                                                                                    background:white;
+                                                                                                    border:1px solid var(--line);
+                                                                                                    border-radius:8px}
+                                                                                                    .route .label{
+                                                                                                      font:12px ui-monospace,monospace;
+                                                                                                      color:var(--green);
+                                                                                                      display:block;
+                                                                                                      margin-bottom:18px}
+                                                                                                      .route ol{
+                                                                                                        padding-left:22px}
+                                                                                                        .route p{
+                                                                                                          color:var(--muted)}
+                                                                                                          .route pre{
+                                                                                                            margin:22px 0}
+                                                                                                            .table-scroll{
+                                                                                                              overflow-x:auto;
+                                                                                                              border:1px solid var(--line);
+                                                                                                              border-radius:6px;
+                                                                                                              background:white}
+                                                                                                              table{
+                                                                                                                border-collapse:collapse;
+                                                                                                                width:100%;
+                                                                                                                text-align:left;
+                                                                                                                font-size:15px}
+                                                                                                                th,td{
+                                                                                                                  padding:16px 20px;
+                                                                                                                  border-bottom:1px solid var(--line);
+                                                                                                                  vertical-align:top}
+                                                                                                                  thead{
+                                                                                                                    background:#edf1f5}
+                                                                                                                    th{
+                                                                                                                      font-weight:600}
+                                                                                                                      tr:last-child td,tr:last-child th{
+                                                                                                                        border-bottom:0}
+                                                                                                                        code{
+                                                                                                                          font: .9em ui-monospace,SFMono-Regular,Consolas,monospace;
+                                                                                                                          overflow-wrap:anywhere}
+                                                                                                                          p code,td code,li code{
+                                                                                                                            background:#e9eef4;
+                                                                                                                            padding:2px 5px;
+                                                                                                                            border-radius:3px}
+                                                                                                                            pre{
+                                                                                                                              background:#17212f;
+                                                                                                                              color:#edf3fb;
+                                                                                                                              padding:20px;
+                                                                                                                              border-radius:6px;
+                                                                                                                              overflow:auto;
+                                                                                                                              line-height:1.6;
+                                                                                                                              font-size:14px;
+                                                                                                                              white-space:pre-wrap;
+                                                                                                                              overflow-wrap:anywhere;
+                                                                                                                              position:relative}
+                                                                                                                              pre code{
+                                                                                                                                font-size:inherit}
+                                                                                                                                .copy{
+                                                                                                                                  display:block;
+                                                                                                                                  margin-top:10px;
+                                                                                                                                  font:12px inherit;
+                                                                                                                                  color:#fff;
+                                                                                                                                  border:1px solid #6b7b90;
+                                                                                                                                  background:transparent;
+                                                                                                                                  border-radius:4px;
+                                                                                                                                  padding:4px 10px;
+                                                                                                                                  cursor:pointer}
+                                                                                                                                  .band{
+                                                                                                                                    background:#eaf0f5;
+                                                                                                                                    border-block:1px solid var(--line);
+                                                                                                                                    padding:48px 0}
+                                                                                                                                    .band .cols{
+                                                                                                                                      align-items:center}
+                                                                                                                                      .band h2{
+                                                                                                                                        font-size:28px}
+                                                                                                                                        footer{
+                                                                                                                                          display:flex;
+                                                                                                                                          justify-content:space-between;
+                                                                                                                                          gap:24px;
+                                                                                                                                          flex-wrap:wrap;
+                                                                                                                                          padding-top:28px!important;
+                                                                                                                                          padding-bottom:28px!important;
+                                                                                                                                          font-size:13px;
+                                                                                                                                          color:var(--muted)}
+                                                                                                                                          footer p{
+                                                                                                                                            margin:0}
+                                                                                                                                            .document{
+                                                                                                                                              display:grid;
+                                                                                                                                              grid-template-columns:210px minmax(0,1fr);
+                                                                                                                                              gap:56px;
+                                                                                                                                              padding-top:48px;
+                                                                                                                                              padding-bottom:64px}
+                                                                                                                                              .toc{
+                                                                                                                                                align-self:start;
+                                                                                                                                                position:sticky;
+                                                                                                                                                top:24px;
+                                                                                                                                                font-size:14px}
+                                                                                                                                                .toc strong{
+                                                                                                                                                  display:block;
+                                                                                                                                                  margin-bottom:12px}
+                                                                                                                                                  .toc a{
+                                                                                                                                                    display:block;
+                                                                                                                                                    padding:7px 0;
+                                                                                                                                                    color:var(--muted)}
+                                                                                                                                                    .prose{
+                                                                                                                                                      max-width:850px;
+                                                                                                                                                      min-width:0}
+                                                                                                                                                      .prose h1{
+                                                                                                                                                        font-size:38px}
+                                                                                                                                                        .prose section{
+                                                                                                                                                          padding:36px 0;
+                                                                                                                                                          border-bottom:1px solid var(--line);
+                                                                                                                                                          scroll-margin-top:24px}
+                                                                                                                                                          .prose h2{
+                                                                                                                                                            font-size:27px}
+                                                                                                                                                            .prose h3{
+                                                                                                                                                              margin:24px 0 12px}
+                                                                                                                                                              .prose ul,.prose ol{
+                                                                                                                                                                padding-left:24px}
+                                                                                                                                                                .prose li{
+                                                                                                                                                                  margin:8px 0}
+                                                                                                                                                                  .callout{
+                                                                                                                                                                    padding:18px 20px;
+                                                                                                                                                                    border-left:3px solid var(--green);
+                                                                                                                                                                    background:#eaf3f0;
+                                                                                                                                                                    margin:22px 0}
+                                                                                                                                                                    .callout p:last-child{
+                                                                                                                                                                      margin:0}
+                                                                                                                                                                      details{
+                                                                                                                                                                        border-bottom:1px solid var(--line);
+                                                                                                                                                                        padding:18px 0}
+                                                                                                                                                                        summary{
+                                                                                                                                                                          cursor:pointer;
+                                                                                                                                                                          font-weight:600}
+                                                                                                                                                                          details p{
+                                                                                                                                                                            margin:14px 0 0}
+                                                                                                                                                                            .layer{
+                                                                                                                                                                              padding:24px;
+                                                                                                                                                                              background:white;
+                                                                                                                                                                              border:1px solid var(--line);
+                                                                                                                                                                              border-radius:6px;
+                                                                                                                                                                              margin:12px 0}
+                                                                                                                                                                              .layer strong{
+                                                                                                                                                                                font-size:18px}
+                                                                                                                                                                                .layer p{
+                                                                                                                                                                                  margin:8px 0 0;
+                                                                                                                                                                                  color:var(--muted)}
+                                                                                                                                                                                  .arrow{
+                                                                                                                                                                                    text-align:center;
+                                                                                                                                                                                    color:var(--muted);
+                                                                                                                                                                                    font-size:14px}
+                                                                                                                                                                                    .sources a{
+                                                                                                                                                                                      overflow-wrap:anywhere}
+                                                                                                                                                                                      .sr-only{
+                                                                                                                                                                                        position:absolute;
+                                                                                                                                                                                        width:1px;
+                                                                                                                                                                                        height:1px;
+                                                                                                                                                                                        overflow:hidden;
+                                                                                                                                                                                        clip-path:inset(50%)}
+                                                                                                                                                                                        @media(max-width:800px){
+                                                                                                                                                                                          .wrap{
+                                                                                                                                                                                            padding-left:22px;
+                                                                                                                                                                                            padding-right:22px}
+                                                                                                                                                                                            .hero{
+                                                                                                                                                                                              grid-template-columns:1fr;
+                                                                                                                                                                                              gap:32px;
+                                                                                                                                                                                              padding-top:40px;
+                                                                                                                                                                                              padding-bottom:40px}
+                                                                                                                                                                                              h1{
+                                                                                                                                                                                                font-size:38px}
+                                                                                                                                                                                                .header .wrap{
+                                                                                                                                                                                                  align-items:flex-start;
+                                                                                                                                                                                                  padding-top:18px;
+                                                                                                                                                                                                  padding-bottom:18px;
+                                                                                                                                                                                                  gap:16px;
+                                                                                                                                                                                                  flex-direction:column}
+                                                                                                                                                                                                  nav{
+                                                                                                                                                                                                    gap:22px}
+                                                                                                                                                                                                    .cols{
+                                                                                                                                                                                                      grid-template-columns:1fr;
+                                                                                                                                                                                                      gap:20px}
+                                                                                                                                                                                                      .strip{
+                                                                                                                                                                                                        grid-template-columns:1fr;
+                                                                                                                                                                                                        gap:16px}
+                                                                                                                                                                                                        .section{
+                                                                                                                                                                                                          padding-top:40px;
+                                                                                                                                                                                                          padding-bottom:40px}
+                                                                                                                                                                                                          .section-head{
+                                                                                                                                                                                                            align-items:flex-start;
+                                                                                                                                                                                                            flex-direction:column;
+                                                                                                                                                                                                            gap:16px}
+                                                                                                                                                                                                            .document{
+                                                                                                                                                                                                              grid-template-columns:1fr;
+                                                                                                                                                                                                              gap:24px;
+                                                                                                                                                                                                              padding-top:28px}
+                                                                                                                                                                                                              .toc{
+                                                                                                                                                                                                                position:static;
+                                                                                                                                                                                                                border-bottom:1px solid var(--line);
+                                                                                                                                                                                                                padding-bottom:16px}
+                                                                                                                                                                                                                .toc a{
+                                                                                                                                                                                                                  display:inline-block;
+                                                                                                                                                                                                                  margin-right:16px}
+                                                                                                                                                                                                                  .prose h1{
+                                                                                                                                                                                                                    font-size:32px}
+                                                                                                                                                                                                                    th,td{
+                                                                                                                                                                                                                      padding:12px;
+                                                                                                                                                                                                                      min-width:120px}
+                                                                                                                                                                                                                      h2{
+                                                                                                                                                                                                                        font-size:27px}
+                                                                                                                                                                                                                        .sheet{
+                                                                                                                                                                                                                          padding:22px}
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        @media(prefers-reduced-motion:reduce){
+                                                                                                                                                                                                                          html{
+                                                                                                                                                                                                                            scroll-behavior:auto}
+                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                          .flow{
+                                                                                                                                                                                                                            background:#fff;
+                                                                                                                                                                                                                            border:1px solid var(--line);
+                                                                                                                                                                                                                            border-radius:6px;
+                                                                                                                                                                                                                            padding:20px}
+                                                                                                                                                                                                                            .flow p{
+                                                                                                                                                                                                                              line-height:2.5;
+                                                                                                                                                                                                                              margin:0 0 14px}
+                                                                                                                                                                                                                              .flow p:last-child{
+                                                                                                                                                                                                                                margin:0}
+                                                                                                                                                                                                                                .flow span,.flow strong{
+                                                                                                                                                                                                                                  display:inline-block;
+                                                                                                                                                                                                                                  padding:0 6px;
+                                                                                                                                                                                                                                  border-bottom:2px solid var(--line)}
+                                                                                                                                                                                                                                  .flow strong{
+                                                                                                                                                                                                                                    color:var(--green);
+                                                                                                                                                                                                                                    border-color:var(--green)}

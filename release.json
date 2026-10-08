@@ -1,0 +1,28 @@
+{
+  "name": "human-writer",
+  "version": "0.2.0",
+  "date": "2026-10-08",
+  "host": "Codex",
+  "download": "downloads/human-writer-codex.zip",
+  "sha256": "162a99e4dcfbdf3dbbe75208f9791b3ec7326fbdc453ad0a6c9db59344d2de7b",
+  "packageFiles": 149,
+  "packageManifestSha256": "d5f7f8c4a187464985c53c1c7fe8f5f8620acb4785dc33ae924bd9734ab90b46",
+  "siteFiles": {
+    "index.html": "bdb464f1336758034405f8d6c04505cf16136a65db353e725c7bf45fdac1e320",
+    "guide.html": "795da174871aeeec952c4b23641ba300d0ef9c5fc86c555dfa8915c23247813f",
+    "architecture.html": "d3f964130f37a1e5440bd69770f5155feda8240689d96728a849c8d7596411ab",
+    "styles.css": "e847179c13dade4ef4cc1f920427656a066df28ab465b67a0e5561fea939be99",
+    "site.js": "2fdc5318a5a674efe4d3cf2b979f8e3a70b863f102b3df8dd403ab07044888d7",
+    "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c"
+  },
+  "sdk": {
+    "sdkVersion": "0.5.0",
+    "sourceRepo": "https://github.com/ww880412/matt-pocock-plugins",
+    "sourceCommit": "5cce5bae103ab194b2b94ed58aecf0a2ccb84c80",
+    "manifestSha256": "a5d9cf4da8db3b45ae7caafa813a4f7894af843f027be357c9fc13ba6b78ef6f",
+    "minimumStateReader": "0.2.0",
+    "checkedNodeVersion": "24.13.0"
+  },
+  "functionalBaseline": "HW-06 accepted; new writing skills trial",
+  "sourceParentCommit": "2263ea1da446129198ddf9e53674e7e439ad038a"
+}
