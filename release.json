@@ -4,14 +4,14 @@
   "date": "2026-10-08",
   "host": "Codex",
   "download": "downloads/human-writer-codex.zip",
-  "sha256": "162a99e4dcfbdf3dbbe75208f9791b3ec7326fbdc453ad0a6c9db59344d2de7b",
+  "sha256": "a5320779935a3fef38c6c641651ae6d531aab64213dee53e041a61ee698c48d2",
   "packageFiles": 149,
-  "packageManifestSha256": "d5f7f8c4a187464985c53c1c7fe8f5f8620acb4785dc33ae924bd9734ab90b46",
+  "packageManifestSha256": "3cfabd12ca39dcdec4ba0d6ddb5adc0f66f8f4ac6791acbd82a8f8df3861c3e2",
   "siteFiles": {
     "index.html": "bdb464f1336758034405f8d6c04505cf16136a65db353e725c7bf45fdac1e320",
     "guide.html": "795da174871aeeec952c4b23641ba300d0ef9c5fc86c555dfa8915c23247813f",
     "architecture.html": "d3f964130f37a1e5440bd69770f5155feda8240689d96728a849c8d7596411ab",
-    "styles.css": "e847179c13dade4ef4cc1f920427656a066df28ab465b67a0e5561fea939be99",
+    "styles.css": "6578b48a35649879ea6c3de512de71bb9a759ec26de9ed6029358ad9a84db691",
     "site.js": "2fdc5318a5a674efe4d3cf2b979f8e3a70b863f102b3df8dd403ab07044888d7",
     "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c"
   },
@@ -24,5 +24,5 @@
     "checkedNodeVersion": "24.13.0"
   },
   "functionalBaseline": "HW-06 accepted; new writing skills trial",
-  "sourceParentCommit": "2263ea1da446129198ddf9e53674e7e439ad038a"
+  "sourceParentCommit": "78f544d1a8f063f975992f89b663fd79a384729c"
 }
