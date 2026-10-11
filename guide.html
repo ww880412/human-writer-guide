@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html" aria-current="page">使用指南</a>
-<a href="architecture.html">架构与边界</a>
+<a href="architecture.html">架构与边界</a><a href="release.html">0.3.0 更新</a>
 </nav>
 </div>
 </header>
@@ -33,18 +33,22 @@
 <a href="#install">01 · 安装与更新</a>
 <a href="#new">02 · 从题目开始</a>
 <a href="#import">03 · 修改已有稿件</a>
+<a href="#requirements">写作要求与补内容</a>
+<a href="#independent">单独使用一个技能</a>
+<a href="#word">导入 Word</a><a href="#products">Word 与演示交付</a><a href="#reorganize">按框架重组</a>
 <a href="#cards">04 · 卡片、恢复与换会话</a>
 <a href="#reference">05 · 操作速查</a>
 <a href="#skills">06 · 选择写作技能</a>
-<a href="#release">07 · 0.2.0 的范围</a>
+<a href="#release">07 · 0.3.0 的范围</a>
 <a href="#sources">08 · 来源、许可与数据</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.2.0</p>
+<p class="eyebrow">Human Writer / 0.3.0 · Word 与演示</p>
 <h1>使用指南</h1>
 <section id="install">
 <h2>01 · 安装与更新</h2>
-<p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，实际验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.160.1。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
+<p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，已有安装验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.162.0-alpha.17.2。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
+<p class="callout">本页下载为 0.3.0，包含已验收的 HW-14 成品流程及此前的修订、重组能力。五个新成品组合开放试用。<a href="release.html">查看完整更新说明</a>。</p>
 <h3>交给 Codex 安装</h3>
 <ol>
 <li>
@@ -102,11 +106,48 @@ node scripts/trust-hooks.mjs --review</code>
 <ol>
 <li>agent 生成自查报告；有问题时弹出采纳卡。</li>
 <li>选择全部采纳、只改表达、只改高严重度，或在卡片自由输入 <code>1,3,5</code> 这样的编号。也可本轮不改，进入定稿。</li>
-<li>agent 按采纳集合润色，每轮至多自动复查一次，再由你决定是否定稿。</li>
+<li>含事实或论证类的采纳意见进入写稿修订，纯表达意见进入润色；每轮至多自动复查一次，再由你决定是否定稿。</li>
 </ol>
+<p>已有明确修改要求时，可以直接说“按刚才的三条意见改”；在修改确认卡上选“修改（可以补内容、改判断）”“只改措辞”或“先不改”。</p>
 <p>定稿卡的“继续修改”会先等待你的修改要求；“补充内容”回到写稿。直接在聊天里说“全部采纳”不等于回答卡片。</p>
 </section>
-<section id="cards">
+<section id="requirements">
+<h2>把意见整理成写作要求</h2>
+<p><code>requirements.md</code> 记录标准 S、保持项 K、本轮目标 G。它和素材归作者维护；作者自己写，或明确让模型整理后查看全文。写下目标本身不会开始修订。</p>
+<p>必须逐字保留的原文，在 K 条目里用「」标出，标点和空格也照原文复制。只检查基准稿中确实存在的引文；不存在的会列为跳过。</p>
+<pre data-copy><code>请按 requirements.md 的 G1 修订，保持 K1 不变；缺少依据的地方标为待补，不编造数据。</code></pre>
+<p>在修改确认卡上选择内容修改或只改措辞。卡片冻结这轮要求；后续编辑要求文件不会悄悄改变已经确认的范围。也可以由作者显式使用 <code>go draft</code> 或 <code>go polish</code>，再给出要求。</p>
+<p>写稿、润色和自查会接收写作要求；默认自查也会按要求检查。修订交付正文和 <code>changes.md</code>，复查还会对照“上一版”报告内容丢失或减弱。自查的结论仍需作者判断。</p>
+</section>
+<section id="reorganize">
+<h2>按新框架重组整篇</h2><p>先把新主线写进写作要求的“必须保持”，然后回到框架：</p>
+<pre data-copy><code>$human-writer go outline</code></pre><p>如果还没有选题，先用 <code>go topic</code>。确认新框架后，插件按框架重组现稿，保留事实、限定与必要关系，并逐节写明原有内容的去向。确认框架前，可以要求重新梳理。</p>
+</section><section id="independent">
+<h2>单独使用一个技能</h2>
+<pre data-copy><code>$human-writer use report-check
+只检查当前作品是否符合写作要求，先给我报告，不推进写作阶段。</code></pre>
+<p>作品内执行会保留产物与记录，完成后阶段不变。独立写稿或润色的正文先成为候选，由作者选择采用、保留当前稿或手工处理；独立自查保留报告。</p>
+<p>成品槽位不支持独立试做；请先定稿，再说“做成 Word”或“做成演示”。</p><p>没有打开作品时，<code>use</code> 只提供技能指令，由 agent 按你给的内容处理，不建立作品历史，也不能据此声称插件执行已经完成。</p>
+<p>“这次用某个技能”只影响一次执行；“把本作品的自查绑定为 report-check”会保存到作品；<code>skills</code> 的列出与推荐只读，不会自动替换绑定。</p>
+</section>
+<section id="word">
+<h2>导入 Word 稿件</h2><p>导入仍只接受项目内 UTF-8 文本。先用文档工具把 DOCX 转成 Markdown，再导入；核对原文档的表格、批注与图片位置。原 DOCX 可放入素材目录留作来源。定稿之后，使用下面的成品流程生成新的 Word。</p>
+</section>
+<section id="products">
+<h2>定稿后，交付 Word 与演示</h2><ol>
+<li>完成正文，在定稿卡上选择“只定稿”。成品使用这个固定版本，不会把后续未定稿的编辑混进去。</li>
+<li>说明“做成 Word”或“做成演示”。Word 先给图文方案；演示先给主线、页纲和原文章节去向。</li>
+<li>查看方案文件，必要时自行编辑；卡上选择“确认，开始制作”或“重新做方案”。重做方案后，先说明要怎么改。</li>
+<li>模型使用宿主已有工具制作，并尽量逐页渲染。Word 包含图源 HTML；演示包含自包含 HTML 和可编辑 PPTX。</li>
+<li>成品自查对照正文、方案与成品，区分内容失真、版面问题和正文自身问题。有可处理意见时，选择“采纳后重新制作”或“直接交付”；无意见直接交付。只涉及正文内容的意见需回正文处理，不在成品里擅自改意思。</li>
+</ol>
+<pre data-copy><code>用 Human Writer 把这份定稿做成演示。</code></pre><p>演示完成后，另发一条：</p>
+<pre data-copy><code>再出一份 Word。</code></pre>
+<h3>交付文件在哪里</h3><p>在 <code>works/&lt;slug&gt;/products/doc/</code> 和 <code>products/deck/</code>。文件按作品名保存，例如 <code>三季度业务盘点.docx</code>、<code>三季度业务盘点.html</code>、<code>三季度业务盘点.pptx</code>；图文方案、页纲与自查报告也保存在对应目录。</p>
+<h3>只调整成品呈现</h3><pre data-copy><code>第 2 页的要点减成两条。</code></pre><p>模型沿用上一版成品，只改要求涉及的页，留下 <code>changes.md</code>。作者直接改过的成品不会被覆盖，新产物另存为 <code>&lt;作品名&gt;.&lt;执行编号&gt;.new.pptx</code> 等文件，并明确给出新旧路径。</p>
+<h3>正文又有变化</h3><p>先修订正文，再重新定稿；已有成品保留，并标为需要核对。更新时沿用已经确认的方案；若方案的出处与新稿不符，先调整或重做方案。成品中的手改不会自动回写 Markdown。</p>
+<h3>渲染与使用边界</h3><p>不为制作成品自动安装软件。已有工具失败时会尝试其他可用方式；浏览器受沙箱限制时，宿主允许的话可请求作者批准渲染。两份演示均已生成、只有一份不能逐页渲染时可交付，但会说明未看过哪份及原因。两份均无法渲染或成品做不出来时停止并说明缺口。批准后的真实 Desktop 渲染仍待实际使用验证。</p>
+</section><section id="cards">
 <h2>04 · 卡片、恢复与换会话</h2>
 <details open>
 <summary>没看到卡片，或卡片收起来了</summary>
@@ -122,7 +163,7 @@ node scripts/trust-hooks.mjs --review</code>
 </details>
 <details>
 <summary>定稿后想继续 / 想先跳到某阶段</summary>
-<p>由作者输入 <code>$human-writer go draft</code>、<code>go review</code> 或 <code>go polish</code> 等命令。作品可重新打开；跳转后的写稿或润色会等待你的要求。</p>
+<p>直接说明正文修改要求，或输入 <code>$human-writer go draft</code>、<code>go review</code>、<code>go polish</code>。跳转后的写稿或润色会等待要求；修改后重新定稿，已有成品会标为需要核对。</p>
 </details>
 <p>编辑器保持旧内容时再次保存，可能把新稿覆盖回旧稿。先检查编辑器是否重新加载文件；已登记版本和移开文件可帮助找回内容，但不等于完整备份。<a href="architecture.html#limits">详见边界</a>。</p>
 </section>
@@ -175,6 +216,12 @@ node scripts/trust-hooks.mjs --review</code>
 </tr>
 <tr>
 <td>
+<code>$human-writer use &lt;技能 ID&gt;</code>
+</td>
+<td>独立使用技能，不推进阶段</td>
+</tr>
+<tr>
+<td>
 <code>$human-writer end</code>
 </td>
 <td>结束本会话的作品绑定；不删除作品，也不等于定稿</td>
@@ -201,15 +248,15 @@ node scripts/trust-hooks.mjs --review</code>
 <td>
 <code>dbs-ai-check</code>
 </td>
-<td>自查</td>
-<td>已通过已有样本验收</td>
+<td>默认自查 · 正文、要求与上一版</td>
+<td>正式可用；限已有样本证据</td>
 </tr>
 <tr>
 <td>
 <code>humanizer-zh</code>
 </td>
-<td>润色</td>
-<td>已通过已有样本验收</td>
+<td>默认润色</td>
+<td>正式可用；限已有样本证据</td>
 </tr>
 <tr>
 <td>
@@ -246,23 +293,17 @@ node scripts/trust-hooks.mjs --review</code>
 <td>写稿</td>
 <td>试用</td>
 </tr>
+<tr><td><code>report-check</code></td><td>自查备选 · 对照要求和素材</td><td>试用</td></tr>
+<tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>两个组合试用</td></tr>
+<tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>两个组合试用</td></tr>
+<tr><td><code>product-check</code></td><td>成品自查</td><td>试用</td></tr>
 </tbody>
 </table>
 </div>
 <p class="note" style="margin-top:18px">“已通过已有样本验收”不保证适合所有文体。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
-<h2>07 · 0.2.0 的范围</h2>
-<p>
-<strong>2026-10-08</strong> · 汇总已验收的 HW-01 至 HW-06，实现从新建、导入到定稿，以及补充素材后再次写稿。</p>
-<ul>
-<li>新增选题、框架和写稿；框架确认与补充内容关卡。</li>
-<li>五个新技能组合开放试用，记录结构检查与样本证据。</li>
-<li>修复选题 / 框架并发保存的文件保护；正文、选题和框架共用先移开、再核对的判断。</li>
-<li>首次提供独立发布站、可校验 ZIP 和离线指南。功能验收基线为 HW-06，发布层不修改这些写作文本和 SDK 快照。</li>
-</ul>
-<p>283 项组件测试通过；9 个隔离宿主样本、E5/E6 两条路线已核对。它们证明工程和限定场景执行，不代表真人写作效果已充分验证。</p>
-<p>尚未实现：配图、排版、二次发布。未声称支持 Claude Code / Devin。Desktop 菜单入口、重启细节与常用编辑器的保存行为仍留在实际使用中观察。</p>
+<h2>07 · 0.3.0 的范围</h2><p><strong>2026-10-11 · 0.3.0 / HW-14</strong>。含 11 个技能、10 个可执行槽位。新增定稿后的 Word 与演示两条线、方案确认、成品自查、局部重做和手改文件保护；同时包含此前的修改确认、上一版退化复查与按框架重组。</p><p>HW-14 已独立验收，两种模式组件测试均 545/545；五个成品组合样本与一次连续 Codex 冒烟通过。新组合都是 trial，真实作者体验尚未验证。<a href="release.html">完整更新、升级方式和已知限制 →</a></p><p>本下载包面向 Codex。源码另有 Claude 适配；HW-14 的样本与冒烟仅在 Codex 运行，不据此宣称 Claude 成品链路已验证。公众号排版、独立配图/排版、二次发布和成品自动回写正文不在本版范围。</p>
 </section>
 <section id="sources">
 <h2>08 · 来源、许可与数据</h2>
@@ -281,7 +322,7 @@ node scripts/trust-hooks.mjs --review</code>
 <a href="https://github.com/xstongxue/best-skills/blob/9aa4e555950da6e43e7d98c5f0c7b70264204850/skills/md-report-summary/SKILL.md">md-report-summary</a> · Apache-2.0 · <code>9aa4e555950d</code>
 </li>
 </ul>
-<p>本项目自写 material-brief、material-outline、material-draft 及适配、业务编排。状态 SDK 为锁定的 0.5.0 快照，来自 Matt 项目提交 <code>5cce5bae103a</code>；包内 <code>sdk-dependency.json</code> 与 SDK manifest 可核对。</p>
+<p>本项目自写 material-brief、material-outline、material-draft、report-check、doc-visual、deck-story、product-check 及适配、业务编排。状态 SDK 为锁定的 0.5.0 快照，来自 Matt 项目提交 <code>5cce5bae103a</code>；包内 <code>sdk-dependency.json</code> 与 SDK manifest 可核对。</p>
 <div class="callout">
 <p>
 <strong>按组件许可使用。</strong>dbs-ai-check 带非商业限制，本发布不将整个插件声明为 MIT，也不授予超出各上游许可的权利。查看包内 <code>THIRD_PARTY_NOTICES.md</code> 和各 LICENSE。</p>
@@ -294,7 +335,7 @@ node scripts/trust-hooks.mjs --review</code>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.2.0 · 2026-10-08</p>
+<p>Human Writer · 0.3.0 / Word 与演示 · 2026-10-11</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

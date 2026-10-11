@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html" aria-current="page">架构与边界</a>
+<a href="architecture.html" aria-current="page">架构与边界</a><a href="release.html">0.3.0 更新</a>
 </nav>
 </div>
 </header>
@@ -37,14 +37,14 @@
 <a href="#evidence">05 · 已验证的结论</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.2.0</p>
+<p class="eyebrow">Human Writer / 0.3.0 · Word 与演示</p>
 <h1>架构与验证边界</h1>
 <section id="layers">
 <h2>01 · 每一层负责什么</h2>
 <p>写作方法可以替换，作品与决定需要连续保存。Human Writer 把这两件事分开。</p>
 <div class="layer">
 <strong>作者 · 目标、材料、取舍</strong>
-<p>确认框架，选择采纳意见，决定定稿；可以在本机编辑稿件。</p>
+<p>确认修改范围、框架与成品方案，选择采纳和交付；可以在本机编辑正文与成品。</p>
 </div>
 <div class="arrow">↓ 原生卡片与入口命令 ↑</div>
 <div class="layer">
@@ -54,7 +54,7 @@
 <div class="arrow">↓ MCP / hooks ↑</div>
 <div class="layer">
 <strong>Human Writer · 作品与路线</strong>
-<p>作品管理、技能目录、结构检查、关卡、工作副本与版本；把冲突留给作者决策。</p>
+<p>作品管理、正文路线、成品任务、技能目录、确定性检查、关卡与文件保护；模型负责内容产出，SDK 负责持久调用、回执与恢复。</p>
 </div>
 <div class="arrow">↓ 持久调用、回执与恢复 ↑</div>
 <div class="layer">
@@ -71,17 +71,17 @@
 <p>
 <span>导入稿件 / 写稿完成</span> → <span>自查</span>
 </p>
-<p>有问题 → <strong>采纳意见</strong> → <span>润色</span> → <span>复查至多一次</span>
+<p>有问题 → <strong>采纳意见</strong> → <span>内容修订或润色</span> → <span>复查至多一次</span>
 </p>
-<p>无问题 / 复查完成 → <strong>定稿卡</strong>
+<p>无问题 → <strong>定稿卡</strong>；复查仍有问题 → <strong>作者重新选择</strong>
 </p>
 </div>
 <ul>
-<li>只定稿 → 完成。</li>
+<li>只定稿 → 固定正文版本；可继续创建 Word 或页面成品任务。</li>
 <li>继续修改 → 等待作者要求 → 润色。</li>
 <li>补充内容 → 等待作者要求 → 写稿。</li>
 </ul>
-<p>加粗的关卡需要作者在原生卡片作答。流程允许作者跳转，但 agent 不代替作者回答，不把聊天表态伪造为关卡回执。</p>
+<div class="flow"><p>定稿 → 图文方案 / 页纲 → <strong>作者确认</strong> → 制作 → 成品自查 → <strong>交付或重做</strong></p></div><p>两条成品线可以先后推进，作者卡片串行；成品任务不改正文路线、正文版本或素材。重新定稿后，旧成品保留并标记需要核对。</p><p>加粗的关卡需要作者在原生卡片作答。流程允许作者跳转，但 agent 不代替作者回答，不把聊天表态伪造为关卡回执。</p>
 </section>
 <section id="files">
 <h2>03 · 文件在哪里</h2>
@@ -102,6 +102,7 @@
 </tr>
 <tr>
 <td>
+<code>works/&lt;slug&gt;/requirements.md</code></td><td>作者标准、保持项和本轮目标；框架、写稿、润色、自查及成品任务按契约冻结输入；修改确认冻结本轮要求</td></tr><tr><td>
 <code>works/&lt;slug&gt;/brief.md</code>
 <br>
 <code>outline.md</code>
@@ -123,7 +124,7 @@
 <td>宿主状态；所在文件系统须支持硬链接，通常使用本机 HOME</td>
 </tr>
 <tr>
-<td>Codex 插件缓存</td>
+<td><code>works/&lt;slug&gt;/products/doc/</code><br><code>products/deck/</code></td><td>图文方案 / 页纲、Word、图源、HTML、PPTX、自查与修改说明；正文仍是内容正本</td></tr><tr><td>Codex 插件缓存</td>
 <td>运行时、技能、适配与锁定 SDK；更新时校验包内容</td>
 </tr>
 </tbody>
@@ -134,10 +135,10 @@
 <section id="limits">
 <h2>04 · 保护到哪里，边界在哪里</h2>
 <h3>并发保存</h3>
-<p>写入前先移开工作文件，再核对移开的内容。检测到作者变更时优先保留作者文件；正文产物进入候选处理，选题 / 框架产物保存为 <code>.new.md</code>。崩溃恢复沿同一判断重放。</p>
+<p>写入前先移开工作文件，再核对移开的内容。检测到作者变更时优先保留作者文件；正文产物进入候选处理，选题 / 框架产物保存为 <code>.new.md</code>；手改的成品方案或成品保留，模型产物另存带执行编号的 <code>.new</code> 文件。崩溃恢复沿同一判断重放。</p>
 <p>编辑器持有旧文件描述符写入时，新内容可能落在移开文件中，需按保留路径找回。检查目标不存在与随后改名之间仍有一个极窄的竞争窗口。这里不承诺绝对无丢失，也不能代替备份。</p>
 <h3>事实与质量</h3>
-<p>检查器能验证结构、素材引用、格式和编号，不能自动证明所有事实真实、所有观点合理。模型可能少读材料、误解数据或给出多余待补；重要事实由作者复核。</p>
+<p>检查器能验证结构、引用、页数、数字口径和原文字面保留；它读不到图片里的文字，也不能证明事实、观点或版面质量。成品自查由模型执行，不是独立评审。模型可能少读材料、误解数据或给出多余待补；重要事实由作者复核。</p>
 <h3>宿主与界面</h3>
 <p>CLI 隔离宿主已运行，Desktop 自由输入编号已有证据。菜单入口插入格式、Desktop 重启与特定编辑器重载的完整表现仍需实际使用观察；卡片折叠可要求 resume。</p>
 </section>
@@ -155,12 +156,12 @@
 <tbody>
 <tr>
 <th>工程</th>
-<td>HW-06 验收：283/283，SMB 两种模式复核通过；SDK 47 文件未改</td>
+<td>HW-14：两种模式各 545/545，24 个成品组件测试；SDK 锁定快照未改</td>
 <td>不自动等于每类文章都好用</td>
 </tr>
 <tr>
 <th>隔离宿主</th>
-<td>9 个样本、E5/E6 两路线；作者保存竞态复现修复</td>
+<td>HW-14：五个成品组合样本，以及 Word / 页面交付、局部重做和手改保护的连续冒烟；H-synthetic</td>
 <td>限定场景，非所有编辑器与重启组合</td>
 </tr>
 <tr>
@@ -170,18 +171,18 @@
 </tr>
 <tr>
 <th>业务效果</th>
-<td>新技能处于试用，样本产物已人工阅读</td>
+<td>五个新成品组合 trial；样本与冒烟经 Claude 独立验收，作者使用效果未验证</td>
 <td>不能承诺减少返工或提升所有文体质量</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="note" style="margin-top:18px">详细内部验收记录随源码项目保存；公开页仅汇总结论，不包含测试会话、配置或作者原稿。</p>
+<p class="note" style="margin-top:18px">HW-14 已由 Claude 独立验收。冒烟驱动在手改前发生文件名错误，修正后在原线程继续，未重跑已完成阶段；该恢复经独立验收接受。HTML 渲染受沙箱限制时已披露，未冒充逐页验证。公开页不包含内部测试会话、配置或作者原稿。</p>
 </section>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.2.0 · 2026-10-08</p>
+<p>Human Writer · 0.3.0 / Word 与演示 · 2026-10-11</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
