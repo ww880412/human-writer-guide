@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.3.0 更新说明 · Human Writer</title>
+<title>0.3.2 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,24 +23,34 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.0 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.2 更新</a>
 </nav>
 </div>
 </header>
-<main id="main" class="wrap document"><aside class="toc" aria-label="本页目录"><strong>0.3.0 更新</strong><a href="#new">新增成品流程</a><a href="#included">同时包含的更新</a><a href="#start">最短使用路径</a><a href="#upgrade">升级与数据</a><a href="#limits">验证与限制</a></aside><article class="prose"><p class="eyebrow">2026-10-11 · Codex 0.3.0</p><h1>从定稿，到可以交付的成品。</h1><p class="lead">Word 与演示进入同一篇作品的流程：先确认方案，再制作、自查与交付。已经写好的正文和作者手改的文件继续保留。</p>
-<section id="new"><h2>这次新增什么</h2><div class="table-scroll"><table><thead><tr><th>你要做的事</th><th>0.3.0 的做法</th></tr></thead><tbody>
-<tr><th>出一份 Word</th><td>先出图文方案，确认后生成 DOCX 和图源 HTML；未纳入方案的正文保持原样。</td></tr>
-<tr><th>做一套演示</th><td>先定主线与页纲，一页一个判断，再制作自包含 HTML 和可编辑 PPTX。</td></tr>
-<tr><th>检查成品</th><td>对照正文和方案，区分失真、版面问题、正文自身问题；由你选择直接交付或采纳后重做。</td></tr>
-<tr><th>只改一页</th><td>沿用上一版成品，只改涉及的页，并留下修改说明。</td></tr>
-<tr><th>已经手改过文件</th><td>保留你的文件，新产物另存带执行编号的 .new 文件，给出新旧路径。</td></tr>
-<tr><th>正文又改了</th><td>重新定稿后，已有成品保留并标为需要核对；可沿用方案更新，必要时重做方案。</td></tr>
-</tbody></table></div><p>新增 doc-visual、deck-story、product-check 三个技能，覆盖五个成品组合。全目录 11 个技能、10 个可执行槽位。</p></section>
-<section id="included"><h2>从公开 0.2.0 升级，也会得到</h2><ul><li><strong>直接提出修改要求：</strong>一张卡确认内容修改、只改措辞或先不改；不用先学阶段命令。</li><li><strong>按意见选择修订方式：</strong>事实、论证意见回写稿，表达意见进润色；写作要求贯穿执行。</li><li><strong>复查上一版：</strong>报告这一轮丢失或改弱的内容，并写明依据。</li><li><strong>按新框架重组：</strong>确认骨架后按框架重组现稿，逐节说明原内容去向。</li><li><strong>独立调用与对比：</strong>正文类产物先成为候选，检查类产物单独保存；主线阶段不变。</li></ul><p>本次包同时包含此前本地交付的修订与重组能力，无需另外安装 HW-12。</p></section>
-<section id="start"><h2>最短使用路径</h2><p>打开已有作品、完成定稿，在定稿卡上选择“只定稿”，然后发送：</p><pre data-copy><code>用 Human Writer 把这份定稿做成演示。</code></pre><p>确认页纲，查看成品和自查，选择交付。再发一条：</p><pre data-copy><code>再出一份 Word。</code></pre><p><a href="guide.html#products">查看完整使用步骤 →</a></p></section>
-<section id="upgrade"><h2>升级与数据</h2><p>下载新包并核验 SHA-256，解压到新的持久目录。安装前备份配置与旧插件，只更新 Human Writer 相关项；作品、本机状态和写作要求不迁移、不删除。完成后用新聊天加载更新入口。</p><p>沿用 human-writer@human-writer-local，避免同时启用重复来源。两个 hook 分别负责会话开始和作者消息，安装步骤包含核对实际定义与信任状态。</p><div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.0 · ZIP ↓</a><a href="guide.html#install">安装与回退 →</a></div><p><a href="downloads/human-writer-codex.zip.sha256">ZIP SHA-256</a> · <a href="release.json">版本与来源清单</a></p></section>
-<section id="limits"><h2>已经验证，仍需判断</h2><p>HW-14 经独立验收，两种模式组件测试各 545/545；五个成品组合的样本及一次连续 Codex 冒烟通过。冒烟覆盖两条线交付、手改文件保护与只改第 2 页。样本与脚本作答属于 H-synthetic，不代表真实作者使用效果。</p><ul><li>五个新组合均为试用。内容、版面与返工量仍需在你的材料上判断。</li><li>生成与预览依赖宿主已有工具。HTML 未能逐页渲染时会如实说明；沙箱外批准后的 Desktop 渲染尚未实测。</li><li>Word 字体替换、分页留白，以及“减成两条”后文字仍偏多，是实际使用中需要观察的点。</li><li>成品手改不会自动回写正文；公众号排版、独立配图/排版和二次发布未开放。</li><li>本页下载与安装面向 Codex。源码保留 Claude 适配，本批未验证 Claude 的成品流程。</li></ul><p><a href="architecture.html#evidence">查看证据与文件保护边界 →</a></p></section></article></main><footer class="wrap">
-<p>Human Writer · 0.3.0 / Word 与演示 · 2026-10-11</p>
+<main id="main" class="wrap document">
+<aside class="toc" aria-label="本页目录"><strong>0.3.2 更新</strong><a href="#new">路线、自查与反馈</a><a href="#fixes">同时带入的修复</a><a href="#included">此前版本的能力</a><a href="#start">开始使用</a><a href="#upgrade">升级与数据</a><a href="#limits">验证与限制</a></aside>
+<article class="prose"><p class="eyebrow">2026-10-12 · Codex 0.3.2</p>
+<h1>看清写作路线，具体说出哪里要改。</h1>
+<p class="lead">入口显示每步用什么技能、现在走到哪里。成品自查分开说明取舍、设计与渲染问题；使用中不顺的地方，可以当场记成反馈。</p>
+<section id="new"><h2>0.3.2 新增什么</h2><div class="table-scroll"><table><thead><tr><th>你要做的事</th><th>这版的变化</th></tr></thead><tbody>
+<tr><th>看清当前进度</th><td>输入 <code>$human-writer</code> 或 <code>$human-writer status</code>，查看路线、每步技能、当前位置和下一步；定稿后也显示 Word 与演示各自的进度。</td></tr>
+<tr><th>知道从哪开始</th><td>入口列出六种用法：从题目写、改已有稿、按新思路重组、做 Word 或演示、看看写法、记个反馈。</td></tr>
+<tr><th>说清成品哪里不好</th><td>成品自查增加“取舍”“设计”“渲染”三层意见；涉及选图、删减或页面主线的问题标明“需改方案”。已有内容失真检查继续保留。</td></tr>
+<tr><th>区分成品问题与检查限制</th><td>检查环境打不开或无法渲染时，单独给出低严重度的“未能渲染”说明，写明未检查范围，不据此断言作者环境有缺字或版面缺陷。</td></tr>
+<tr><th>留下使用反馈</th><td>说“记个反馈：……”后，模型在项目根目录追加反馈文件，记录原话和定位信息，不抄正文、素材或成品文字与数字；累计五条未交出的反馈时提醒交给维护者。</td></tr>
+</tbody></table></div><p>成品自查继续开放试用。具体意见仍需作者判断，不能把“检查过”当成所有版面问题都已发现。</p></section>
+<section id="fixes"><h2>同时带入 0.3.1 的三项修复</h2><ul>
+<li><strong>答卡更稳：</strong>识别答复标签外的首尾空白，重复收取同一答复仍只推进一次。</li>
+<li><strong>修订后继续查论证：</strong>补查案例是否可比、团队判断与个人归因是否混淆、措施是否对应问题。</li>
+<li><strong>有来源的轴刻度可用：</strong>允许契约约定的水平、零起点、等距 SVG 线性轴刻度；业务数字仍需有来源，竖直数值轴不在本次支持范围。</li>
+</ul></section>
+<section id="included"><h2>此前版本的能力继续保留</h2><p>0.3.0 提供定稿后的 Word 与演示两条成品线：确认方案、制作、自查、交付，支持局部重做和手改文件保护。Word 带图源 HTML；演示同时提供 HTML 与可编辑 PPTX。</p><p>也包含按要求修订、按新框架重组、复查上一版退化、独立调用和候选对比。全目录仍为 11 个技能、10 个可执行槽位。<a href="guide.html#products">成品制作步骤 →</a></p></section>
+<section id="start"><h2>开始使用</h2><p>安装更新后，在写作项目的新聊天中发送：</p><pre data-copy><code>$human-writer</code></pre><p>已有作品时，先打开作品，再查看当前路线：</p><pre data-copy><code>$human-writer status</code></pre><p>想记录使用中的问题，可以直接说：</p><pre data-copy><code>记个反馈：这次成品自查没有指出标题太长，打开后才发现换行。</code></pre><p>这只记录反馈，不会自动修改成品或替你发送给维护者。</p></section>
+<section id="upgrade"><h2>升级与数据</h2><p>下载新包并核验 SHA-256，解压到新的持久目录。安装前备份配置与旧插件，只更新 Human Writer 相关项；作品、本机状态和写作要求不迁移、不删除。完成后用新聊天加载更新入口。</p><p>沿用 human-writer@human-writer-local，避免同时启用重复来源。两个 hook 分别负责会话开始和作者消息，安装步骤包含核对实际定义与信任状态。</p><div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.2 · ZIP ↓</a><a href="guide.html#install">安装与回退 →</a></div><p><a href="downloads/human-writer-codex.zip.sha256">ZIP SHA-256</a> · <a href="release.json">版本与来源清单</a></p></section>
+<section id="limits"><h2>已经验证，仍需判断</h2>
+<p>0.3.2 两种本机模式组件测试各 549/549；两个成品自查样本各执行、提交一次，确定性检查通过。样本中渲染限制已列为低严重度说明；修正后报告的独立语义复核仍待完成。组件与样本证据不等于真实材料的使用效果。</p>
+<ul><li>路线是否好懂、自查意见是否到点、反馈记录是否合用，仍需真实使用判断。</li><li>隔离环境的中文和 HTML 渲染受限，完整视觉检查未完成；样本中的固定宽度问题仍未被单独报告。</li><li>已有真实答卡与同一聊天后续核对，只推进一次；Desktop 完全退出重启后的恢复仍未验证。</li><li>Word 字体替换、分页留白与压缩后文字偏多，继续作为使用观察项。成品手改不自动回写正文。</li><li>本页下载面向 Codex。本次未更新 Claude 包，也未验证跨宿主成品接管。</li></ul><p><a href="architecture.html#evidence">查看验证边界 →</a></p></section></article></main><footer class="wrap">
+<p>Human Writer · 0.3.2 / 路线、自查与反馈 · 2026-10-12</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

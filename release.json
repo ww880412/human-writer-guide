@@ -1,39 +1,49 @@
 {
   "name": "human-writer",
-  "version": "0.3.0",
-  "date": "2026-10-11",
+  "version": "0.3.2",
+  "date": "2026-10-12",
   "host": "Codex",
   "download": "downloads/human-writer-codex.zip",
-  "sha256": "0fcd44bcd9e58d3abfd0c3acd966641457164cd9115fd687ab9d15f2aa1144bd",
-  "packageFiles": 213,
-  "packageManifestSha256": "1e18feb4af10c89768a4fcceeb2159d83c41e27f4f2c647379896813e3e45277",
+  "sha256": "9af2b7cef132ef79ee343d9b9ca772411e8ed6a9e5d5ce64a877f267a03c367a",
+  "packageFiles": 216,
+  "packageManifestSha256": "d7a9d5a9fcf9a36e33f7cf33a8d0a575358c81e80a2fe3420ee7b6fc112d09bf",
   "siteFiles": {
-    "release.html": "a5da2d7bcfb0916bfb6c82c4482b6ad14e3f2feaa051bc0f39b5b2b98a4f7ff1",
-    "index.html": "20e3522ab77138deac226dea64fa9bf394e2670738b88b794015863475273bf3",
-    "guide.html": "64b42f4eda23c749c9085dc5a6db199ef0f526b1664b8a3edb2bd9592df40479",
-    "architecture.html": "87e5614a483c9a7e7b1f3c18d20fbd08e184eff0ff88ecf2d255591dffc9b7ec",
+    "release.html": "d6cfbf735084570d9775e5b00c464ccdeb1415b3f4625ff4ed54213738487a87",
+    "index.html": "7364e4e7a29672ef75d8081c943783127b67215622aee0e80cb6d32fd665e6e5",
+    "guide.html": "cdbebdc106680ca4a49f6a792a73fb27350316e1aefff33ba3e313c2ebcc6a0a",
+    "architecture.html": "6304da142490551e51bd57b50e8186f2b86e4b65ee60b0c575a25b8c20bd900e",
     "styles.css": "dfb450e91f4f126035b8220ca6ef1430e1c0d1950031549f235a3a0b7778e4cb",
     "site.js": "d3e0ce95765dcb381eea9bf55fe7e6e5bfd78d623cfa8b9444b354d639e48c5c",
     "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c",
-    "panels/workflow.html": "64e231c683015c5ebcf50537b3f609c70daf373fee6f348ff89e7b8369afba9b",
-    "panels/workflow.json": "4c26e3d00015923c6a7d966d22b4e99bdc93809b2b51c90cf14c575aa6eb708d",
-    "panels/revision.html": "21a145951b4d81884d2d2baf0b7fcbde223becc24c89568750ce7dbb22e25954",
-    "panels/revision.json": "45f3b32c3f3ad32df985806409c403b6d3105e520b1a48af1679a848c395b08a",
-    "panels/skills.html": "485ce008ad09d7801fb104bdb648d0d00e68ba5a5274b1cc8bb8f3b7952c82c5",
-    "panels/skills.json": "116bfe502548e99d7835bc5b9d55d30c7c0219e31c0d64cbda38ee1ea4872fc3",
-    "panels/usage.html": "654589c12ae7a8d747aebb643126fe189b803a2f14bcc07fb086fea9a9d5b0c6",
-    "panels/usage.json": "c1c295c5b19b70a392ef01f5c1d12fc25036939b52fcb4256e986a59dd9130de"
+    "panels/workflow.html": "1c01cbd06cc8472a9a4a50bfed65b764d2e6d6658f7ab1a96c8dfd4e28aa244b",
+    "panels/workflow.json": "4dcf12048a19323fe21419abb9c52a5b82bf2d1fe1ad6545b6f9fdfd912a3fe0",
+    "panels/revision.html": "8bbe7c1925ac034c364ea2571d61132f95f1e765fb720ff24ca676e3f4aea141",
+    "panels/revision.json": "910cdc0a2ebe19b0c1291507e9811130c2434d6fa98886c92b2909e3ddd03593",
+    "panels/skills.html": "ad34204cd8308094be9351be2c5028da3a88a2bf5a2f442c5a1d4c7e2975dc92",
+    "panels/skills.json": "6610ba6a0a1e57f6039305058cad7f802d4b29f1ef956049c7d3afd1add015ea",
+    "panels/usage.html": "678e9c0d11fe71a48ffd99665d0104bbab285dca76260b53eca3b05da4bd2a9a",
+    "panels/usage.json": "8fba3a5c2801ac71bc352463b4e6afe7a233b43f9ccc666c8f68b8001418889e"
   },
   "sdk": {
     "sdkVersion": "0.5.0",
     "sourceRepo": "https://github.com/ww880412/matt-pocock-plugins",
     "sourceCommit": "5cce5bae103ab194b2b94ed58aecf0a2ccb84c80",
-    "manifestSha256": "a5d9cf4da8db3b45ae7caafa813a4f7894af843f027be357c9fc13ba6b78ef6f",
+    "manifestSha256": "0bc17f066187887cb69915fac05df67dd4da4ad50138d58213f24cf8d3511bcf",
     "minimumStateReader": "0.2.0",
-    "checkedNodeVersion": "24.13.0"
+    "checkedNodeVersion": "24.13.0",
+    "maintenance": {
+      "id": "hw-native-reply-whitespace-20261012",
+      "upstreamFixCommit": "5fbf9e3c555e28772dcb48d34a4e7f47f9254795",
+      "files": {
+        "sdk/adapters/codex-proof.mjs": {
+          "before": "6340f439128845be01dd501d1eecf1ada845e2d62505a138f0519f971308326e",
+          "after": "0288975a2560f8f35d1204d8b5a15343e6f4b0c6a00766417274453ee76b4db1"
+        }
+      }
+    }
   },
   "status": "released",
-  "functionalBaseline": "HW-14 independently accepted; 545 component tests in both modes; five product combinations trial; Codex H-synthetic smoke passed; user effectiveness unverified",
+  "functionalBaseline": "Route visibility, presentation review and feedback instructions; 549 component tests in both local modes; product-check t5 and t6 each executed and submitted once; deterministic checks pass and combination trial; Claude judgment pending; full visual review, user effectiveness and Desktop restart recovery unverified",
   "pluginSourceMode": "git-ref",
-  "sourceParentCommit": "0464930ee3e3425491f2f0dda137da17e8e67095"
+  "sourceParentCommit": "45f13e81545daa60d3b7e0a8c6fbd25a35607957"
 }

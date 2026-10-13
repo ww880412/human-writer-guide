@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html" aria-current="page">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html">0.3.0 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html">0.3.2 更新</a>
 </nav>
 </div>
 </header>
@@ -31,6 +31,7 @@
 <aside class="toc" aria-label="本页目录">
 <strong>本页目录</strong>
 <a href="#install">01 · 安装与更新</a>
+<a href="#routes">路线与反馈</a>
 <a href="#new">02 · 从题目开始</a>
 <a href="#import">03 · 修改已有稿件</a>
 <a href="#requirements">写作要求与补内容</a>
@@ -39,16 +40,16 @@
 <a href="#cards">04 · 卡片、恢复与换会话</a>
 <a href="#reference">05 · 操作速查</a>
 <a href="#skills">06 · 选择写作技能</a>
-<a href="#release">07 · 0.3.0 的范围</a>
+<a href="#release">07 · 0.3.2 的范围</a>
 <a href="#sources">08 · 来源、许可与数据</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.3.0 · Word 与演示</p>
+<p class="eyebrow">Human Writer / 0.3.2 · Word 与演示</p>
 <h1>使用指南</h1>
 <section id="install">
 <h2>01 · 安装与更新</h2>
 <p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，已有安装验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.162.0-alpha.17.2。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
-<p class="callout">本页下载为 0.3.0，包含已验收的 HW-14 成品流程及此前的修订、重组能力。五个新成品组合开放试用。<a href="release.html">查看完整更新说明</a>。</p>
+<p class="callout">本页下载为 0.3.2，新增路线展示、成品自查分层和反馈入口，包含此前的修订、重组与成品流程。成品组合继续开放试用。<a href="release.html">查看完整更新说明</a>。</p>
 <h3>交给 Codex 安装</h3>
 <ol>
 <li>
@@ -77,6 +78,7 @@ node scripts/trust-hooks.mjs --review</code>
 <p>下载新包，在新目录解压校验，先备份当前配置与安装目录，再按上述命令更新同一个 marketplace。同名 marketplace 不允许直接换目录：旧路径已备份后，先用 <code>codex plugin marketplace remove human-writer-local --json</code> 移除旧来源登记，再立即登记新目录并安装；失败则重新登记旧来源。不要同时启用两个来源的 Human Writer。更新不迁移、不删除作品与本机状态。</p>
 <p>卸载用 <code>codex plugin remove human-writer@human-writer-local</code>；另行移除已确认属于本插件的两个 hook 信任项。作品和状态保留。回退时从备份恢复旧包、重新注册并核对 hash，按需恢复 Human Writer 配置项；不要用整份旧配置覆盖更新后其他插件的配置。状态格式不兼容时先停止。</p>
 </section>
+<section id="routes"><h2>路线与反馈</h2><p>输入 <code>$human-writer</code> 查看当前状态和六种用法；输入 <code>$human-writer status</code> 查看写作路线、每一步实际使用的技能、当前位置以及下一步在等谁。导入稿件会标明前面阶段未经过，定稿后显示 Word 与演示两条成品线的进度。</p><p>六种入口分别是：从题目写一份新材料、改一份已有的稿子、按新思路重组整篇、定稿后做成 Word 或演示、看看有哪些写法、记个反馈。它们是同一插件的使用方式。</p><h3>记下不顺的地方</h3><pre data-copy><code>记个反馈：这次成品自查没有指出标题太长，打开后才发现换行。</code></pre><p>模型在项目根目录的 <code>human-writer-feedback.md</code> 追加原话、作品和执行定位、结构性现象及自查是否发现。反馈不抄正文、素材和成品文字或数字。最后一次“已交出”之后累计五条，会提醒交给维护者；不会自动外发。</p></section>
 <section id="new">
 <h2>02 · 从题目开始</h2>
 <ol>
@@ -146,6 +148,7 @@ node scripts/trust-hooks.mjs --review</code>
 <h3>交付文件在哪里</h3><p>在 <code>works/&lt;slug&gt;/products/doc/</code> 和 <code>products/deck/</code>。文件按作品名保存，例如 <code>三季度业务盘点.docx</code>、<code>三季度业务盘点.html</code>、<code>三季度业务盘点.pptx</code>；图文方案、页纲与自查报告也保存在对应目录。</p>
 <h3>只调整成品呈现</h3><pre data-copy><code>第 2 页的要点减成两条。</code></pre><p>模型沿用上一版成品，只改要求涉及的页，留下 <code>changes.md</code>。作者直接改过的成品不会被覆盖，新产物另存为 <code>&lt;作品名&gt;.&lt;执行编号&gt;.new.pptx</code> 等文件，并明确给出新旧路径。</p>
 <h3>正文又有变化</h3><p>先修订正文，再重新定稿；已有成品保留，并标为需要核对。更新时沿用已经确认的方案；若方案的出处与新稿不符，先调整或重做方案。成品中的手改不会自动回写 Markdown。</p>
+<h3>看懂成品自查</h3><p>呈现意见分为“取舍”“设计”“渲染”：取舍看该不该画、内容与图表是否匹配；设计看层级、关系和文字负担；渲染看字体、溢出与缩放等实际显示。标明“需改方案”的意见要回方案处理。检查环境无法渲染时会单独说明未检查范围，不当作作者环境的成品缺陷。</p>
 <h3>渲染与使用边界</h3><p>不为制作成品自动安装软件。已有工具失败时会尝试其他可用方式；浏览器受沙箱限制时，宿主允许的话可请求作者批准渲染。两份演示均已生成、只有一份不能逐页渲染时可交付，但会说明未看过哪份及原因。两份均无法渲染或成品做不出来时停止并说明缺口。批准后的真实 Desktop 渲染仍待实际使用验证。</p>
 </section><section id="cards">
 <h2>04 · 卡片、恢复与换会话</h2>
@@ -303,7 +306,7 @@ node scripts/trust-hooks.mjs --review</code>
 <p class="note" style="margin-top:18px">“已通过已有样本验收”不保证适合所有文体。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
-<h2>07 · 0.3.0 的范围</h2><p><strong>2026-10-11 · 0.3.0 / HW-14</strong>。含 11 个技能、10 个可执行槽位。新增定稿后的 Word 与演示两条线、方案确认、成品自查、局部重做和手改文件保护；同时包含此前的修改确认、上一版退化复查与按框架重组。</p><p>HW-14 已独立验收，两种模式组件测试均 545/545；五个成品组合样本与一次连续 Codex 冒烟通过。新组合都是 trial，真实作者体验尚未验证。<a href="release.html">完整更新、升级方式和已知限制 →</a></p><p>本下载包面向 Codex。源码另有 Claude 适配；HW-14 的样本与冒烟仅在 Codex 运行，不据此宣称 Claude 成品链路已验证。公众号排版、独立配图/排版、二次发布和成品自动回写正文不在本版范围。</p>
+<h2>07 · 0.3.2 的范围</h2><p><strong>2026-10-12 · 0.3.2</strong>。含 11 个技能、10 个可执行槽位，新增路线展示、成品自查分层与反馈入口，并带入 0.3.1 的答卡、论证自查与 SVG 轴刻度修复。此前的 Word、演示、修订与重组能力保留。</p><p>两种本机模式组件测试各 549/549；两个成品自查样本的确定性检查通过，修正后报告的独立语义复核仍待完成。完整视觉检查与真实材料效果未验收；成品组合保持试用。<a href="release.html">完整更新与已知限制 →</a></p><p>本下载包面向 Codex，本次未更新 Claude 包或验证跨宿主成品接管。公众号排版、独立配图/排版、二次发布和成品自动回写正文不在本版范围。</p>
 </section>
 <section id="sources">
 <h2>08 · 来源、许可与数据</h2>
@@ -322,7 +325,7 @@ node scripts/trust-hooks.mjs --review</code>
 <a href="https://github.com/xstongxue/best-skills/blob/9aa4e555950da6e43e7d98c5f0c7b70264204850/skills/md-report-summary/SKILL.md">md-report-summary</a> · Apache-2.0 · <code>9aa4e555950d</code>
 </li>
 </ul>
-<p>本项目自写 material-brief、material-outline、material-draft、report-check、doc-visual、deck-story、product-check 及适配、业务编排。状态 SDK 为锁定的 0.5.0 快照，来自 Matt 项目提交 <code>5cce5bae103a</code>；包内 <code>sdk-dependency.json</code> 与 SDK manifest 可核对。</p>
+<p>本项目自写 material-brief、material-outline、material-draft、report-check、doc-visual、deck-story、product-check 及适配、业务编排。状态 SDK 为锁定的 0.5.0 快照（含答卡空白解析的已授权维护补丁），来自 Matt 项目提交 <code>5cce5bae103a</code>；包内 <code>sdk-dependency.json</code> 与 SDK manifest 可核对。</p>
 <div class="callout">
 <p>
 <strong>按组件许可使用。</strong>dbs-ai-check 带非商业限制，本发布不将整个插件声明为 MIT，也不授予超出各上游许可的权利。查看包内 <code>THIRD_PARTY_NOTICES.md</code> 和各 LICENSE。</p>
@@ -335,7 +338,7 @@ node scripts/trust-hooks.mjs --review</code>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.0 / Word 与演示 · 2026-10-11</p>
+<p>Human Writer · 0.3.2 / Word 与演示 · 2026-10-12</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
