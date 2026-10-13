@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.3.3 更新说明 · Human Writer</title>
+<title>0.3.4 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,17 +23,17 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.3 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.4 更新</a>
 </nav>
 </div>
 </header>
 <main id="main" class="wrap release-page">
 <section class="release-hero">
 <div>
-<p class="eyebrow">2026-10-13 · Codex 0.3.3</p>
+<p class="eyebrow">2026-10-13 · Codex 0.3.4</p>
 <h1>写作可以分工，<br>决定仍由你来做。</h1>
-<p class="lead">子 agent 执行这一步，或把任务交给另一个模型。产出带回作品，继续检查与确认。</p>
-<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.3 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+<p class="lead">子 agent 执行这一步，或把任务交给另一个模型。0.3.4 明确 Devin CLI 本机交接用法，并修正交接失败后的产出目录说明。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.4 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
 </div>
 <p class="note">附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
 </p>
@@ -81,7 +81,7 @@
 <section>
 <p class="eyebrow">按需 · 交给别的模型或工具</p>
 <h3>把任务打成离线交接包</h3>
-<p>想用 Claude Code 或 Devin 做这一步，直接告诉主会话交给谁。交接包包含任务说明、冻结输入和素材副本，对方不需要安装 Human Writer。</p>
+<p>想用 Claude Code 或 Devin CLI 做这一步，直接告诉主会话交给谁。交接包包含任务说明、冻结输入和素材副本，对方不需要安装 Human Writer。</p>
 <pre data-copy><code>这一步自查交给 Claude Code。</code>
 </pre>
 <p class="note">选题和无作品的单次使用不支持交接。去向约定只在当前对话有效；交给云端工具时，包内素材会离开本机。</p>
@@ -108,12 +108,12 @@
 </p>
 </div>
 <div>
-<h3>交给 Claude Code</h3>
+<h3>交给 Claude Code 或 Devin CLI</h3>
 <p>在交接目录开普通会话，发送：</p>
 <pre data-copy><code>按 TASK.md 做。</code>
 </pre>
-<p>完成后，回到 Human Writer 的主会话说“好了，请提交交接产出”。如果交给 Devin，上传整个目录，并把完成的产出带回同一个 <code>out/</code>。</p>
-<p class="note">关闭聊天后也可以在新会话打开并接管作品，再提交交接产出。若检查未通过，按失败原因修正交接包的 <code>out/</code> 后再提交。</p>
+<p>完成后，回到 Human Writer 的主会话说“好了，请提交交接产出”。如果使用云端工具（Devin 网页版，或 Devin CLI 转到云端执行），上传整个目录，并把完成的产出带回同一个 <code>out/</code>。</p>
+<p class="note">关闭聊天后也可以在新会话打开并接管作品，再提交交接产出。若检查未通过，按失败原因修正交接包的 <code>out/</code> 后再提交。让主会话派子 agent 修复时，会明确指定这个目录并附上失败原因，在对方已有产出上修改。</p>
 </div>
 </div>
 </section>
@@ -145,6 +145,7 @@
 </section>
 <section id="limits" class="release-section">
 <h2>已验证到哪里</h2>
+<p>0.3.4 仅更新入口文字与文档，运行代码不变。入口生成、构建与包结构等 12 项定向检查通过；文字能否被模型正确遵循仍待真实使用。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -152,9 +153,9 @@
 </tr>
 </thead>
 <tbody>
-<tr><th>组件行为</th><td>0.3.3 两种本机模式各 564/564；交接包、输入副本、提交路径与执行者记录已验证。</td>
+<tr><th>组件行为</th><td>0.3.3 基线两种本机模式各 564/564；交接包、输入副本、提交路径与执行者记录已验证。</td>
 </tr>
-<tr><th>真实 Codex 派发</th><td>一次隔离冒烟：主会话派发子 agent，子 agent 写自查结果，主会话提交后报告显示执行者。Claude 已独立核对代码与原始证据。</td>
+<tr><th>真实 Codex 派发</th><td>沿用 0.3.3 的一次隔离冒烟：主会话派发子 agent，子 agent 写自查结果，主会话提交后报告显示执行者。Claude 已独立核对代码与原始证据。</td>
 </tr>
 <tr><th>仍待真实使用</th><td>子 agent 自查是否更独立、实际材料质量，以及 Claude Code / Devin 接包是否顺畅，仍未验收。</td>
 </tr>
@@ -210,7 +211,7 @@
 </section>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.3 / 子 agent 与离线交接 · 2026-10-13</p>
+<p>Human Writer · 0.3.4 / 子 agent 与离线交接 · 2026-10-13</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
