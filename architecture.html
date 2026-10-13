@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html" aria-current="page">架构与边界</a><a href="release.html">0.3.2 更新</a>
+<a href="architecture.html" aria-current="page">架构与边界</a><a href="release.html">0.3.3 更新</a>
 </nav>
 </div>
 </header>
@@ -37,7 +37,7 @@
 <a href="#evidence">05 · 已验证的结论</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.3.2 · Word 与演示</p>
+<p class="eyebrow">Human Writer / 0.3.3 · 子 agent 与离线交接</p>
 <h1>架构与验证边界</h1>
 <section id="layers">
 <h2>01 · 每一层负责什么</h2>
@@ -156,12 +156,12 @@
 <tbody>
 <tr>
 <th>工程</th>
-<td>0.3.2：两种本机模式各 549/549；SDK 使用锁定快照及已授权的答卡空白解析维护补丁</td>
+<td>0.3.3：两种本机模式各 564/564；SDK 使用锁定快照及已授权的答卡空白解析维护补丁</td>
 <td>不自动等于每类文章都好用</td>
 </tr>
 <tr>
 <th>隔离宿主</th>
-<td>既有五个成品组合与连续冒烟属于 H-synthetic；0.3.2 两个自查样本确定性检查通过，独立语义复核待完成</td>
+<td>0.3.3 一次真实 Codex 子 agent 冒烟通过，Claude 已独立核对原始证据；此前五个成品组合与连续冒烟属于 H-synthetic，t5/t6 成品自查样本已复判成立</td>
 <td>限定场景，非所有编辑器与重启组合</td>
 </tr>
 <tr>
@@ -171,18 +171,18 @@
 </tr>
 <tr>
 <th>业务效果</th>
-<td>成品组合保持 trial；路线展示、自查分层与反馈的真实使用效果未验收</td>
+<td>成品组合保持 trial；子 agent 自查效果、Claude Code / Devin 接包，以及路线、自查分层与反馈的真实使用效果未验收</td>
 <td>不能承诺减少返工或提升所有文体质量</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="note" style="margin-top:18px">此前 HW-14 已由 Claude 独立验收，不能外推为 0.3.2 新增效果已通过。冒烟驱动在手改前发生文件名错误，修正后在原线程继续，未重跑已完成阶段；该恢复经独立验收接受。HTML 渲染受沙箱限制时已披露，未冒充逐页验证。公开页不包含内部测试会话、配置或作者原稿。</p>
+<p class="note" style="margin-top:18px">0.3.3 工程与一次真实派发冒烟已通过 Claude 独立验收，不能外推为真实材料效果已通过。固定宽度问题仍为观察项。冒烟驱动在手改前发生文件名错误，修正后在原线程继续，未重跑已完成阶段；该恢复经独立验收接受。HTML 渲染受沙箱限制时已披露，未冒充逐页验证。公开页不包含内部测试会话、配置或作者原稿。</p>
 </section>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.2 / Word 与演示 · 2026-10-12</p>
+<p>Human Writer · 0.3.3 / 子 agent 与离线交接 · 2026-10-13</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

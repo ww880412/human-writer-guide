@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.3.2 更新说明 · Human Writer</title>
+<title>0.3.3 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,34 +23,194 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.2 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.3 更新</a>
 </nav>
 </div>
 </header>
-<main id="main" class="wrap document">
-<aside class="toc" aria-label="本页目录"><strong>0.3.2 更新</strong><a href="#new">路线、自查与反馈</a><a href="#fixes">同时带入的修复</a><a href="#included">此前版本的能力</a><a href="#start">开始使用</a><a href="#upgrade">升级与数据</a><a href="#limits">验证与限制</a></aside>
-<article class="prose"><p class="eyebrow">2026-10-12 · Codex 0.3.2</p>
-<h1>看清写作路线，具体说出哪里要改。</h1>
-<p class="lead">入口显示每步用什么技能、现在走到哪里。成品自查分开说明取舍、设计与渲染问题；使用中不顺的地方，可以当场记成反馈。</p>
-<section id="new"><h2>0.3.2 新增什么</h2><div class="table-scroll"><table><thead><tr><th>你要做的事</th><th>这版的变化</th></tr></thead><tbody>
-<tr><th>看清当前进度</th><td>输入 <code>$human-writer</code> 或 <code>$human-writer status</code>，查看路线、每步技能、当前位置和下一步；定稿后也显示 Word 与演示各自的进度。</td></tr>
-<tr><th>知道从哪开始</th><td>入口列出六种用法：从题目写、改已有稿、按新思路重组、做 Word 或演示、看看写法、记个反馈。</td></tr>
-<tr><th>说清成品哪里不好</th><td>成品自查增加“取舍”“设计”“渲染”三层意见；涉及选图、删减或页面主线的问题标明“需改方案”。已有内容失真检查继续保留。</td></tr>
-<tr><th>区分成品问题与检查限制</th><td>检查环境打不开或无法渲染时，单独给出低严重度的“未能渲染”说明，写明未检查范围，不据此断言作者环境有缺字或版面缺陷。</td></tr>
-<tr><th>留下使用反馈</th><td>说“记个反馈：……”后，模型在项目根目录追加反馈文件，记录原话和定位信息，不抄正文、素材或成品文字与数字；累计五条未交出的反馈时提醒交给维护者。</td></tr>
-</tbody></table></div><p>成品自查继续开放试用。具体意见仍需作者判断，不能把“检查过”当成所有版面问题都已发现。</p></section>
-<section id="fixes"><h2>同时带入 0.3.1 的三项修复</h2><ul>
+<main id="main" class="wrap release-page">
+<section class="release-hero">
+<div>
+<p class="eyebrow">2026-10-13 · Codex 0.3.3</p>
+<h1>写作可以分工，<br>决定仍由你来做。</h1>
+<p class="lead">子 agent 执行这一步，或把任务交给另一个模型。产出带回作品，继续检查与确认。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.3 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+</div>
+<p class="note">附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
+</p>
+</div>
+<div class="handoff-preview">
+<p class="eyebrow">离线交接 · 操作示意</p>
+<ol class="handoff-steps">
+<li><span>01</span>
+<div><strong>你指定这一步交给谁</strong>
+<p>Human Writer 准备任务、冻结输入与素材副本。</p>
+</div>
+</li>
+<li><span>02</span>
+<div><strong>对方按 TASK.md 做</strong>
+<p>在交接目录执行，把产出写进 <code>out/</code>。</p>
+</div>
+</li>
+<li><span>03</span>
+<div><strong>回到作品，继续确认</strong>
+<p>主会话提交产出；检查通过后，照常进入作者关卡。</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<nav class="release-jumps" aria-label="本页目录"><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
+</nav>
+<section id="execution" class="release-section">
+<div class="section-head">
+<div>
+<p class="eyebrow">这版怎样用</p>
+<h2>两种分工方式，一份作品继续。</h2>
+</div>
+<p>执行可以交出去。<br>框架、意见采纳与定稿仍由作者决定。</p>
+</div>
+<div class="execution-grid">
+<section>
+<p class="eyebrow">默认 · 在 Codex 内完成</p>
+<h3>这一步，交给子 agent</h3>
+<p>框架、写稿、自查、润色及成品环节，默认交给不继承主会话对话的子 agent。它按本次任务与冻结输入产出，主会话负责提交和向你呈现结果。</p>
+<pre data-copy><code>$human-writer</code>
+</pre>
+<p class="note">无需额外切换模式。选题和无作品的单次使用仍由主会话完成；宿主派不出子 agent 时会说明并回退。</p>
+</section>
+<section>
+<p class="eyebrow">按需 · 交给别的模型或工具</p>
+<h3>把任务打成离线交接包</h3>
+<p>想用 Claude Code 或 Devin 做这一步，直接告诉主会话交给谁。交接包包含任务说明、冻结输入和素材副本，对方不需要安装 Human Writer。</p>
+<pre data-copy><code>这一步自查交给 Claude Code。</code>
+</pre>
+<p class="note">选题和无作品的单次使用不支持交接。去向约定只在当前对话有效；交给云端工具时，包内素材会离开本机。</p>
+</section>
+</div>
+</section>
+<section id="handoff" class="release-section">
+<div class="section-head">
+<div>
+<p class="eyebrow">带走任务，带回结果</p>
+<h2>一次交接，从这里继续。</h2>
+</div>
+<p>插件生成本地目录。<br>由你决定把它交给谁。</p>
+</div>
+<div class="handoff-guide">
+<div class="file-tree" aria-label="交接包目录">
+<p><strong>handoffs/&lt;执行编号&gt;/</strong>
+</p>
+<p>├─ TASK.md <span>任务与产出要求</span>
+</p>
+<p>├─ in/ <span>冻结输入与素材副本</span>
+</p>
+<p>└─ out/ <span>对方把产出放这里</span>
+</p>
+</div>
+<div>
+<h3>交给 Claude Code</h3>
+<p>在交接目录开普通会话，发送：</p>
+<pre data-copy><code>按 TASK.md 做。</code>
+</pre>
+<p>完成后，回到 Human Writer 的主会话说“好了，请提交交接产出”。如果交给 Devin，上传整个目录，并把完成的产出带回同一个 <code>out/</code>。</p>
+<p class="note">关闭聊天后也可以在新会话打开并接管作品，再提交交接产出。若检查未通过，按失败原因修正交接包的 <code>out/</code> 后再提交。</p>
+</div>
+</div>
+</section>
+<section id="record" class="release-section record-strip">
+<div>
+<p class="eyebrow">执行者记录</p>
+<h2>这次自查是谁做的，<br>翻开报告就知道。</h2>
+<p>成功提交会记录子 agent、主会话或交接去向。正文自查与成品自查报告都会显示执行者，便于回看本轮结果。</p>
+</div>
+<blockquote class="report-preview"><span>报告示意</span>
+<h3>正文自查报告</h3>
+<p class="executor-line">执行：子 agent</p>
+<p class="note">摘要与逐条意见接在后面。<br>显示执行者不等于自查质量已经提高。</p>
+</blockquote>
+</section>
+<section id="upgrade" class="release-section">
+<h2>升级后，在新聊天中开始。</h2>
+<div class="upgrade-grid">
+<div>
+<h3>安装到新的持久目录</h3>
+<p>下载并核验 SHA-256，解压新包。先备份配置与旧插件，再按包内 <code>INSTALL.md</code> 更新同一个 Human Writer 来源，并核对入口、两个 hook 与 MCP。</p><a href="guide.html#install">完整安装与回退步骤 →</a>
+</div>
+<div>
+<h3>继续已有作品</h3>
+<p>升级保留作品、本机状态和写作要求。打开新聊天后输入 <code>$human-writer</code>，打开已有作品，再看当前路线。</p>
+<p class="note">不要同时启用多个来源。旧执行记录没有执行者字段，不会补造记录。本次下载面向 Codex，未更新 Claude 插件包。</p>
+</div>
+</div>
+</section>
+<section id="limits" class="release-section">
+<h2>已验证到哪里</h2>
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>范围</th><th>当前证据</th>
+</tr>
+</thead>
+<tbody>
+<tr><th>组件行为</th><td>0.3.3 两种本机模式各 564/564；交接包、输入副本、提交路径与执行者记录已验证。</td>
+</tr>
+<tr><th>真实 Codex 派发</th><td>一次隔离冒烟：主会话派发子 agent，子 agent 写自查结果，主会话提交后报告显示执行者。Claude 已独立核对代码与原始证据。</td>
+</tr>
+<tr><th>仍待真实使用</th><td>子 agent 自查是否更独立、实际材料质量，以及 Claude Code / Devin 接包是否顺畅，仍未验收。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="note">此前 t5/t6 自查样本已由 Claude 复判成立；固定宽度问题仍是观察项，完整成品视觉核验未完成。Desktop 完全退出重启恢复仍未验证。Word 和演示继续开放试用。<a href="architecture.html#evidence">完整验证边界 →</a>
+</p>
+</section>
+<section id="history" class="release-section">
+<h2>此前更新，一起带入。</h2>
+<p>路线展示、反馈记录、Word、演示、修订与重组继续保留。技能目录仍为 11 个技能、10 个可执行槽位。</p>
+<details class="release-history">
+<summary>展开 0.3.2、0.3.1 与此前能力</summary>
+<section id="new">
+<h2>0.3.2 · 路线、自查与反馈</h2>
+<div class="table-scroll">
+<table>
+<thead>
+<tr><th>你要做的事</th><th>这版的变化</th>
+</tr>
+</thead>
+<tbody>
+<tr><th>看清当前进度</th><td>输入 <code>$human-writer</code> 或 <code>$human-writer status</code>，查看路线、每步技能、当前位置和下一步；定稿后也显示 Word 与演示各自的进度。</td>
+</tr>
+<tr><th>知道从哪开始</th><td>入口列出六种用法：从题目写、改已有稿、按新思路重组、做 Word 或演示、看看写法、记个反馈。</td>
+</tr>
+<tr><th>说清成品哪里不好</th><td>成品自查增加“取舍”“设计”“渲染”三层意见；涉及选图、删减或页面主线的问题标明“需改方案”。已有内容失真检查继续保留。</td>
+</tr>
+<tr><th>区分成品问题与检查限制</th><td>检查环境打不开或无法渲染时，单独给出低严重度的“未能渲染”说明，写明未检查范围，不据此断言作者环境有缺字或版面缺陷。</td>
+</tr>
+<tr><th>留下使用反馈</th><td>说“记个反馈：……”后，模型在项目根目录追加反馈文件，记录原话和定位信息，不抄正文、素材或成品文字与数字；累计五条未交出的反馈时提醒交给维护者。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>成品自查继续开放试用。具体意见仍需作者判断，不能把“检查过”当成所有版面问题都已发现。</p>
+</section>
+<section id="fixes">
+<h2>同时带入 0.3.1 的三项修复</h2><ul>
 <li><strong>答卡更稳：</strong>识别答复标签外的首尾空白，重复收取同一答复仍只推进一次。</li>
 <li><strong>修订后继续查论证：</strong>补查案例是否可比、团队判断与个人归因是否混淆、措施是否对应问题。</li>
 <li><strong>有来源的轴刻度可用：</strong>允许契约约定的水平、零起点、等距 SVG 线性轴刻度；业务数字仍需有来源，竖直数值轴不在本次支持范围。</li>
-</ul></section>
-<section id="included"><h2>此前版本的能力继续保留</h2><p>0.3.0 提供定稿后的 Word 与演示两条成品线：确认方案、制作、自查、交付，支持局部重做和手改文件保护。Word 带图源 HTML；演示同时提供 HTML 与可编辑 PPTX。</p><p>也包含按要求修订、按新框架重组、复查上一版退化、独立调用和候选对比。全目录仍为 11 个技能、10 个可执行槽位。<a href="guide.html#products">成品制作步骤 →</a></p></section>
-<section id="start"><h2>开始使用</h2><p>安装更新后，在写作项目的新聊天中发送：</p><pre data-copy><code>$human-writer</code></pre><p>已有作品时，先打开作品，再查看当前路线：</p><pre data-copy><code>$human-writer status</code></pre><p>想记录使用中的问题，可以直接说：</p><pre data-copy><code>记个反馈：这次成品自查没有指出标题太长，打开后才发现换行。</code></pre><p>这只记录反馈，不会自动修改成品或替你发送给维护者。</p></section>
-<section id="upgrade"><h2>升级与数据</h2><p>下载新包并核验 SHA-256，解压到新的持久目录。安装前备份配置与旧插件，只更新 Human Writer 相关项；作品、本机状态和写作要求不迁移、不删除。完成后用新聊天加载更新入口。</p><p>沿用 human-writer@human-writer-local，避免同时启用重复来源。两个 hook 分别负责会话开始和作者消息，安装步骤包含核对实际定义与信任状态。</p><div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.2 · ZIP ↓</a><a href="guide.html#install">安装与回退 →</a></div><p><a href="downloads/human-writer-codex.zip.sha256">ZIP SHA-256</a> · <a href="release.json">版本与来源清单</a></p></section>
-<section id="limits"><h2>已经验证，仍需判断</h2>
-<p>0.3.2 两种本机模式组件测试各 549/549；两个成品自查样本各执行、提交一次，确定性检查通过。样本中渲染限制已列为低严重度说明；修正后报告的独立语义复核仍待完成。组件与样本证据不等于真实材料的使用效果。</p>
-<ul><li>路线是否好懂、自查意见是否到点、反馈记录是否合用，仍需真实使用判断。</li><li>隔离环境的中文和 HTML 渲染受限，完整视觉检查未完成；样本中的固定宽度问题仍未被单独报告。</li><li>已有真实答卡与同一聊天后续核对，只推进一次；Desktop 完全退出重启后的恢复仍未验证。</li><li>Word 字体替换、分页留白与压缩后文字偏多，继续作为使用观察项。成品手改不自动回写正文。</li><li>本页下载面向 Codex。本次未更新 Claude 包，也未验证跨宿主成品接管。</li></ul><p><a href="architecture.html#evidence">查看验证边界 →</a></p></section></article></main><footer class="wrap">
-<p>Human Writer · 0.3.2 / 路线、自查与反馈 · 2026-10-12</p>
+</ul>
+</section>
+<section id="included">
+<h2>此前版本的能力继续保留</h2>
+<p>0.3.0 提供定稿后的 Word 与演示两条成品线：确认方案、制作、自查、交付，支持局部重做和手改文件保护。Word 带图源 HTML；演示同时提供 HTML 与可编辑 PPTX。</p>
+<p>也包含按要求修订、按新框架重组、复查上一版退化、独立调用和候选对比。全目录仍为 11 个技能、10 个可执行槽位。<a href="guide.html#products">成品制作步骤 →</a>
+</p>
+</section>
+</details>
+</section>
+</main>
+<footer class="wrap">
+<p>Human Writer · 0.3.3 / 子 agent 与离线交接 · 2026-10-13</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

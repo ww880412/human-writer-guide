@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html" aria-current="page">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html">0.3.2 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html">0.3.3 更新</a>
 </nav>
 </div>
 </header>
@@ -31,7 +31,7 @@
 <aside class="toc" aria-label="本页目录">
 <strong>本页目录</strong>
 <a href="#install">01 · 安装与更新</a>
-<a href="#routes">路线与反馈</a>
+<a href="#routes">路线与反馈</a><a href="#delegation">子 agent 与交接</a>
 <a href="#new">02 · 从题目开始</a>
 <a href="#import">03 · 修改已有稿件</a>
 <a href="#requirements">写作要求与补内容</a>
@@ -40,16 +40,16 @@
 <a href="#cards">04 · 卡片、恢复与换会话</a>
 <a href="#reference">05 · 操作速查</a>
 <a href="#skills">06 · 选择写作技能</a>
-<a href="#release">07 · 0.3.2 的范围</a>
+<a href="#release">07 · 0.3.3 的范围</a>
 <a href="#sources">08 · 来源、许可与数据</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.3.2 · Word 与演示</p>
+<p class="eyebrow">Human Writer / 0.3.3 · 子 agent 与离线交接</p>
 <h1>使用指南</h1>
 <section id="install">
 <h2>01 · 安装与更新</h2>
 <p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，已有安装验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.162.0-alpha.17.2。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
-<p class="callout">本页下载为 0.3.2，新增路线展示、成品自查分层和反馈入口，包含此前的修订、重组与成品流程。成品组合继续开放试用。<a href="release.html">查看完整更新说明</a>。</p>
+<p class="callout">本页下载为 0.3.3，新增子 agent 执行、离线交接包与执行者记录，包含此前的路线、反馈、修订、重组与成品流程。成品组合继续开放试用。<a href="release.html">查看完整更新说明</a>。</p>
 <h3>交给 Codex 安装</h3>
 <ol>
 <li>
@@ -78,7 +78,7 @@ node scripts/trust-hooks.mjs --review</code>
 <p>下载新包，在新目录解压校验，先备份当前配置与安装目录，再按上述命令更新同一个 marketplace。同名 marketplace 不允许直接换目录：旧路径已备份后，先用 <code>codex plugin marketplace remove human-writer-local --json</code> 移除旧来源登记，再立即登记新目录并安装；失败则重新登记旧来源。不要同时启用两个来源的 Human Writer。更新不迁移、不删除作品与本机状态。</p>
 <p>卸载用 <code>codex plugin remove human-writer@human-writer-local</code>；另行移除已确认属于本插件的两个 hook 信任项。作品和状态保留。回退时从备份恢复旧包、重新注册并核对 hash，按需恢复 Human Writer 配置项；不要用整份旧配置覆盖更新后其他插件的配置。状态格式不兼容时先停止。</p>
 </section>
-<section id="routes"><h2>路线与反馈</h2><p>输入 <code>$human-writer</code> 查看当前状态和六种用法；输入 <code>$human-writer status</code> 查看写作路线、每一步实际使用的技能、当前位置以及下一步在等谁。导入稿件会标明前面阶段未经过，定稿后显示 Word 与演示两条成品线的进度。</p><p>六种入口分别是：从题目写一份新材料、改一份已有的稿子、按新思路重组整篇、定稿后做成 Word 或演示、看看有哪些写法、记个反馈。它们是同一插件的使用方式。</p><h3>记下不顺的地方</h3><pre data-copy><code>记个反馈：这次成品自查没有指出标题太长，打开后才发现换行。</code></pre><p>模型在项目根目录的 <code>human-writer-feedback.md</code> 追加原话、作品和执行定位、结构性现象及自查是否发现。反馈不抄正文、素材和成品文字或数字。最后一次“已交出”之后累计五条，会提醒交给维护者；不会自动外发。</p></section>
+<section id="delegation"><h2>子 agent 与离线交接</h2><p>除选题和无作品单次使用外，各槽位默认交给不继承主会话对话的子 agent；主会话负责提交、开卡和与你沟通。宿主派不出子 agent 时会说明并回退。成功提交记下执行者，正文自查与成品自查报告开头会显示。</p><p>要把这一步交给别的模型，直接说“这一步自查交给 Claude Code”。插件在作品的 <code>handoffs/&lt;执行编号&gt;/</code> 生成 <code>TASK.md</code>、<code>in/</code> 和 <code>out/</code>，输入与素材已复制。对方不需要安装插件。</p><ol><li>Claude Code：在交接目录开会话，说“按 TASK.md 做”。Devin：上传整个目录。</li><li>把对方的产出放回交接包的 <code>out/</code>，回到主会话说“好了，请提交交接产出”。</li><li>提交后照常检查与确认；检查未通过，按原因修正同一个交接包的 <code>out/</code> 再提交。</li></ol><p>交接去向只在当前对话有效；新会话需重新说明，但接管作品后可提交已经准备好的交接包。选题和无作品单次使用不支持交接。云端工具会收到包内素材，由作者决定是否交出。真实 Claude Code / Devin 接包效果仍待使用验证。</p></section><section id="routes"><h2>路线与反馈</h2><p>输入 <code>$human-writer</code> 查看当前状态和六种用法；输入 <code>$human-writer status</code> 查看写作路线、每一步实际使用的技能、当前位置以及下一步在等谁。导入稿件会标明前面阶段未经过，定稿后显示 Word 与演示两条成品线的进度。</p><p>六种入口分别是：从题目写一份新材料、改一份已有的稿子、按新思路重组整篇、定稿后做成 Word 或演示、看看有哪些写法、记个反馈。它们是同一插件的使用方式。</p><h3>记下不顺的地方</h3><pre data-copy><code>记个反馈：这次成品自查没有指出标题太长，打开后才发现换行。</code></pre><p>模型在项目根目录的 <code>human-writer-feedback.md</code> 追加原话、作品和执行定位、结构性现象及自查是否发现。反馈不抄正文、素材和成品文字或数字。最后一次“已交出”之后累计五条，会提醒交给维护者；不会自动外发。</p></section>
 <section id="new">
 <h2>02 · 从题目开始</h2>
 <ol>
@@ -306,8 +306,7 @@ node scripts/trust-hooks.mjs --review</code>
 <p class="note" style="margin-top:18px">“已通过已有样本验收”不保证适合所有文体。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
-<h2>07 · 0.3.2 的范围</h2><p><strong>2026-10-12 · 0.3.2</strong>。含 11 个技能、10 个可执行槽位，新增路线展示、成品自查分层与反馈入口，并带入 0.3.1 的答卡、论证自查与 SVG 轴刻度修复。此前的 Word、演示、修订与重组能力保留。</p><p>两种本机模式组件测试各 549/549；两个成品自查样本的确定性检查通过，修正后报告的独立语义复核仍待完成。完整视觉检查与真实材料效果未验收；成品组合保持试用。<a href="release.html">完整更新与已知限制 →</a></p><p>本下载包面向 Codex，本次未更新 Claude 包或验证跨宿主成品接管。公众号排版、独立配图/排版、二次发布和成品自动回写正文不在本版范围。</p>
-</section>
+<h2>07 · 0.3.3 的范围</h2><p><strong>2026-10-13 · 0.3.3</strong>。11 个技能、10 个可执行槽位；新增子 agent 执行、离线交接包与执行者记录。路线、自查分层、反馈、Word、演示、修订与重组继续保留。</p><p>两种本机模式组件测试各 564/564，一次真实 Codex 子 agent 冒烟通过，Claude 已独立核对代码与原始证据。此前 t5/t6 成品自查样本已复判成立，固定宽度问题仍为观察项。完整成品视觉核验、真实材料效果和外部接包未验收；成品组合保持试用。<a href="release.html">完整更新与已知限制 →</a></p><p>本下载包面向 Codex；离线交接不等于更新 Claude 插件包或验证跨宿主成品接管。公众号排版、独立配图/排版、二次发布和成品自动回写正文不在本版范围。</p></section>
 <section id="sources">
 <h2>08 · 来源、许可与数据</h2>
 <p>技能快照随包分发，保留原始文本、来源提交与 LICENSE。以下是本版本实际采用的固定来源：</p>
@@ -338,7 +337,7 @@ node scripts/trust-hooks.mjs --review</code>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.2 / Word 与演示 · 2026-10-12</p>
+<p>Human Writer · 0.3.3 / 子 agent 与离线交接 · 2026-10-13</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

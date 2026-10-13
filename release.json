@@ -1,28 +1,28 @@
 {
   "name": "human-writer",
-  "version": "0.3.2",
-  "date": "2026-10-12",
+  "version": "0.3.3",
+  "date": "2026-10-13",
   "host": "Codex",
   "download": "downloads/human-writer-codex.zip",
-  "sha256": "9af2b7cef132ef79ee343d9b9ca772411e8ed6a9e5d5ce64a877f267a03c367a",
+  "sha256": "60be9802018ba1af4123f4553815d45ccd2d43809b3556bd7009059e1d0cad68",
   "packageFiles": 216,
-  "packageManifestSha256": "d7a9d5a9fcf9a36e33f7cf33a8d0a575358c81e80a2fe3420ee7b6fc112d09bf",
+  "packageManifestSha256": "6ba789403418e634f03e7f4c77cdec05d4481fa33d67a56a29ed7f7bcf622813",
   "siteFiles": {
-    "release.html": "d6cfbf735084570d9775e5b00c464ccdeb1415b3f4625ff4ed54213738487a87",
-    "index.html": "7364e4e7a29672ef75d8081c943783127b67215622aee0e80cb6d32fd665e6e5",
-    "guide.html": "cdbebdc106680ca4a49f6a792a73fb27350316e1aefff33ba3e313c2ebcc6a0a",
-    "architecture.html": "6304da142490551e51bd57b50e8186f2b86e4b65ee60b0c575a25b8c20bd900e",
-    "styles.css": "dfb450e91f4f126035b8220ca6ef1430e1c0d1950031549f235a3a0b7778e4cb",
+    "release.html": "b8cb6e61a74c0be647b12e91a58a0c0a01861adb60c085a4c6f344ff51447072",
+    "index.html": "84f8da75e9c926d58b53d8225dba602bcd1752f8247daedbf4ca301c52d77762",
+    "guide.html": "6b441e8b438b093efd3edf273b1d7c4c5e3814229d57ff4a3d552020210e3d8d",
+    "architecture.html": "c1824ca3ae8462603e6ebb4ceadd6e19e4cfb836e04b997f54f9e1e272fc814d",
+    "styles.css": "b275bfbe621c7065a8edfb5fda0b8530eaa925051e9ceb6deba0fdaca92871bf",
     "site.js": "d3e0ce95765dcb381eea9bf55fe7e6e5bfd78d623cfa8b9444b354d639e48c5c",
     "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c",
-    "panels/workflow.html": "1c01cbd06cc8472a9a4a50bfed65b764d2e6d6658f7ab1a96c8dfd4e28aa244b",
-    "panels/workflow.json": "4dcf12048a19323fe21419abb9c52a5b82bf2d1fe1ad6545b6f9fdfd912a3fe0",
-    "panels/revision.html": "8bbe7c1925ac034c364ea2571d61132f95f1e765fb720ff24ca676e3f4aea141",
-    "panels/revision.json": "910cdc0a2ebe19b0c1291507e9811130c2434d6fa98886c92b2909e3ddd03593",
-    "panels/skills.html": "ad34204cd8308094be9351be2c5028da3a88a2bf5a2f442c5a1d4c7e2975dc92",
-    "panels/skills.json": "6610ba6a0a1e57f6039305058cad7f802d4b29f1ef956049c7d3afd1add015ea",
-    "panels/usage.html": "678e9c0d11fe71a48ffd99665d0104bbab285dca76260b53eca3b05da4bd2a9a",
-    "panels/usage.json": "8fba3a5c2801ac71bc352463b4e6afe7a233b43f9ccc666c8f68b8001418889e"
+    "panels/workflow.html": "be405c5f54c9420873ce3a1199133f7e2301b2ca28c1cf2cb75f317b4a766014",
+    "panels/workflow.json": "bb20a90737200cad6e53806894bfe225bc02dd8b909d1e1c1bdec8d1c54613af",
+    "panels/revision.html": "18bf8a00b93f71c16e81e1c9a9c52ca66cf9dc3fa19f1fccf554af1ef0f8d17e",
+    "panels/revision.json": "e9872af9fecffc603b45896318d74984aa06ee4db076a882408e7ae672dade60",
+    "panels/skills.html": "b965d778b4accf4825404f3759a2c167021ea2e035561bc961adfc0a0864fbc5",
+    "panels/skills.json": "07e9d73882914cccdeaeaaba2faee13d2ef8ea3d9f0bdf0750756613c7a91b0b",
+    "panels/usage.html": "59b928d24605790a2ae64d30482ab7fb9602aa4b09872c843409c52de68a31b6",
+    "panels/usage.json": "698c4e95163b9d836c16715a64bbcb5eb00bae5ebc3b7407ea8d2a8cde0cf507"
   },
   "sdk": {
     "sdkVersion": "0.5.0",
@@ -43,7 +43,7 @@
     }
   },
   "status": "released",
-  "functionalBaseline": "Route visibility, presentation review and feedback instructions; 549 component tests in both local modes; product-check t5 and t6 each executed and submitted once; deterministic checks pass and combination trial; Claude judgment pending; full visual review, user effectiveness and Desktop restart recovery unverified",
+  "functionalBaseline": "HW-15 executor records and offline handoff; deterministic component verification and isolated Codex subagent smoke recorded in local delivery; independent engineering acceptance completed; user effectiveness and external Claude/Devin handoff unverified",
   "pluginSourceMode": "git-ref",
-  "sourceParentCommit": "45f13e81545daa60d3b7e0a8c6fbd25a35607957"
+  "sourceParentCommit": "a1eaaa81633825c639063ae3f1ff1c5174e213b0"
 }

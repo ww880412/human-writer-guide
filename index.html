@@ -15,7 +15,7 @@
 <header class="header">
 <div class="wrap">
 <a class="brand" href="index.html"><b aria-hidden="true">h.</b><span>Human Writer<small>写作，由你定稿</small></span></a>
-<nav aria-label="主导航"><a href="index.html" aria-current="page">概览</a><a href="guide.html">使用指南</a><a href="architecture.html">架构与边界</a><a href="release.html">0.3.2 更新</a></nav>
+<nav aria-label="主导航"><a href="index.html" aria-current="page">概览</a><a href="guide.html">使用指南</a><a href="architecture.html">架构与边界</a><a href="release.html">0.3.3 更新</a></nav>
 <a class="header-action" href="#get">获取插件 <span aria-hidden="true">↗</span></a>
 </div>
 </header>
@@ -26,7 +26,7 @@
 <h1>把材料写成稿，<br>把定稿做成品。</h1>
 <p class="lead">从题目起稿，按反馈修改，定稿后继续做成 Word 或演示。框架、修改范围、成品方案和交付都由你决定；作品与版本留在本机。</p>
 <div class="actions"><a class="button" href="#start">选一种开始方式 <span aria-hidden="true">↓</span></a><a href="#atlas">先看完整流程 →</a></div>
-<p class="note release-note">0.3.2 / 路线、自查与反馈<br>新增路线展示、成品自查分层和反馈入口。<a href="#get">下载与当前边界</a></p>
+<p class="note release-note">0.3.3 / 子 agent 与离线交接<br>新增子 agent 执行、离线交接包与执行者记录。<a href="#get">下载与当前边界</a></p>
 </div>
 <aside class="writing-preview" aria-label="一篇作品如何推进">
 <div class="preview-top"><span>一篇作品，可以接着写</span><span class="pill">过程示意</span></div>
@@ -53,7 +53,7 @@
 <article class="product-line"><p class="label">页面线 / HTML + PPTX</p><h3>给人听懂的演示</h3><p>先归纳主线，一页一个判断。确认页纲后，生成自包含 HTML 和可编辑 PPTX；标题与要点可以继续修改。</p><pre data-copy><code>用 Human Writer 把这份定稿做成演示。</code></pre><p class="note">交付：HTML、PPTX、页纲与自查报告。</p></article></div>
 <ol class="product-steps"><li><strong>01 先定稿</strong><span>在定稿卡上选择“只定稿”，固定内容版本。</span></li><li><strong>02 你确认方案</strong><span>先看图文方案或页纲，也可自己编辑方案文件。</span></li><li><strong>03 制作并自查</strong><span>对照正文和方案，检查内容失真、版面及待补。</span></li><li><strong>04 交付或再改</strong><span>选择直接交付或采纳后重做；手改文件会保留。</span></li></ol>
 <div class="product-followup"><p><strong>只改这一页：</strong>“第 2 页的要点减成两条。”<br>插件沿用上一版成品，只改涉及的页，并留下修改说明。</p><p><strong>你已经手改过：</strong>原文件保留，新成品另存 <code>.new</code>。<br>两条线可先后推进，确认卡一次只出现一张。</p></div>
-<p class="section-footnote">成品功能开放试用。生成和预览使用宿主已有工具；某份成品未能逐页渲染时会明确说明。正文仍以 Markdown 为准，不自动从 Word 或 PPTX 回写。<a href="guide.html#products">完整步骤与边界 →</a> · <a href="release.html">0.3.2 更新说明 →</a></p>
+<p class="section-footnote">成品功能开放试用。生成和预览使用宿主已有工具；某份成品未能逐页渲染时会明确说明。正文仍以 Markdown 为准，不自动从 Word 或 PPTX 回写。<a href="guide.html#products">完整步骤与边界 →</a> · <a href="release.html">0.3.3 更新说明 →</a></p>
 </section>
 <section class="band" id="everyday"><div class="wrap section">
 <div class="section-head"><div><p class="eyebrow">日常写作，不只有从头写</p><h2>遇到这些情况，直接说清要改什么。</h2></div><p>先找到你的问题，再看怎么调用。<br>展开示例，补上真实稿件与要求。</p></div>
@@ -109,7 +109,7 @@
 </section>
 <section class="band" id="skills"><div class="section wrap">
 <div class="section-head"><div><p class="eyebrow">11 个技能，10 个可执行槽位</p><h2>先看要做什么，再选怎么做。</h2></div><p>正文五个阶段，加上成品五个步骤。<br>新增成品组合开放试用，效果由你的材料检验。</p></div>
-<div class="table-scroll skill-table"><table><caption>Human Writer 0.3.2 技能目录</caption><thead><tr><th>要做什么</th><th>技能</th><th>选择</th><th>你会得到什么</th><th>状态</th></tr></thead><tbody>
+<div class="table-scroll skill-table"><table><caption>Human Writer 0.3.3 技能目录</caption><thead><tr><th>要做什么</th><th>技能</th><th>选择</th><th>你会得到什么</th><th>状态</th></tr></thead><tbody>
 <tr><th>梳理选题</th><td><code>material-brief</code></td><td>选题默认</td><td>目的、读者和关键问题；brief.md</td><td><span class="trial">试用</span></td></tr>
 <tr><th>搭建框架</th><td><code>material-outline</code></td><td>框架默认</td><td>基于选题与素材的章节框架；outline.md</td><td><span class="trial">试用</span></td></tr>
 <tr><th>先判断，再展开支撑</th><td><code>pyramid-long-form</code></td><td>框架可选</td><td>用金字塔方法组织结构；不直接写正文</td><td><span class="trial">试用</span></td></tr>
@@ -146,12 +146,12 @@
 </div></section>
 <section class="section wrap" id="get">
 <div class="section-head"><div><p class="eyebrow">获取与使用边界</p><h2>准备好材料，再开始第一篇。</h2></div><p>本页说明与下载包同版。<br>安装后在新聊天中使用更新后的入口。</p></div>
-<div class="get-grid"><div class="download-block"><p class="label">CODEX / 0.3.2</p><h3>Human Writer 0.3.2</h3><p>包含 11 个技能、路线展示、成品自查分层与反馈入口，同时保留 Word、演示、修订与重组；附同版离线指南和校验清单。</p><div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.2 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a></div><p class="note"><a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a> · <a href="release.html">完整更新说明 →</a></p><p class="note">更新会替换 Human Writer 插件文件；保留作品和本机状态。不要同时启用多个来源的 Human Writer。</p></div>
+<div class="get-grid"><div class="download-block"><p class="label">CODEX / 0.3.3</p><h3>Human Writer 0.3.3</h3><p>包含 11 个技能，新增子 agent 执行、离线交接包与执行者记录；保留路线、反馈、Word、演示、修订与重组；附同版离线指南和校验清单。</p><div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.3 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a></div><p class="note"><a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a> · <a href="release.html">完整更新说明 →</a></p><p class="note">更新会替换 Human Writer 插件文件；保留作品和本机状态。不要同时启用多个来源的 Human Writer。</p></div>
 <div class="bounds-list"><h3>知道它做到哪里</h3><p><strong>已经实现</strong><br>作品与版本、按要求修订、按框架重组、Word 与演示成品，以及作者手改文件保护。</p><p><strong>仍需在你的材料上验证</strong><br>试用技能的效果、真实修订体验、Desktop 重启及编辑器保存配合。工程与隔离宿主证据不等于真人效果。</p><p><strong>当前未开放</strong><br>公众号排版、独立配图/排版、二次发布；成品改动自动回写正文。本下载包面向 Codex。</p></div></div>
 </section>
 <section class="section wrap quicklinks" aria-label="继续查阅">
 <div><p class="eyebrow">第一次读懂，下一次快速找到</p><h2>需要的时候，回到这里。</h2></div><div class="quicklink-list"><a href="guide.html#new"><span><strong>第一次使用</strong><small>怎样放素材、开始写、回答关卡</small></span><b aria-hidden="true">→</b></a><a href="guide.html#reference"><span><strong>操作速查</strong><small>全部命令、独立调用与技能选择</small></span><b aria-hidden="true">→</b></a><a href="guide.html#cards"><span><strong>遇到问题</strong><small>卡片恢复、候选处理、换会话接管</small></span><b aria-hidden="true">→</b></a><a href="architecture.html#evidence"><span><strong>来源与验证</strong><small>实现边界、已有证据与未验证部分</small></span><b aria-hidden="true">→</b></a></div>
 </section>
 </main>
-<footer class="wrap"><p>Human Writer · 0.3.2 / 路线、自查与反馈</p><div><a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">公开发布仓库 ↗</a> · <a href="release.json">版本清单</a></div><p class="footer-note">本页不收集稿件。作品保存在本机，模型读取的材料仍进入对应模型上下文。可在 Codex 内置浏览器用 Annotation mode 批注。</p></footer>
+<footer class="wrap"><p>Human Writer · 0.3.3 / 子 agent 与离线交接</p><div><a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">公开发布仓库 ↗</a> · <a href="release.json">版本清单</a></div><p class="footer-note">本页不收集稿件。作品保存在本机，模型读取的材料仍进入对应模型上下文。可在 Codex 内置浏览器用 Annotation mode 批注。</p></footer>
 </body></html>
