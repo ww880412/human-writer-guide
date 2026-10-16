@@ -1,28 +1,28 @@
 {
   "name": "human-writer",
-  "version": "0.3.4",
-  "date": "2026-10-13",
+  "version": "0.3.5",
+  "date": "2026-10-16",
   "host": "Codex",
   "download": "downloads/human-writer-codex.zip",
-  "sha256": "4847b9e43e09eccf4caabc1327e87eb5ad2a879fad28672000e070e8ebc73a48",
-  "packageFiles": 216,
-  "packageManifestSha256": "b237537e576b8629979fbca3cf0ae77ab4243fa0e11c4ebf676c663be2b30750",
+  "sha256": "ba1a9f164aaf26226933854d8ae5053f1b5652af3c94b0a008479120b5801d49",
+  "packageFiles": 245,
+  "packageManifestSha256": "a1d907877e0ac56b3df24cedb196975d4b4d0553120a6216f35df3f4e3605d43",
   "siteFiles": {
-    "release.html": "0a6ac83bfb17c0bb53c6c8827c4e8dd2a99c7850fd1b2e1defeb9584c0b5ddd7",
-    "index.html": "e95d7350f1bbd33f17be461cd6f5dd74409dc24980ac3c035e0c06e920a816bf",
-    "guide.html": "b76c1c9d4ea7d7ac2fcb5c077aab05c02a060a9a7c0fcd9c92efa96383ab4d61",
-    "architecture.html": "d6260c936697ebbecc60c07629833b65db64fbf7c8a86c865f978f048201446c",
+    "release.html": "8c0745be3bfb3decb48b2ad1f98b90544c4b98c6979fb13c349ce2b4a9a3fd1f",
+    "index.html": "318a62378e5fbd04ae3330ba3c8cf2d461f0c40acce981987a0344298c9dd073",
+    "guide.html": "81e6aedff7375f002c694b3dd7d21d005b52f21c52c0a1a3b93e55d1ec242d32",
+    "architecture.html": "9365693fdcefb1108e99746c2fcb58a3bcad2e71d627a2d3e7aebc6635441c4e",
     "styles.css": "b275bfbe621c7065a8edfb5fda0b8530eaa925051e9ceb6deba0fdaca92871bf",
     "site.js": "d3e0ce95765dcb381eea9bf55fe7e6e5bfd78d623cfa8b9444b354d639e48c5c",
     "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c",
-    "panels/workflow.html": "279bb1bc232fc57f2af746c5dc8821df4498a8494da003d34f629384cbb348d5",
-    "panels/workflow.json": "52f84c6d9bead0cc948524d30657e0ca80966875b517ea3aa2543094f3acbd93",
-    "panels/revision.html": "aeea85f7fc650b6d34231c6a61f518e0d93373cca00450385480b36a5d294c01",
-    "panels/revision.json": "6d33a7efe029eff0b7313e2d82b74165f1b5f865655b9134718b05c97ef6215e",
-    "panels/skills.html": "dc91d1d001370ebd4aeefe6ac7f0a258514952229b8fd10858d1a64f2038b188",
-    "panels/skills.json": "393d604d2bda6f3970d5145c1a14150e9af7b0ed8d4d9058e886bf3cd4a85c84",
-    "panels/usage.html": "b333faacf0523c95986285e9da4cc0e1b104a2b6a5f61c8249a612f323dbae14",
-    "panels/usage.json": "b552bb3275de4208bb8b0c14d105b8e219794cd4910ad9f95d24f1e980d63cde"
+    "panels/workflow.html": "9e11d085d5aebaadb48500853829706c6177d8bddb904c13070eba8c6ceb9619",
+    "panels/workflow.json": "be8364e9482004967645fbbd06cf6a431f53bc60e397ad0b0fe893ea92b7defb",
+    "panels/revision.html": "3b1cf27ef2f6ca6b6025e202e04d05de352fad840e15f58f8830e519574f834b",
+    "panels/revision.json": "382ea46e521347321b0d73328ce0ff5dcef42192efb2756fa55fb5c8c999089c",
+    "panels/skills.html": "866bde45ff2e07ed72bc13e1f43c60f6f27db0b1afc3692967a8f3e603793291",
+    "panels/skills.json": "5e48201420e8ed0c71d950b9ad0f384f77a218267eb73db464b1b60e32aca79b",
+    "panels/usage.html": "4e48fc91c2f7a25410ab9288fb11535df0982c1b2deeb2d40a57f8ce0303cff7",
+    "panels/usage.json": "46d83726f601d4cb1805a285676ebc2a76c91e738b79bfa3e4d594cc425e651f"
   },
   "sdk": {
     "sdkVersion": "0.5.0",
@@ -43,7 +43,7 @@
     }
   },
   "status": "released",
-  "functionalBaseline": "0.3.4 entry-text maintenance: Devin CLI local handoff and explicit handoff out directory for repair; runtime unchanged from HW-15; user effectiveness and external handoff unverified",
+  "functionalBaseline": "0.3.5: review followups and author-approved automatic argument/fact revisions up to two rounds; first-round empty-review host branch accepted; second-round host continuity and real-user effectiveness unverified",
   "pluginSourceMode": "git-ref",
-  "sourceParentCommit": "fb9d488ac36809057a674947cd5c069a9cd52a32"
+  "sourceParentCommit": "eb1ad7a4a0be1ad8ca4d48469f3749bdda57b1f9"
 }

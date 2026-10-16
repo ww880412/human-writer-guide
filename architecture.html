@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html" aria-current="page">架构与边界</a><a href="release.html">0.3.4 更新</a>
+<a href="architecture.html" aria-current="page">架构与边界</a><a href="release.html">0.3.5 更新</a>
 </nav>
 </div>
 </header>
@@ -37,7 +37,7 @@
 <a href="#evidence">05 · 已验证的结论</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.3.4 · 子 agent 与离线交接</p>
+<p class="eyebrow">Human Writer / 0.3.5 · 一次授权，自动修订</p>
 <h1>架构与验证边界</h1>
 <section id="layers">
 <h2>01 · 每一层负责什么</h2>
@@ -73,8 +73,9 @@
 </p>
 <p>有问题 → <strong>采纳意见</strong> → <span>内容修订或润色</span> → <span>复查至多一次</span>
 </p>
-<p>无问题 → <strong>定稿卡</strong>；复查仍有问题 → <strong>作者重新选择</strong>
+<p>无问题 → <strong>定稿卡</strong>；普通复查有问题 → <strong>作者重新选择</strong>
 </p>
+<p>作者选自动改 → 仅论证 / 事实类可续轮，最多 2 轮；满足停止条件 → <strong>交回作者决定</strong></p>
 </div>
 <ul>
 <li>只定稿 → 固定正文版本；可继续创建 Word 或页面成品任务。</li>
@@ -156,12 +157,12 @@
 <tbody>
 <tr>
 <th>工程</th>
-<td>0.3.4 只更新入口文字和文档；0.3.3 基线两种本机模式各 564/564；SDK 使用锁定快照及已授权的答卡空白解析维护补丁</td>
+<td>0.3.5 两种本机模式全套通过；覆盖原卡授权、自动续轮、六种停止条件与定稿边界；SDK 未变</td>
 <td>不自动等于每类文章都好用</td>
 </tr>
 <tr>
 <th>隔离宿主</th>
-<td>沿用 0.3.3 一次真实 Codex 子 agent 冒烟通过，Claude 已独立核对原始证据；此前五个成品组合与连续冒烟属于 H-synthetic，t5/t6 成品自查样本已复判成立</td>
+<td>0.3.5 一次 H-synthetic 冒烟通过 Claude 内容验收：第一轮复查空报告后出定稿卡；第二轮连续性未覆盖。此前成品样本保留原证据边界</td>
 <td>限定场景，非所有编辑器与重启组合</td>
 </tr>
 <tr>
@@ -171,18 +172,18 @@
 </tr>
 <tr>
 <th>业务效果</th>
-<td>成品组合保持 trial；子 agent 自查效果、Claude Code / Devin 接包，以及路线、自查分层与反馈的真实使用效果未验收</td>
+<td>自动修订的卡数改善、内容质量、停止阈值仍待真实使用；成品保持 trial；外部接包未验收</td>
 <td>不能承诺减少返工或提升所有文体质量</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="note" style="margin-top:18px">0.3.3 工程与一次真实派发冒烟已通过 Claude 独立验收，不能外推为真实材料效果已通过。固定宽度问题仍为观察项。冒烟驱动在手改前发生文件名错误，修正后在原线程继续，未重跑已完成阶段；该恢复经独立验收接受。HTML 渲染受沙箱限制时已披露，未冒充逐页验证。公开页不包含内部测试会话、配置或作者原稿。</p>
+<p class="note" style="margin-top:18px">工程通过和报告为空不能推出真实材料质量通过。自查仍可能漏报，自动修订只能处理报告中出现的意见。固定宽度问题、成品视觉核验和 Desktop 重启恢复继续保留原边界。公开页不包含内部会话、配置或作者原稿。</p>
 </section>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.4 / 子 agent 与离线交接 · 2026-10-13</p>
+<p>Human Writer · 0.3.5 / 一次授权，自动修订 · 2026-10-16</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

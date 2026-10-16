@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.3.4 更新说明 · Human Writer</title>
+<title>0.3.5 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,44 +23,50 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.4 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.5 更新</a>
 </nav>
 </div>
 </header>
 <main id="main" class="wrap release-page">
 <section class="release-hero">
 <div>
-<p class="eyebrow">2026-10-13 · Codex 0.3.4</p>
-<h1>写作可以分工，<br>决定仍由你来做。</h1>
-<p class="lead">子 agent 执行这一步，或把任务交给另一个模型。0.3.4 明确 Devin CLI 本机交接用法，并修正交接失败后的产出目录说明。</p>
-<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.4 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+<p class="eyebrow">2026-10-16 · Codex 0.3.5</p>
+<h1>一次授权，<br>连续修订与复查。</h1>
+<p class="lead">在采纳卡选“论证和事实类自动改，最多 2 轮”。插件连续修订、复查；没有意见或触发停止条件时交回给你，定稿仍由你决定。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.5 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
 </div>
 <p class="note">附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
 </p>
 </div>
 <div class="handoff-preview">
-<p class="eyebrow">离线交接 · 操作示意</p>
+<p class="eyebrow">自动修订 · 操作示意</p>
 <ol class="handoff-steps">
 <li><span>01</span>
-<div><strong>你指定这一步交给谁</strong>
-<p>Human Writer 准备任务、冻结输入与素材副本。</p>
+<div><strong>你在采纳卡授权</strong>
+<p>选论证和事实类自动改，最多 2 轮。</p>
 </div>
 </li>
 <li><span>02</span>
-<div><strong>对方按 TASK.md 做</strong>
-<p>在交接目录执行，把产出写进 <code>out/</code>。</p>
+<div><strong>连续修订与复查</strong>
+<p>逐项核对意见是否落实，保留原卡授权。</p>
 </div>
 </li>
 <li><span>03</span>
-<div><strong>回到作品，继续确认</strong>
-<p>主会话提交产出；检查通过后，照常进入作者关卡。</p>
+<div><strong>到停止点，由你决定</strong>
+<p>出示停止原因或最后报告，等待你答卡。</p>
 </div>
 </li>
 </ol>
 </div>
 </section>
-<nav class="release-jumps" aria-label="本页目录"><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
+<nav class="release-jumps" aria-label="本页目录"><a href="#auto-revision">自动修订</a><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
 </nav>
+<section id="auto-revision" class="release-section">
+<h2>改了什么，复查会接着核对。</h2>
+<p>复查逐项说明已采纳意见是已解决、未解决，还是本轮新引入的问题。采纳卡展示落实情况、反复意见与篇幅变化。有写作要求时，默认由 report-check 对照要求和素材；没有要求时用 dbs-ai-check。你指定的技能或作品绑定优先。</p>
+<div class="upgrade-grid"><div><h3>最多 2 轮，范围明确</h3><p>自动采纳只包括论证和事实类意见，纯表达意见留给你选择。也可照常逐轮采纳，不选择自动改。</p></div><div><h3>有异常，就停下来</h3><p>没有改动、出现新引入事实问题、意见反复、正文增长超过 20%、只剩表达问题或达到 2 轮时停下，给出原因。复查没有意见时显示定稿卡。</p></div></div>
+<p class="note">自查可能漏掉问题。空报告、自动停下或测试通过，都不保证稿件已适合交付；定稿前仍可查看最后报告与正文。</p>
+</section>
 <section id="execution" class="release-section">
 <div class="section-head">
 <div>
@@ -145,7 +151,7 @@
 </section>
 <section id="limits" class="release-section">
 <h2>已验证到哪里</h2>
-<p>0.3.4 仅更新入口文字与文档，运行代码不变。入口生成、构建与包结构等 12 项定向检查通过；文字能否被模型正确遵循仍待真实使用。</p>
+<p>本版合并修订落实追踪与自动修订。Claude 已验收代码及一次冒烟的实际分支，发布已获批准；真实使用效果仍待检验。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -153,11 +159,11 @@
 </tr>
 </thead>
 <tbody>
-<tr><th>组件行为</th><td>0.3.3 基线两种本机模式各 564/564；交接包、输入副本、提交路径与执行者记录已验证。</td>
+<tr><th>组件行为</th><td>两种本机模式全套通过，覆盖原卡授权、自动续轮、六种停止条件、文件保护与定稿边界。</td>
 </tr>
-<tr><th>真实 Codex 派发</th><td>沿用 0.3.3 的一次隔离冒烟：主会话派发子 agent，子 agent 写自查结果，主会话提交后报告显示执行者。Claude 已独立核对代码与原始证据。</td>
+<tr><th>真实 Codex 派发</th><td>一次隔离冒烟：第 1 轮修订后，复查报告为空，显示定稿卡并清除自动授权。测试客户端随后选择定稿；第 2 轮实际连续性未覆盖。</td>
 </tr>
-<tr><th>仍待真实使用</th><td>子 agent 自查是否更独立、实际材料质量，以及 Claude Code / Devin 接包是否顺畅，仍未验收。</td>
+<tr><th>仍待真实使用</th><td>实际省了多少卡、自动修订质量、停止阈值是否合适，以及 Claude Code / Devin 接包体验，仍待真实使用。</td>
 </tr>
 </tbody>
 </table>
@@ -169,7 +175,8 @@
 <h2>此前更新，一起带入。</h2>
 <p>路线展示、反馈记录、Word、演示、修订与重组继续保留。技能目录仍为 11 个技能、10 个可执行槽位。</p>
 <details class="release-history">
-<summary>展开 0.3.2、0.3.1 与此前能力</summary>
+<summary>展开 0.3.4、0.3.3 与此前能力</summary>
+<p>0.3.4 明确 Devin CLI 本机交接与修复产出目录；0.3.3 增加子 agent 执行、离线交接包与执行者记录。上述能力继续保留。</p>
 <section id="new">
 <h2>0.3.2 · 路线、自查与反馈</h2>
 <div class="table-scroll">
@@ -211,7 +218,7 @@
 </section>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.4 / 子 agent 与离线交接 · 2026-10-13</p>
+<p>Human Writer · 0.3.5 / 一次授权，自动修订 · 2026-10-16</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
