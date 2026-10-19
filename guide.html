@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
+<meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，先对齐本篇标准，由作者确认框架与定稿。">
 <meta name="theme-color" content="#f6f7f9">
 <title>使用指南 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html" aria-current="page">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html">0.3.5 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html">0.4.0 更新</a>
 </nav>
 </div>
 </header>
@@ -40,16 +40,16 @@
 <a href="#cards">04 · 卡片、恢复与换会话</a>
 <a href="#reference">05 · 操作速查</a>
 <a href="#skills">06 · 选择写作技能</a>
-<a href="#release">07 · 0.3.5 的范围</a>
+<a href="#release">07 · 0.4.0 的范围</a>
 <a href="#sources">08 · 来源、许可与数据</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.3.5 · 一次授权，自动修订</p>
+<p class="eyebrow">Human Writer / 0.4.0 · 先定标准，一次自查后交稿</p>
 <h1>使用指南</h1>
 <section id="install">
 <h2>01 · 安装与更新</h2>
 <p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，已有安装验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.162.0-alpha.17.2。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
-<p class="callout">本页下载为 0.3.5。采纳卡可一次授权论证和事实类意见自动修订，最多 2 轮；复查逐项核对意见落实情况。<a href="release.html">查看完整更新说明</a>。</p>
+<p class="callout">本页下载为 0.4.0。先确认本篇标准；默认一次自查、一次修改后交稿，不自动再审或弹定稿卡。<a href="release.html">更新与已知限制</a>。</p>
 <h3>交给 Codex 安装</h3>
 <ol>
 <li>
@@ -90,7 +90,7 @@ node scripts/trust-hooks.mjs --review</code>
 </pre>
 <ol start="3">
 <li>把事实笔记、数据或引用材料放入返回的 <code>works/&lt;slug&gt;/materials/</code>。插件只记录素材清单与 hash，模型按需要读取；大 PDF 或表格不保证全部读完。</li>
-<li>说“用 Human Writer 处理当前作品”。agent 会先确认读者、目的和材料，再生成 <code>brief.md</code> 与 <code>outline.md</code>。</li>
+<li>说“用 Human Writer 处理当前作品”。agent 会先确认读者、目的、材料与本篇写作标准，再生成 <code>brief.md</code> 与 <code>outline.md</code>。</li>
 <li>在“确认框架”卡上选择“确认，开始写稿”或“重新梳理”。不回答即可暂放，之后能恢复卡片。</li>
 <li>查看正文和 <code>【待补：…】</code>，完成自查与定稿。</li>
 </ol>
@@ -106,21 +106,20 @@ node scripts/trust-hooks.mjs --review</code>
 </pre>
 <p>源文件保持只读。工作正文在 <code>works/&lt;slug&gt;/draft.md</code>，之后在这份文件上阅读和修改。</p>
 <ol>
-<li>agent 生成自查报告；有问题时弹出采纳卡。</li>
-<li>选择全部采纳、只改表达、只改高严重度，或在卡片自由输入 <code>1,3,5</code> 这样的编号。也可本轮不改，进入定稿。</li>
-<li>含事实或论证类的采纳意见进入写稿修订，纯表达意见进入润色；每轮至多复查一次。选“论证和事实类自动改，最多 2 轮”后，论证与事实意见可自动续轮，直到报告为空或触发停止条件。</li>
+<li>先确认本篇写作标准；已有确认且仍适用的标准可以沿用。</li>
+<li>做一次自查；有意见就修改一次，修改者自检；没有意见直接交稿。</li>
+<li>交稿后等待你的决定。可补要求再改、用 <code>go review</code> 再审，或说“定稿”打开定稿卡。</li>
 </ol>
 <p>已有明确修改要求时，可以直接说“按刚才的三条意见改”；在修改确认卡上选“修改（可以补内容、改判断）”“只改措辞”或“先不改”。</p>
-<p>定稿卡的“继续修改”会先等待你的修改要求；“补充内容”回到写稿。直接在聊天里说“全部采纳”不等于回答卡片。</p>
+<p>定稿卡的“继续修改”会先等待你的修改要求；“补充内容”回到写稿。升级前的旧采纳卡仍需在卡片里作答。</p>
 </section>
 <section id="requirements">
 <h2>把意见整理成写作要求</h2>
-<p><code>requirements.md</code> 记录标准 S、保持项 K、本轮目标 G。它和素材归作者维护；作者自己写，或明确让模型整理后查看全文。写下目标本身不会开始修订。</p>
+<p><code>requirements.md</code> 记录标准 S、保持项 K、本轮目标 G。开工先对齐本篇适用标准，由作者确认后记录；已有确认且仍适用的标准可以沿用。它和素材归作者维护，插件只读。写下目标本身不会开始修订。</p>
 <p>必须逐字保留的原文，在 K 条目里用「」标出，标点和空格也照原文复制。只检查基准稿中确实存在的引文；不存在的会列为跳过。</p>
 <pre data-copy><code>请按 requirements.md 的 G1 修订，保持 K1 不变；缺少依据的地方标为待补，不编造数据。</code></pre>
 <p>在修改确认卡上选择内容修改或只改措辞。卡片冻结这轮要求；后续编辑要求文件不会悄悄改变已经确认的范围。也可以由作者显式使用 <code>go draft</code> 或 <code>go polish</code>，再给出要求。</p>
-<h3>一次授权，自动修订</h3><p>采纳卡有论证或事实类意见时，选“论证和事实类自动改，最多 2 轮”。中间修订与复查只汇报，不等待再次采纳；表达类意见不自动采纳。未改动、新引入事实问题、意见反复、正文增长超过 20%、只剩表达问题或达到 2 轮时停下。没有意见时出定稿卡，仍由你决定定稿。</p><p>复查逐项列明意见是否解决，保留待补并展示篇幅变化。自查可能漏报，定稿前可以看最后报告。主动跳转或提出新的修改要求会结束这次自动授权。</p>
-<p>写稿、润色和自查会接收写作要求；默认自查也会按要求检查。修订交付正文和 <code>changes.md</code>，复查还会对照“上一版”报告内容丢失或减弱。自查的结论仍需作者判断。</p>
+<h3>修改一次后交稿</h3><p>路线 Review 有意见时，把全部意见交给写稿者修改一次，不再弹采纳卡。素材冲突按素材处理；只有作者能决定的问题写为待补或未改，集中在交稿时交代。不自动做第二次 Review。</p><p>已有明确作者要求的修改轮，完成后也默认交稿。要再审可用 <code>go review</code>；只想看独立报告可用 <code>$human-writer use report-check</code>。新 Review 检查当前稿，不再承诺对上一版逐条跟踪。升级前的旧卡和旧执行按原授权处理。</p>
 </section>
 <section id="reorganize">
 <h2>按新框架重组整篇</h2><p>先把新主线写进写作要求的“必须保持”，然后回到框架：</p>
@@ -237,7 +236,7 @@ node scripts/trust-hooks.mjs --review</code>
 </section>
 <section id="skills">
 <h2>06 · 选择写作技能</h2>
-<p>默认技能覆盖五个阶段。你可说“这一次用 md-report-summary 写”，或“把这篇作品的写稿技能绑定为 md-report-summary”。前者只影响本次，后者保存到作品绑定。</p>
+<p>默认技能覆盖五个阶段。你可说“这一次用 dbs-ai-check 自查”，或“把这篇作品的自查技能绑定为 dbs-ai-check”。前者只影响本次，后者保存到作品绑定。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -252,7 +251,7 @@ node scripts/trust-hooks.mjs --review</code>
 <td>
 <code>dbs-ai-check</code>
 </td>
-<td>默认自查 · 正文、要求与上一版</td>
+<td>自查可选 · 当前正文与本篇标准</td>
 <td>正式可用；限已有样本证据</td>
 </tr>
 <tr>
@@ -281,23 +280,23 @@ node scripts/trust-hooks.mjs --review</code>
 <code>material-draft</code>
 </td>
 <td>写稿</td>
-<td>试用</td>
+<td>已验收；限当前样本证据</td>
 </tr>
 <tr>
 <td>
 <code>pyramid-long-form</code>
 </td>
 <td>框架</td>
-<td>试用</td>
+<td>暂不可用，待补验</td>
 </tr>
 <tr>
 <td>
 <code>md-report-summary</code>
 </td>
 <td>写稿</td>
-<td>试用</td>
+<td>暂不可用，待补验</td>
 </tr>
-<tr><td><code>report-check</code></td><td>有写作要求时自查默认 · 对照要求和素材</td><td>试用</td></tr>
+<tr><td><code>report-check</code></td><td>有写作要求时自查默认 · 对照要求和素材</td><td>已验收；限当前样本证据</td></tr>
 <tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>两个组合试用</td></tr>
 <tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>两个组合试用</td></tr>
 <tr><td><code>product-check</code></td><td>成品自查</td><td>试用</td></tr>
@@ -307,7 +306,7 @@ node scripts/trust-hooks.mjs --review</code>
 <p class="note" style="margin-top:18px">“已通过已有样本验收”不保证适合所有文体。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
-<h2>07 · 0.3.5 的范围</h2><p><strong>2026-10-16 · 0.3.5</strong>。新增一次授权、最多两轮的自动修订；复查逐项核对已采纳意见，卡片展示落实与篇幅变化。有写作要求时默认用 report-check，没有时用 dbs-ai-check；显式指定和作品绑定优先。</p><p>全套两种模式通过，Claude 已验收一次冒烟的实际分支：第一轮复查没有意见，随后由作者卡片确认定稿。第二轮实际连续性未覆盖；减少卡片的幅度、自动修订质量和停止阈值仍待真实使用。<a href="release.html">完整更新与已知限制 →</a></p><p>11 个技能、10 个可执行槽位不变。子 agent、离线交接、Word 与演示继续保留；本次只发布 Codex 包。成品组合仍为试用，完整成品视觉核验、外部接包和 Desktop 完全退出重启恢复未验收。</p></section>
+<h2>07 · 0.4.0 的范围</h2><p><strong>2026-10-19 · 0.4.0</strong>。先对齐本篇标准；默认一次 Review、一次修改后交稿，不自动续轮、不自动开定稿卡。独立执行和作者主动再审继续保留。</p><p>组件验证完成，隔离宿主已走通交稿与作者定稿。Claude 有条件通过：交稿漏再审指引作为已知限制接受；模型内容与格式仍有观察项，作者答复为脚本合成，不代表真实使用效果。<a href="release.html#limits">完整边界 →</a></p><p>目录含 11 个技能。md-report-summary / draft、pyramid-long-form / outline 暂不可用，用到时再补验。Word、演示保持试用；完整成品视觉核验、外部接包和 Desktop 完全退出重启恢复未验收。本次只发布 Codex 包。</p></section>
 <section id="sources">
 <h2>08 · 来源、许可与数据</h2>
 <p>技能快照随包分发，保留原始文本、来源提交与 LICENSE。以下是本版本实际采用的固定来源：</p>
@@ -338,7 +337,7 @@ node scripts/trust-hooks.mjs --review</code>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.5 / 一次授权，自动修订 · 2026-10-16</p>
+<p>Human Writer · 0.4.0 / 先定标准，一次自查后交稿 · 2026-10-19</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

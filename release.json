@@ -1,28 +1,28 @@
 {
   "name": "human-writer",
-  "version": "0.3.5",
-  "date": "2026-10-16",
+  "version": "0.4.0",
+  "date": "2026-10-19",
   "host": "Codex",
   "download": "downloads/human-writer-codex.zip",
-  "sha256": "ba1a9f164aaf26226933854d8ae5053f1b5652af3c94b0a008479120b5801d49",
+  "sha256": "54820be56516e0fa8f30ea1163fd7194b07b6e27d0e98ddc410cf2752b1282be",
   "packageFiles": 245,
-  "packageManifestSha256": "a1d907877e0ac56b3df24cedb196975d4b4d0553120a6216f35df3f4e3605d43",
+  "packageManifestSha256": "7847ee88ca47368a1f739121ff352ff79bfe756152ddc71caac9c1154ac96d2a",
   "siteFiles": {
-    "release.html": "8c0745be3bfb3decb48b2ad1f98b90544c4b98c6979fb13c349ce2b4a9a3fd1f",
-    "index.html": "318a62378e5fbd04ae3330ba3c8cf2d461f0c40acce981987a0344298c9dd073",
-    "guide.html": "81e6aedff7375f002c694b3dd7d21d005b52f21c52c0a1a3b93e55d1ec242d32",
-    "architecture.html": "9365693fdcefb1108e99746c2fcb58a3bcad2e71d627a2d3e7aebc6635441c4e",
+    "release.html": "154cbf389231d386df481cf21efee443cb0b3422cdead3c603b5c3e772f9eced",
+    "index.html": "aad9919feb771ffc364cf5c5480c5191715d8b151273d931ba055a3f0bc30d23",
+    "guide.html": "b6f3338377bb165fe9e5cdb8518c322fc9ddd52df7f3f8b261a934414396c621",
+    "architecture.html": "6e1d636403ea655c54e44ed6f5ebbbf703e4daa573cd1e5bbab7a0ed9809212e",
     "styles.css": "b275bfbe621c7065a8edfb5fda0b8530eaa925051e9ceb6deba0fdaca92871bf",
     "site.js": "d3e0ce95765dcb381eea9bf55fe7e6e5bfd78d623cfa8b9444b354d639e48c5c",
     "favicon.svg": "95816dead7383a997a69028ed7bce928211c3b200e191a147d444a136797268c",
-    "panels/workflow.html": "9e11d085d5aebaadb48500853829706c6177d8bddb904c13070eba8c6ceb9619",
-    "panels/workflow.json": "be8364e9482004967645fbbd06cf6a431f53bc60e397ad0b0fe893ea92b7defb",
-    "panels/revision.html": "3b1cf27ef2f6ca6b6025e202e04d05de352fad840e15f58f8830e519574f834b",
-    "panels/revision.json": "382ea46e521347321b0d73328ce0ff5dcef42192efb2756fa55fb5c8c999089c",
-    "panels/skills.html": "866bde45ff2e07ed72bc13e1f43c60f6f27db0b1afc3692967a8f3e603793291",
-    "panels/skills.json": "5e48201420e8ed0c71d950b9ad0f384f77a218267eb73db464b1b60e32aca79b",
-    "panels/usage.html": "4e48fc91c2f7a25410ab9288fb11535df0982c1b2deeb2d40a57f8ce0303cff7",
-    "panels/usage.json": "46d83726f601d4cb1805a285676ebc2a76c91e738b79bfa3e4d594cc425e651f"
+    "panels/workflow.html": "624ec693dd4e41ea7dbffd83c10014f54761a195552a8a32e7bf37b9df2e879c",
+    "panels/workflow.json": "3f02570038532662675eb7a69242005e13d4d1cded6f2524baaac6e5cf94a400",
+    "panels/revision.html": "d9f9ff56728d6ea6eebf37712537de8d731cbfe17a35bf60848196a4216144b7",
+    "panels/revision.json": "20d6ca1b64b0c70db76a5e98a6fef06a326e648286e70cf02d6472d36683408a",
+    "panels/skills.html": "21041cfcccd012c75f38cfedf889de0b185a48c0b6d475763cae01bb051a6c5e",
+    "panels/skills.json": "7f8ed29f17b7de2adedde5bacbb19555958ca8b5ff577158f9ebc9ce4afb2d8d",
+    "panels/usage.html": "37ae4b4382a17d0798c0e9ddcbe9a6e50990c1e88681a553da66b9b4ad6b4be2",
+    "panels/usage.json": "bce2c416fabdcca6258c17b323a573283fc3d59a6c684ab39df839ed7f1d3cdc"
   },
   "sdk": {
     "sdkVersion": "0.5.0",
@@ -43,7 +43,7 @@
     }
   },
   "status": "released",
-  "functionalBaseline": "0.3.5: review followups and author-approved automatic argument/fact revisions up to two rounds; first-round empty-review host branch accepted; second-round host continuity and real-user effectiveness unverified",
+  "functionalBaseline": "0.4.0: author-confirmed rubric, one review and revision before delivery; no automatic re-review or finalization card; conditional acceptance with omitted re-review guidance; isolated H-synthetic evidence, real-user effectiveness unverified",
   "pluginSourceMode": "git-ref",
-  "sourceParentCommit": "eb1ad7a4a0be1ad8ca4d48469f3749bdda57b1f9"
+  "sourceParentCommit": "39977c7b3162122f22e44ffde4797a871c16c63f"
 }

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，由作者确认框架、采纳意见和定稿。">
+<meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，先对齐本篇标准，由作者确认框架与定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.3.5 更新说明 · Human Writer</title>
+<title>0.4.0 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,49 +23,49 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.3.5 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.4.0 更新</a>
 </nav>
 </div>
 </header>
 <main id="main" class="wrap release-page">
 <section class="release-hero">
 <div>
-<p class="eyebrow">2026-10-16 · Codex 0.3.5</p>
-<h1>一次授权，<br>连续修订与复查。</h1>
-<p class="lead">在采纳卡选“论证和事实类自动改，最多 2 轮”。插件连续修订、复查；没有意见或触发停止条件时交回给你，定稿仍由你决定。</p>
-<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.3.5 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+<p class="eyebrow">2026-10-19 · Codex 0.4.0</p>
+<h1>先定标准，<br>一次自查后交稿。</h1>
+<p class="lead">先确认这篇要做到什么，再做一次自查、一次修改后交稿。修改者自检，不自动再审或续轮；你说“定稿”，才打开定稿卡。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.4.0 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
 </div>
 <p class="note">附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
 </p>
 </div>
 <div class="handoff-preview">
-<p class="eyebrow">自动修订 · 操作示意</p>
+<p class="eyebrow">0.4 写作流程 · 操作示意</p>
 <ol class="handoff-steps">
 <li><span>01</span>
-<div><strong>你在采纳卡授权</strong>
-<p>选论证和事实类自动改，最多 2 轮。</p>
+<div><strong>先确认本篇标准</strong>
+<p>对齐主题、框架、逻辑与表达要求。</p>
 </div>
 </li>
 <li><span>02</span>
-<div><strong>连续修订与复查</strong>
-<p>逐项核对意见是否落实，保留原卡授权。</p>
+<div><strong>一次自查，一次修改</strong>
+<p>有意见就改一次；不自动续轮。</p>
 </div>
 </li>
 <li><span>03</span>
-<div><strong>到停止点，由你决定</strong>
-<p>出示停止原因或最后报告，等待你答卡。</p>
+<div><strong>先交稿，再由你决定</strong>
+<p>交代未完成项；说“定稿”才开卡。</p>
 </div>
 </li>
 </ol>
 </div>
 </section>
-<nav class="release-jumps" aria-label="本页目录"><a href="#auto-revision">自动修订</a><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
+<nav class="release-jumps" aria-label="本页目录"><a href="#auto-revision">一次自查</a><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
 </nav>
 <section id="auto-revision" class="release-section">
-<h2>改了什么，复查会接着核对。</h2>
-<p>复查逐项说明已采纳意见是已解决、未解决，还是本轮新引入的问题。采纳卡展示落实情况、反复意见与篇幅变化。有写作要求时，默认由 report-check 对照要求和素材；没有要求时用 dbs-ai-check。你指定的技能或作品绑定优先。</p>
-<div class="upgrade-grid"><div><h3>最多 2 轮，范围明确</h3><p>自动采纳只包括论证和事实类意见，纯表达意见留给你选择。也可照常逐轮采纳，不选择自动改。</p></div><div><h3>有异常，就停下来</h3><p>没有改动、出现新引入事实问题、意见反复、正文增长超过 20%、只剩表达问题或达到 2 轮时停下，给出原因。复查没有意见时显示定稿卡。</p></div></div>
-<p class="note">自查可能漏掉问题。空报告、自动停下或测试通过，都不保证稿件已适合交付；定稿前仍可查看最后报告与正文。</p>
+<h2>先把这篇的标准说清楚。</h2>
+<p>开工前，主会话针对这篇提出适用标准，由你确认或修改。已经为本篇确认、仍适用的标准可以沿用；文件里只是有标准，不等于你已确认。</p>
+<div class="upgrade-grid"><div><h3>Review 只做一次</h3><p>先给整体判断，再按标准指出实质问题。有意见就修改一次；没有意见直接交稿。0.3.5 的两轮自动修订已停用。</p></div><div><h3>交稿后等你决定</h3><p>已改、未完成、保持项一起交代；不阻塞工作的问题集中在交稿时问。你可以补要求再改，用 <code>go review</code> 再审，或说“定稿”打开卡片。</p></div></div>
+<p class="note">修改后没有再做 Review，交稿说明中的自检来自修改者。交稿不等于定稿，自查也不保证稿件质量。</p>
 </section>
 <section id="execution" class="release-section">
 <div class="section-head">
@@ -73,7 +73,7 @@
 <p class="eyebrow">这版怎样用</p>
 <h2>两种分工方式，一份作品继续。</h2>
 </div>
-<p>执行可以交出去。<br>框架、意见采纳与定稿仍由作者决定。</p>
+<p>执行可以交出去。<br>写作标准、框架与定稿仍由作者决定。</p>
 </div>
 <div class="execution-grid">
 <section>
@@ -145,13 +145,13 @@
 <div>
 <h3>继续已有作品</h3>
 <p>升级保留作品、本机状态和写作要求。打开新聊天后输入 <code>$human-writer</code>，打开已有作品，再看当前路线。</p>
-<p class="note">不要同时启用多个来源。旧执行记录没有执行者字段，不会补造记录。本次下载面向 Codex，未更新 Claude 插件包。</p>
+<p class="note">不要同时启用多个来源。升级前已准备的执行和旧卡仍按原授权处理，不自动迁移或补造记录。本次下载面向 Codex，未更新 Claude 插件包。</p>
 </div>
 </div>
 </section>
 <section id="limits" class="release-section">
 <h2>已验证到哪里</h2>
-<p>本版合并修订落实追踪与自动修订。Claude 已验收代码及一次冒烟的实际分支，发布已获批准；真实使用效果仍待检验。</p>
+<p>本版改变默认写作流程。Claude 的验收结论为有条件通过，已接受下列提示遗漏；真实使用效果仍待检验。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -159,15 +159,16 @@
 </tr>
 </thead>
 <tbody>
-<tr><th>组件行为</th><td>两种本机模式全套通过，覆盖原卡授权、自动续轮、六种停止条件、文件保护与定稿边界。</td>
+<tr><th>组件行为</th><td>两种本机模式全套检查及受影响补验完成，覆盖标准检查、一次修改、交稿等待、旧执行兼容和文件保护。</td>
 </tr>
-<tr><th>真实 Codex 派发</th><td>一次隔离冒烟：第 1 轮修订后，复查报告为空，显示定稿卡并清除自动授权。测试客户端随后选择定稿；第 2 轮实际连续性未覆盖。</td>
+<tr><th>真实 Codex 派发</th><td>隔离宿主走通 Review → 修改 → 交稿等待 → 作者说定稿 → 答卡完成。作者答复由脚本合成（H-synthetic），不是真实作者使用。</td>
 </tr>
-<tr><th>仍待真实使用</th><td>实际省了多少卡、自动修订质量、停止阈值是否合适，以及 Claude Code / Devin 接包体验，仍待真实使用。</td>
+<tr><th>仍待真实使用</th><td>标准是否贴合材料、自查与修改质量、实际减少多少摩擦，以及 Claude Code / Devin 接包体验，仍待真实使用。</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p class="note"><strong>已知限制：</strong>本次交稿漏了再审 / 独立审阅提示；可主动用 <code>go review</code> 或 <code>use report-check</code>。待补内容的处理和改动记录格式仍有模型偏差，重复准备仍有宿主观察项。md-report-summary 写稿与 pyramid-long-form 框架暂不可用，用到时再补验。</p>
 <p class="note">此前 t5/t6 自查样本已由 Claude 复判成立；固定宽度问题仍是观察项，完整成品视觉核验未完成。Desktop 完全退出重启恢复仍未验证。Word 和演示继续开放试用。<a href="architecture.html#evidence">完整验证边界 →</a>
 </p>
 </section>
@@ -175,7 +176,8 @@
 <h2>此前更新，一起带入。</h2>
 <p>路线展示、反馈记录、Word、演示、修订与重组继续保留。技能目录仍为 11 个技能、10 个可执行槽位。</p>
 <details class="release-history">
-<summary>展开 0.3.4、0.3.3 与此前能力</summary>
+<summary>展开 0.3.5、0.3.4 与此前能力</summary>
+<p>0.3.5 曾提供最多两轮自动修订；0.4.0 已停用该新执行路径，旧执行保留兼容。</p>
 <p>0.3.4 明确 Devin CLI 本机交接与修复产出目录；0.3.3 增加子 agent 执行、离线交接包与执行者记录。上述能力继续保留。</p>
 <section id="new">
 <h2>0.3.2 · 路线、自查与反馈</h2>
@@ -211,14 +213,14 @@
 <section id="included">
 <h2>此前版本的能力继续保留</h2>
 <p>0.3.0 提供定稿后的 Word 与演示两条成品线：确认方案、制作、自查、交付，支持局部重做和手改文件保护。Word 带图源 HTML；演示同时提供 HTML 与可编辑 PPTX。</p>
-<p>也包含按要求修订、按新框架重组、复查上一版退化、独立调用和候选对比。全目录仍为 11 个技能、10 个可执行槽位。<a href="guide.html#products">成品制作步骤 →</a>
+<p>也包含按要求修订、按新框架重组、独立调用和候选对比。全目录仍为 11 个技能、10 个可执行槽位。<a href="guide.html#products">成品制作步骤 →</a>
 </p>
 </section>
 </details>
 </section>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.3.5 / 一次授权，自动修订 · 2026-10-16</p>
+<p>Human Writer · 0.4.0 / 先定标准，一次自查后交稿 · 2026-10-19</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
