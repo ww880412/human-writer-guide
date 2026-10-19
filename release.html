@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，先对齐本篇标准，由作者确认框架与定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.4.0 更新说明 · Human Writer</title>
+<title>0.4.1 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,17 +23,17 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.4.0 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.4.1 更新</a>
 </nav>
 </div>
 </header>
 <main id="main" class="wrap release-page">
 <section class="release-hero">
 <div>
-<p class="eyebrow">2026-10-19 · Codex 0.4.0</p>
-<h1>先定标准，<br>一次自查后交稿。</h1>
-<p class="lead">先确认这篇要做到什么，再做一次自查、一次修改后交稿。修改者自检，不自动再审或续轮；你说“定稿”，才打开定稿卡。</p>
-<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.4.0 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+<p class="eyebrow">2026-10-19 · Codex 0.4.1</p>
+<h1>改稿保留原意，<br>审查有据可查。</h1>
+<p class="lead">0.4.1 补充修订与审查的依据规则：改动已有事实和关系前核对素材，交稿只提出真正需要你决定的问题。继续沿用先定标准、一次自查后交稿的流程。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.4.1 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
 </div>
 <p class="note">附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
 </p>
@@ -61,6 +61,11 @@
 </section>
 <nav class="release-jumps" aria-label="本页目录"><a href="#auto-revision">一次自查</a><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
 </nav>
+<section id="patch" class="release-section">
+<h2>这次修正三件事。</h2>
+<div class="upgrade-grid"><div><h3>来源判断有依据</h3><p>说内容无出处、新增或偏离素材，要说明实际对照了哪份来源。素材没找到或没读全时，写“未能核实”。</p></div><div><h3>修订保留原意</h3><p>改动已有事实、角色和关系前先核对依据；已证明错误的内容按素材纠正，缺失的正确内容留待补。修改后对照原稿检查条件和关系。</p></div></div>
+<p><strong>交稿只提出真正的待决事项。</strong>素材已说明审查意见不成立时，交代未改及依据，不再把被驳回的意见改成作者选项；真实的分工疑问仍会交给作者。</p>
+</section>
 <section id="auto-revision" class="release-section">
 <h2>先把这篇的标准说清楚。</h2>
 <p>开工前，主会话针对这篇提出适用标准，由你确认或修改。已经为本篇确认、仍适用的标准可以沿用；文件里只是有标准，不等于你已确认。</p>
@@ -151,7 +156,7 @@
 </section>
 <section id="limits" class="release-section">
 <h2>已验证到哪里</h2>
-<p>本版改变默认写作流程。Claude 的验收结论为有条件通过，已接受下列提示遗漏；真实使用效果仍待检验。</p>
+<p>0.4.1 的指定修订与来源判断样本已通过 Claude 验收，证据为隔离宿主的 H-synthetic；历史失败记录保留，不代表真实写作中的稳定性。默认流程沿用 0.4.0，其有条件验收中的提示遗漏继续作为限制保留。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -220,7 +225,7 @@
 </section>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.4.0 / 先定标准，一次自查后交稿 · 2026-10-19</p>
+<p>Human Writer · 0.4.1 / 先定标准，一次自查后交稿 · 2026-10-19</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
