@@ -26,11 +26,11 @@
 <h1>把材料写成稿，<br>把定稿做成品。</h1>
 <p class="lead">从题目起稿，按反馈修改，定稿后继续做成 Word 或演示。框架、修改范围、成品方案和交付都由你决定；作品与版本留在本机。</p>
 <div class="actions"><a class="button" href="#start">选一种开始方式 <span aria-hidden="true">↓</span></a><a href="#atlas">先看完整流程 →</a></div>
-<p class="note release-note">0.4.0 / 先定标准，一次自查后交稿<br>先确认本篇标准；一次自查、一次修改后交稿。<a href="#get">下载与当前边界</a></p>
+<p class="note release-note">0.4.1 / 先定标准，一次自查后交稿<br>先确认本篇标准；一次自查、一次修改后交稿。<a href="#get">下载与当前边界</a></p>
 </div>
 <aside class="writing-preview" aria-label="一篇作品如何推进">
 <div class="preview-top"><span>一篇作品，可以接着写</span><span class="pill">过程示意</span></div>
-<div class="draft-preview"><p class="doc-type">季度汇报 / 工作稿</p><h2>三季度业务盘点</h2><p>材料整理成判断，判断展开为结构。<br>缺少的事实先标待补，不替你编齐。</p><div class="draft-lines" aria-hidden="true"><i></i><i></i><i></i></div><p class="margin-note">作者确认框架后，再开始写正文。</p></div>
+<div class="draft-preview"><p class="doc-type">独立虚构示例 / 工作稿</p><h2>邻里旧书交换说明</h2><p>材料整理成判断，判断展开为结构。<br>缺少的事实先标待补，不替你编齐。</p><div class="draft-lines" aria-hidden="true"><i></i><i></i><i></i></div><p class="margin-note">作者确认框架后，再开始写正文。</p></div>
 <ol class="mini-journey"><li><span>01</span><div><strong>整理材料与框架</strong><small>先确定读者、目的和结构</small></div></li><li><span>02</span><div><strong>写稿、自查、按意见修改</strong><small>改什么，由你在卡片上选择</small></div></li><li><span>03</span><div><strong>定稿后，交付 Word 与演示</strong><small>先确认方案，再制作、自查与交付</small></div></li></ol>
 </aside>
 </section>
@@ -38,7 +38,7 @@
 <section class="section wrap" id="start">
 <div class="section-head"><div><p class="eyebrow">先选一种开始方式</p><h2>你带着什么来，就从哪里开始。</h2></div><p>在 Codex 中打开写作项目。<br>复制示例，换成你的题目或文件。</p></div>
 <div class="start-grid">
-<article class="start-card"><span class="label">01 / 从题目开始</span><h3>有题目，还没有正文</h3><p>把零散材料整理成选题与框架。确认方向后，再扩成正文。</p><pre data-copy><code>$human-writer new 三季度业务盘点</code></pre><dl><dt>你会得到</dt><dd>选题说明、框架和工作正文。</dd><dt>接下来</dt><dd>放入素材，说明读者与目的；在卡片上确认框架。</dd></dl><a href="guide.html#new">完整起稿步骤 →</a></article>
+<article class="start-card"><span class="label">01 / 从题目开始</span><h3>有题目，还没有正文</h3><p>把零散材料整理成选题与框架。确认方向后，再扩成正文。</p><pre data-copy><code>$human-writer new 邻里旧书交换说明</code></pre><dl><dt>你会得到</dt><dd>选题说明、框架和工作正文。</dd><dt>接下来</dt><dd>放入素材，说明读者与目的；在卡片上确认框架。</dd></dl><a href="guide.html#new">完整起稿步骤 →</a></article>
 <article class="start-card"><span class="label">02 / 带着已有稿件</span><h3>已经写好，想再改一轮</h3><p>导入后可以自查，也可以直接说出修改要求，在卡片上确认修改范围。</p><pre data-copy><code>$human-writer import drafts/report.md</code></pre><dl><dt>你会得到</dt><dd>独立的作品目录与自查报告，导入源稿保留。</dd><dt>接下来</dt><dd>先确认本篇标准，再自查修改；或直接说明修改目标。</dd></dl><a href="guide.html#import">导入与修订步骤 →</a></article>
 <article class="start-card"><span class="label">03 / 单独用一项能力</span><h3>只解决眼前这一处</h3><p>在当前作品中单独检查或润色，也可以换一种写法生成候选。</p><pre data-copy><code>$human-writer use humanizer-zh
 只润色这段：“在推进过程中，我们持续不断地优化了流程。”</code></pre><dl><dt>你会得到</dt><dd>正文类产物先成为候选；检查类产物单独保存为报告。</dd><dt>接下来</dt><dd>由你决定是否采用；独立调用不推进主线阶段。</dd></dl><a href="guide.html#independent">独立调用与限制 →</a></article>
@@ -62,11 +62,11 @@
 <article class="scenario"><p class="skill-label">局部润色 · humanizer-zh</p><h3>意思对了，只想去掉套话</h3><p>给出要改的原文，保留事实和确定程度，先看候选再决定。</p><details><summary>查看局部润色示例</summary><pre data-copy><code>$human-writer use humanizer-zh
 只润色这段：“在推进过程中，我们持续不断地优化了流程。”
 保留原意，不补事实。</code></pre><p class="note">原文必须在当前稿中唯一；先打开作品，才能保存候选和版本。</p></details></article>
-<article class="scenario"><p class="skill-label">按标准自查 · report-check / 已验收</p><h3>改完了，检查目标有没有落实</h3><p>对照本篇标准、保持项和素材，得到带依据的检查报告。</p><details><summary>查看核查示例</summary><pre data-copy><code>$human-writer use report-check
+<article class="scenario"><p class="skill-label">按标准自查 · report-check / 样本验收通过</p><h3>改完了，检查目标有没有落实</h3><p>对照本篇标准、保持项和素材，得到带依据的检查报告。</p><details><summary>查看核查示例</summary><pre data-copy><code>$human-writer use report-check
 检查当前稿是否落实本轮目标、是否违反保持项，并写明依据。</code></pre><p class="note">独立核查不修改正文、不推进阶段。开工先确认本篇标准；默认用 report-check 自查，也可明确选 dbs-ai-check。</p></details></article>
 <article class="scenario"><p class="skill-label">独立改写 · material-draft</p><h3>想比较两种写法，再决定用哪版</h3><p>指定相同基准稿与要求，另生成一份候选，不先替换当前稿。</p><details><summary>查看对比示例</summary><pre data-copy><code>$human-writer use material-draft
 基于当前版本和同一组写作要求，生成另一种汇报写法，保留为候选供我比较。</code></pre><p class="note">采用候选会形成新版本；保留当前稿则不替换正文。</p></details></article>
-<article class="scenario"><p class="skill-label">作品接管 · open</p><h3>昨天没写完，今天换个会话继续</h3><p>打开同一篇作品，查看进度、未处理的候选和待答问题。</p><details><summary>查看继续写作示例</summary><p>先打开作品：</p><pre data-copy><code>$human-writer open 三季度业务盘点</code></pre><p>打开成功后，另发一条消息查看状态：</p><pre data-copy><code>$human-writer status</code></pre><p class="note">在同一项目中打开。接管后，旧会话不能继续写这篇作品。</p></details></article>
+<article class="scenario"><p class="skill-label">作品接管 · open</p><h3>昨天没写完，今天换个会话继续</h3><p>打开同一篇作品，查看进度、未处理的候选和待答问题。</p><details><summary>查看继续写作示例</summary><p>先打开作品：</p><pre data-copy><code>$human-writer open 邻里旧书交换说明</code></pre><p>打开成功后，另发一条消息查看状态：</p><pre data-copy><code>$human-writer status</code></pre><p class="note">在同一项目中打开。接管后，旧会话不能继续写这篇作品。</p></details></article>
 <article class="scenario"><p class="skill-label">作者决策 · 恢复卡片</p><h3>卡片没看到，或还没想好怎么选</h3><p>让 Codex 重新显示当前问题。没回答、跳过或沉默都不算同意。</p><details><summary>查看恢复问题的说法</summary><pre data-copy><code>没看到当前卡片，请恢复原问题让我回答。</code></pre><p class="note">在实际卡片上回答。聊天里说“全部采纳”不能替代卡片回执。</p></details></article>
 </div>
 </div></section>
@@ -96,7 +96,7 @@
 </div>
 <div role="tabpanel" id="panel-skills" aria-labelledby="tab-skills" tabindex="0" hidden>
 <h3>流程不变，写作方法可以换。</h3>
-<ol class="stage-reading"><li><strong>本次指定</strong><span>“这次用 md-report-summary 写”只影响本次执行。</span></li><li><strong>作品绑定</strong><span>“这篇以后的写稿都用 md-report-summary”保存为本作品的写稿选择。</span></li><li><strong>独立对比</strong><span>用同一基准和要求生成另一份候选，由你决定是否采用；主线阶段不变。</span></li><li><strong>先查可用目录</strong><span>本次指定优先于作品绑定，其后是工作区默认、内置默认。只使用已接入、适配和验收的技能。</span></li></ol>
+<ol class="stage-reading"><li><strong>本次指定</strong><span>“这次用 dbs-ai-check 自查”只影响本次执行。</span></li><li><strong>作品绑定</strong><span>“这篇以后的自查都用 dbs-ai-check”保存为本作品的自查选择。</span></li><li><strong>独立对比</strong><span>用同一基准和要求生成另一份候选，由你决定是否采用；主线阶段不变。</span></li><li><strong>先查可用目录</strong><span>本次指定优先于作品绑定，其后是工作区默认、内置默认。只使用目录中可用的组合；试用与样本验收状态分开查看。</span></li></ol>
 <p class="note">本版共有 11 个技能。上游技能在这里按槽位契约执行，不代表其全部外部工具和搜索能力都开放。<a href="#skills">查看下面的完整目录 →</a></p>
 </div>
 <div role="tabpanel" id="panel-usage" aria-labelledby="tab-usage" tabindex="0" hidden>
@@ -108,30 +108,30 @@
 <details class="reference-detail"><summary>作者会遇到的关键卡片</summary><div class="table-scroll"><table><thead><tr><th>决定</th><th>可选内容</th></tr></thead><tbody><tr><th>确认修改</th><td>修改（可以补内容、改判断）/ 只改措辞 / 先不改</td></tr><tr><th>成品方案</th><td>确认，开始制作 / 重新做方案</td></tr><tr><th>成品自查</th><td>采纳后重新制作 / 直接交付；只涉及正文内容时先回正文处理</td></tr><tr><th>确认框架</th><td>确认，开始写稿 / 重新梳理</td></tr><tr><th>旧采纳卡（兼容）</th><td>全部采纳 / 只改表达问题 / 只改高严重度 / 本轮不改，进入定稿；也可输入编号，如 1,3,5</td></tr><tr><th>定稿</th><td>只定稿 / 继续修改 / 补充内容</td></tr><tr><th>候选处理</th><td>采用候选 / 保留当前稿 / 交给我手工处理</td></tr></tbody></table></div><p class="note">新路线不弹采纳卡；只有升级前的旧卡保留上述选项。作答时基准内容变化可能使卡片过期，需要重新选择；取消卡片不等于批准。</p></details>
 </section>
 <section class="band" id="skills"><div class="section wrap">
-<div class="section-head"><div><p class="eyebrow">11 个技能，10 个可执行槽位</p><h2>先看要做什么，再选怎么做。</h2></div><p>正文五个阶段，加上成品五个步骤。<br>新增成品组合开放试用，效果由你的材料检验。</p></div>
+<div class="section-head"><div><p class="eyebrow">11 个技能，10 个可执行槽位</p><h2>先看要做什么，再选怎么做。</h2></div><p>正文五个阶段，加上成品五个步骤。<br>4 个样本验收通过，5 个试用，2 个待补验不可用。</p></div>
 <div class="table-scroll skill-table"><table><caption>Human Writer 0.4.1 技能目录</caption><thead><tr><th>要做什么</th><th>技能</th><th>选择</th><th>你会得到什么</th><th>状态</th></tr></thead><tbody>
-<tr><th>梳理选题</th><td><code>material-brief</code></td><td>选题默认</td><td>目的、读者和关键问题；brief.md</td><td><span class="trial">试用</span></td></tr>
-<tr><th>搭建框架</th><td><code>material-outline</code></td><td>框架默认</td><td>基于选题与素材的章节框架；outline.md</td><td><span class="trial">试用</span></td></tr>
-<tr><th>先判断，再展开支撑</th><td><code>pyramid-long-form</code></td><td>框架可选</td><td>用金字塔方法组织结构；不直接写正文</td><td><span class="trial">暂不可用</span></td></tr>
-<tr><th>写初稿、按要求修订</th><td><code>material-draft</code></td><td>写稿默认</td><td>正文；修订时附 changes.md，缺事实标待补</td><td><span class="available">已验收</span></td></tr>
-<tr><th>写工作汇报或总结</th><td><code>md-report-summary</code></td><td>写稿可选</td><td>汇报、总结类写法；修订范围按作者要求</td><td><span class="trial">暂不可用</span></td></tr>
-<tr><th>检查正文的问题</th><td><code>dbs-ai-check</code></td><td>自查可选</td><td>按本篇标准检查表达、论证与事实问题</td><td><span class="available">正式可用</span></td></tr>
-<tr><th>对照目标与保持项</th><td><code>report-check</code></td><td>自查默认</td><td>对照要求及相关素材，给出带依据的报告</td><td><span class="available">已验收</span></td></tr>
-<tr><th>按已采纳意见润色</th><td><code>humanizer-zh</code></td><td>润色默认</td><td>保留事实与确定程度的中文修改稿</td><td><span class="available">正式可用</span></td></tr>
-<tr><th>定稿做成 Word</th><td><code>doc-visual</code></td><td>图文方案 / Word 默认</td><td>先确认图文方案，再交付 DOCX 与图源 HTML</td><td><span class="trial">试用</span></td></tr>
-<tr><th>定稿做成演示</th><td><code>deck-story</code></td><td>页纲 / 页面默认</td><td>先确认主线与页纲，再交付 HTML 和可编辑 PPTX</td><td><span class="trial">试用</span></td></tr>
-<tr><th>检查成品是否失真</th><td><code>product-check</code></td><td>成品自查默认</td><td>对照正文与方案，检查失真及取舍、设计、渲染问题</td><td><span class="trial">试用</span></td></tr>
+<tr><th>梳理选题</th><td><code>material-brief</code></td><td>选题默认</td><td>目的、读者和关键问题；brief.md</td><td><span class="trial">试用 · 效果待验</span></td></tr>
+<tr><th>搭建框架</th><td><code>material-outline</code></td><td>框架默认</td><td>基于选题与素材的章节框架；outline.md</td><td><span class="trial">试用 · 效果待验</span></td></tr>
+<tr><th>先判断，再展开支撑</th><td><code>pyramid-long-form</code></td><td>框架可选</td><td>用金字塔方法组织结构；不直接写正文</td><td><span class="trial">暂不可用 · 待补验</span></td></tr>
+<tr><th>写初稿、按要求修订</th><td><code>material-draft</code></td><td>写稿默认</td><td>正文；修订时附 changes.md，缺事实标待补</td><td><span class="available">样本验收通过</span></td></tr>
+<tr><th>写工作汇报或总结</th><td><code>md-report-summary</code></td><td>写稿可选</td><td>汇报、总结类写法；修订范围按作者要求</td><td><span class="trial">暂不可用 · 待补验</span></td></tr>
+<tr><th>检查正文的问题</th><td><code>dbs-ai-check</code></td><td>自查可选</td><td>按本篇标准检查表达、论证与事实问题</td><td><span class="available">样本验收通过</span></td></tr>
+<tr><th>对照目标与保持项</th><td><code>report-check</code></td><td>自查默认</td><td>对照要求及相关素材，给出带依据的报告</td><td><span class="available">样本验收通过</span></td></tr>
+<tr><th>按已采纳意见润色</th><td><code>humanizer-zh</code></td><td>润色默认</td><td>保留事实与确定程度的中文修改稿</td><td><span class="available">样本验收通过</span></td></tr>
+<tr><th>定稿做成 Word</th><td><code>doc-visual</code></td><td>图文方案 / Word 默认</td><td>先确认图文方案，再交付 DOCX 与图源 HTML</td><td><span class="trial">试用 · 效果待验</span></td></tr>
+<tr><th>定稿做成演示</th><td><code>deck-story</code></td><td>页纲 / 页面默认</td><td>先确认主线与页纲，再交付 HTML 和可编辑 PPTX</td><td><span class="trial">试用 · 效果待验</span></td></tr>
+<tr><th>检查成品是否失真</th><td><code>product-check</code></td><td>成品自查默认</td><td>对照正文与方案，检查失真及取舍、设计、渲染问题</td><td><span class="trial">试用 · 效果待验</span></td></tr>
 </tbody></table></div>
 <div class="skill-notes"><p><strong>换一次：</strong>“这次自查用 report-check。”<br><strong>这篇一直用：</strong>“这篇以后的自查都用 report-check。”</p><p><strong>先问目录：</strong><code>$human-writer skills 工作汇报</code><br>新增技能需要接入、适配和验收；不能直接调用未接入的全局 skill。</p></div>
-<p class="section-footnote">“正式可用”是当前目录中的验收状态，不保证适合所有文体。dbs-ai-check 的 CC BY-NC 4.0 包含非商业使用限制；<a href="guide.html#sources">各组件许可分别适用</a>。</p>
+<p class="section-footnote"><strong>样本验收通过：</strong>当前组合的指定样本内容通过，不保证真实写作质量稳定。<strong>试用：</strong>已有工程与隔离宿主样本，部分有内容阅读或判定，效果仍待验。<strong>暂不可用：</strong>契约更新后旧记录失效，补验前不能调用。dbs-ai-check 的 CC BY-NC 4.0 包含非商业使用限制；<a href="guide.html#sources">各组件许可分别适用</a>。</p>
 </div></section>
 <section class="section wrap" id="example">
-<div class="section-head"><div><p class="eyebrow">一篇稿件，怎样改下一轮</p><h2>从“补充一点”，到明确改哪里。</h2></div><p>教学示例 · 三季度业务盘点<br>用于说明用法，不是已运行的真实写作记录。</p></div>
+<div class="section-head"><div><p class="eyebrow">一篇稿件，怎样改下一轮</p><h2>从“补充一点”，到明确改哪里。</h2></div><p>独立虚构示例 · 邻里旧书交换说明<br>为本页新编，不取自用户作品、内部样本或使用记录。</p></div>
 <div class="example-layout">
-<div class="example-brief"><span class="label">起点 / 已有工作稿</span><h3>“试点有效，建议全面推广。”</h3><p>作者发现结论太快，需要补上依据和适用条件，同时保持已经核对的事实。</p><div class="requirements-example"><p><strong>K1 · 必须保持</strong><br>已核对的事实和数字不变。</p><p><strong>G1 · 本轮目标</strong><br>补充试点依据与适用条件；资料不足处标待补。</p><p><strong>G2 · 本轮目标</strong><br>写清下一步由谁做什么。</p></div><p class="note">这些要求由作者写入，或明确请模型整理后确认。它们本身不会触发修改。</p></div>
-<ol class="example-steps"><li><span>01</span><div><h3>带着要求，回到写稿</h3><p>作者说“按本轮目标改，只处理目标涉及的位置”，在修改确认卡上确认可以修改内容和判断。</p></div></li><li><span>02</span><div><h3>看正文，也看改动记录</h3><p>修订稿补上有材料支撑的内容；缺依据时保留待补。<code>changes.md</code> 说明改动位置和依据。</p><blockquote>“在满足【待补：适用条件】的范围内推进下一轮试点。由【待补：负责人】核对结果，再决定是否扩大范围。”<cite>示意改写，不能当作已验证事实。</cite></blockquote></div></li><li><span>03</span><div><h3>对照目标核查，再由你决定</h3><p>默认交稿后等待你；可主动用 <code>go review</code> 再审，或 <code>use report-check</code> 获取独立报告。定稿由你回答卡片。</p></div></li></ol>
+<div class="example-brief"><span class="label">起点 / 已有工作稿</span><h3>“带上旧书，就能现场换书。”</h3><p>虚构设定：只接收书页完整、无明显污损的普通读物；教材是否接收、活动时间和地点尚未决定。原句没有说明这些条件。</p><div class="requirements-example"><p><strong>K1 · 必须保持</strong><br>保留“书页完整、无明显污损”的接收条件。</p><p><strong>G1 · 本轮目标</strong><br>写清接收范围，不把未决定的事项写成承诺。</p><p><strong>G2 · 本轮目标</strong><br>教材安排、时间和地点分别标出待补。</p></div><p class="note">这些要求由作者写入，或明确请模型整理后确认。它们本身不会触发修改。</p></div>
+<ol class="example-steps"><li><span>01</span><div><h3>带着要求，回到写稿</h3><p>作者说“按本轮目标改，只处理目标涉及的位置”，在修改确认卡上确认可以修改内容和判断。</p></div></li><li><span>02</span><div><h3>看正文，也看改动记录</h3><p>修订稿补上有材料支撑的内容；缺依据时保留待补。<code>changes.md</code> 说明改动位置和依据。</p><blockquote>“书页完整、无明显污损的普通读物可现场交换。【待补：是否接收教材】；活动时间【待补：日期与时段】，地点【待补：具体场地】。”<cite>虚构改写示意，不是活动通知或实际运行结果。</cite></blockquote></div></li><li><span>03</span><div><h3>对照目标核查，再由你决定</h3><p>默认交稿后等待你；可主动用 <code>go review</code> 再审，或 <code>use report-check</code> 获取独立报告。定稿由你回答卡片。</p></div></li></ol>
 </div>
-<div class="evidence-line"><strong>这一轮留下什么</strong><span>作者要求</span><b aria-hidden="true">→</b><span>修订正文 + 改动记录</span><b aria-hidden="true">→</b><span>带依据的检查报告</span><b aria-hidden="true">→</b><span>作者决定</span></div>
+<div class="evidence-line"><strong>这一轮留下什么</strong><span>作者要求</span><b aria-hidden="true">→</b><span>修订正文 + 改动记录</span><b aria-hidden="true">→</b><span>交稿后由作者决定</span></div>
 </section>
 <section class="section wrap comparison" id="why-plugin">
 <div class="section-head"><div><p class="eyebrow">已有写作 skill，还需要什么</p><h2>一次调用之外，让同一篇作品接得上。</h2></div><p>技能提供写作方法。插件承接作品、进度、候选、版本与作者的决定。</p></div>
@@ -140,7 +140,7 @@
 </section>
 <section class="band" id="continue"><div class="section wrap">
 <div class="section-head"><div><p class="eyebrow">保存、接管与继续</p><h2>文件在项目里，工作不用从头解释。</h2></div><p>结束会话绑定，不等于删除作品。<br>定稿后也可以由作者重新指定阶段。</p></div>
-<div class="continuation-grid"><div><h3>认识你的作品文件</h3><div class="file-tree" aria-label="作品文件示意"><p>works/&lt;作品&gt;/</p><p>├─ <strong>draft.md</strong> <span>当前正文，可直接编辑</span></p><p>├─ brief.md / outline.md <span>选题与框架</span></p><p>├─ requirements.md <span>作者的写作要求</span></p><p>├─ materials/ <span>作者的事实与素材</span></p><p>└─ products/ <span>Word、演示、方案和自查</span></p></div><p class="note">版本和执行记录另行保存。status 只报告未登记编辑，后续执行才登记作者修改。</p><p>先打开作品：</p><pre data-copy><code>$human-writer open 三季度业务盘点</code></pre><p>打开成功后，另发一条消息查看状态：</p><pre data-copy><code>$human-writer status</code></pre></div>
+<div class="continuation-grid"><div><h3>认识你的作品文件</h3><div class="file-tree" aria-label="作品文件示意"><p>works/&lt;作品&gt;/</p><p>├─ <strong>draft.md</strong> <span>当前正文，可直接编辑</span></p><p>├─ brief.md / outline.md <span>选题与框架</span></p><p>├─ requirements.md <span>作者的写作要求</span></p><p>├─ materials/ <span>作者的事实与素材</span></p><p>└─ products/ <span>Word、演示、方案和自查</span></p></div><p class="note">版本和执行记录另行保存。status 只报告未登记编辑，后续执行才登记作者修改。</p><p>先打开作品：</p><pre data-copy><code>$human-writer open 邻里旧书交换说明</code></pre><p>打开成功后，另发一条消息查看状态：</p><pre data-copy><code>$human-writer status</code></pre></div>
 <div class="continuation-faq"><details open><summary>换会话继续时，会发生什么？</summary><p>在同一项目中打开作品会接管进度，旧会话不能再写。旧会话未应用卡片失效，已应用的决定保留。先查看状态，再处理待办。</p></details><details><summary>我自己编辑，模型也在改，怎么办？</summary><p>检测到冲突时，优先保留作者正文，模型产物转为候选。你可以采用候选、保留当前稿，或手工处理。冲突未处理前，流程不会推进或定稿。</p></details><details><summary>在 Word 里改过，怎样接回来？</summary><p>成品里的改动不会自动回写 Markdown。要改正文，明确授权将 DOCX 转回文本并核对转换损失；正文修改后重新定稿，再更新成品。只改成品呈现可直接说明，例如“第 2 页要点减成两条”。</p></details><details><summary>它会自动学会我的文风吗？</summary><p>当前只传递作者偏好文件，供写稿与润色使用，不会自动学习文风。需要你提供偏好或样本，并实际检查产物。</p></details></div></div>
 <p class="section-footnote">编辑器若持有已移走文件的句柄，修改可能留在恢复目录；极短的检查与改名之间仍有竞态窗口。版本保护不等于完整备份。<a href="architecture.html#limits">文件保护和验证边界 →</a></p>
 </div></section>

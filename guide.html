@@ -86,7 +86,7 @@ node scripts/trust-hooks.mjs --review</code>
 <li>发送下面的命令，创建作品。</li>
 </ol>
 <pre data-copy>
-<code>$human-writer new 三季度业务盘点</code>
+<code>$human-writer new 邻里旧书交换说明</code>
 </pre>
 <ol start="3">
 <li>把事实笔记、数据或引用材料放入返回的 <code>works/&lt;slug&gt;/materials/</code>。插件只记录素材清单与 hash，模型按需要读取；大 PDF 或表格不保证全部读完。</li>
@@ -95,7 +95,7 @@ node scripts/trust-hooks.mjs --review</code>
 <li>查看正文和 <code>【待补：…】</code>，完成自查与定稿。</li>
 </ol>
 <div class="callout">
-<p>缺资料时先标待补。你可以在定稿卡上选“补充内容”，再给出新素材和修改要求。年度数据不能自动当作季度数据使用。</p>
+<p>缺资料时先标待补。你可以在定稿卡上选“补充内容”，再给出新素材和修改要求。本页“邻里旧书交换说明”为独立虚构示例，不对应真实活动或用户作品。</p>
 </div>
 </section>
 <section id="import">
@@ -145,7 +145,7 @@ node scripts/trust-hooks.mjs --review</code>
 </ol>
 <pre data-copy><code>用 Human Writer 把这份定稿做成演示。</code></pre><p>演示完成后，另发一条：</p>
 <pre data-copy><code>再出一份 Word。</code></pre>
-<h3>交付文件在哪里</h3><p>在 <code>works/&lt;slug&gt;/products/doc/</code> 和 <code>products/deck/</code>。文件按作品名保存，例如 <code>三季度业务盘点.docx</code>、<code>三季度业务盘点.html</code>、<code>三季度业务盘点.pptx</code>；图文方案、页纲与自查报告也保存在对应目录。</p>
+<h3>交付文件在哪里</h3><p>在 <code>works/&lt;slug&gt;/products/doc/</code> 和 <code>products/deck/</code>。文件按作品名保存，例如 <code>邻里旧书交换说明.docx</code>、<code>邻里旧书交换说明.html</code>、<code>邻里旧书交换说明.pptx</code>；图文方案、页纲与自查报告也保存在对应目录。</p>
 <h3>只调整成品呈现</h3><pre data-copy><code>第 2 页的要点减成两条。</code></pre><p>模型沿用上一版成品，只改要求涉及的页，留下 <code>changes.md</code>。作者直接改过的成品不会被覆盖，新产物另存为 <code>&lt;作品名&gt;.&lt;执行编号&gt;.new.pptx</code> 等文件，并明确给出新旧路径。</p>
 <h3>正文又有变化</h3><p>先修订正文，再重新定稿；已有成品保留，并标为需要核对。更新时沿用已经确认的方案；若方案的出处与新稿不符，先调整或重做方案。成品中的手改不会自动回写 Markdown。</p>
 <h3>看懂成品自查</h3><p>呈现意见分为“取舍”“设计”“渲染”：取舍看该不该画、内容与图表是否匹配；设计看层级、关系和文字负担；渲染看字体、溢出与缩放等实际显示。标明“需改方案”的意见要回方案处理。检查环境无法渲染时会单独说明未检查范围，不当作作者环境的成品缺陷。</p>
@@ -252,58 +252,58 @@ node scripts/trust-hooks.mjs --review</code>
 <code>dbs-ai-check</code>
 </td>
 <td>自查可选 · 当前正文与本篇标准</td>
-<td>正式可用；限已有样本证据</td>
+<td>样本验收通过；真实使用效果未验</td>
 </tr>
 <tr>
 <td>
 <code>humanizer-zh</code>
 </td>
 <td>默认润色</td>
-<td>正式可用；限已有样本证据</td>
+<td>样本验收通过；真实使用效果未验</td>
 </tr>
 <tr>
 <td>
 <code>material-brief</code>
 </td>
 <td>选题</td>
-<td>试用</td>
+<td>试用：已有工程与宿主样本，效果待验</td>
 </tr>
 <tr>
 <td>
 <code>material-outline</code>
 </td>
 <td>框架</td>
-<td>试用</td>
+<td>试用：已有工程与宿主样本，效果待验</td>
 </tr>
 <tr>
 <td>
 <code>material-draft</code>
 </td>
 <td>写稿</td>
-<td>已验收；限当前样本证据</td>
+<td>样本验收通过；真实使用效果未验</td>
 </tr>
 <tr>
 <td>
 <code>pyramid-long-form</code>
 </td>
 <td>框架</td>
-<td>暂不可用，待补验</td>
+<td>暂不可用：契约更新后旧记录失效，待补验</td>
 </tr>
 <tr>
 <td>
 <code>md-report-summary</code>
 </td>
 <td>写稿</td>
-<td>暂不可用，待补验</td>
+<td>暂不可用：契约更新后旧记录失效，待补验</td>
 </tr>
-<tr><td><code>report-check</code></td><td>有写作要求时自查默认 · 对照要求和素材</td><td>已验收；限当前样本证据</td></tr>
-<tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>两个组合试用</td></tr>
-<tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>两个组合试用</td></tr>
-<tr><td><code>product-check</code></td><td>成品自查</td><td>试用</td></tr>
+<tr><td><code>report-check</code></td><td>有写作要求时自查默认 · 对照要求和素材</td><td>样本验收通过；真实使用效果未验</td></tr>
+<tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>两个组合试用：已有样本，成品效果待验</td></tr>
+<tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>两个组合试用：已有样本，成品效果待验</td></tr>
+<tr><td><code>product-check</code></td><td>成品自查</td><td>试用：已有工程与宿主样本，效果待验</td></tr>
 </tbody>
 </table>
 </div>
-<p class="note" style="margin-top:18px">“已通过已有样本验收”不保证适合所有文体。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
+<p class="note" style="margin-top:18px">11 个技能中，4 个样本验收通过、5 个试用、2 个暂不可用。试用不等于完全没测过：已有工程和隔离宿主样本，部分还有内容阅读或判定，但尚未登记为正式效果验收。样本通过不保证适合所有文体，也不证明模型输出长期稳定。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
 <h2>07 · 0.4.1 的范围</h2><p><strong>2026-10-19 · 0.4.1</strong>。本次补充来源判断、对照原稿的修订自检，以及只提出真正待决事项的交稿说明。先对齐本篇标准；默认一次 Review、一次修改后交稿，不自动续轮、不自动开定稿卡。独立执行和作者主动再审继续保留。</p><p>0.4.1 指定样本经 Claude 验收通过，证据为 H-synthetic。0.4.0 的组件验证和交稿、作者定稿隔离流程作为既有证据保留；此前有条件验收的限制继续保留：交稿漏再审指引作为已知限制接受；模型内容与格式仍有观察项，作者答复为脚本合成，不代表真实使用效果。<a href="release.html#limits">完整边界 →</a></p><p>目录含 11 个技能。md-report-summary / draft、pyramid-long-form / outline 暂不可用，用到时再补验。Word、演示保持试用；完整成品视觉核验、外部接包和 Desktop 完全退出重启恢复未验收。本次只发布 Codex 包。</p></section>
