@@ -23,7 +23,7 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html" aria-current="page">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html">0.4.1 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html">0.4.2 更新</a>
 </nav>
 </div>
 </header>
@@ -40,16 +40,16 @@
 <a href="#cards">04 · 卡片、恢复与换会话</a>
 <a href="#reference">05 · 操作速查</a>
 <a href="#skills">06 · 选择写作技能</a>
-<a href="#release">07 · 0.4.1 的范围</a>
+<a href="#release">07 · 0.4.2 的范围</a>
 <a href="#sources">08 · 来源、许可与数据</a>
 </aside>
 <article class="prose">
-<p class="eyebrow">Human Writer / 0.4.1 · 先定标准，一次自查后交稿</p>
+<p class="eyebrow">Human Writer / 0.4.2 · 先定标准，一次自查后交稿</p>
 <h1>使用指南</h1>
 <section id="install">
 <h2>01 · 安装与更新</h2>
 <p>当前面向 <strong>Codex Desktop / Codex CLI</strong>，已有安装验证环境为 macOS、Node.js 24.13.0 与 Codex CLI 0.163.0-alpha.10.2。需要宿主提供 plugins、hooks、MCP 和原生异步问题卡；其他操作系统与宿主未验证。</p>
-<p class="callout">本页下载为 0.4.1，补充修订保真与来源判断。先确认本篇标准；默认一次自查、一次修改后交稿，不自动再审或弹定稿卡。<a href="release.html">更新与已知限制</a>。</p>
+<p class="callout">本页下载为 0.4.2，更新成品规则并补齐指定样本验收。先确认本篇标准；默认一次自查、一次修改后交稿，不自动再审或弹定稿卡。<a href="release.html">更新与已知限制</a>。</p>
 <h3>交给 Codex 安装</h3>
 <ol>
 <li>
@@ -266,14 +266,14 @@ node scripts/trust-hooks.mjs --review</code>
 <code>material-brief</code>
 </td>
 <td>选题</td>
-<td>试用：已有工程与宿主样本，效果待验</td>
+<td>样本验收通过；真实使用效果未验</td>
 </tr>
 <tr>
 <td>
 <code>material-outline</code>
 </td>
 <td>框架</td>
-<td>试用：已有工程与宿主样本，效果待验</td>
+<td>样本验收通过；真实使用效果未验</td>
 </tr>
 <tr>
 <td>
@@ -297,16 +297,16 @@ node scripts/trust-hooks.mjs --review</code>
 <td>暂不可用：契约更新后旧记录失效，待补验</td>
 </tr>
 <tr><td><code>report-check</code></td><td>有写作要求时自查默认 · 对照要求和素材</td><td>样本验收通过；真实使用效果未验</td></tr>
-<tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>两个组合试用：已有样本，成品效果待验</td></tr>
-<tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>两个组合试用：已有样本，成品效果待验</td></tr>
-<tr><td><code>product-check</code></td><td>成品自查</td><td>试用：已有工程与宿主样本，效果待验</td></tr>
+<tr><td><code>doc-visual</code></td><td>图文方案、Word 成品</td><td>方案与制作样本验收通过；真实使用效果未验</td></tr>
+<tr><td><code>deck-story</code></td><td>页纲、HTML 与 PPTX 成品</td><td>方案与制作样本验收通过；真实使用效果未验</td></tr>
+<tr><td><code>product-check</code></td><td>成品自查</td><td>样本验收通过；真实使用效果未验</td></tr>
 </tbody>
 </table>
 </div>
-<p class="note" style="margin-top:18px">11 个技能中，4 个样本验收通过、5 个试用、2 个暂不可用。试用不等于完全没测过：已有工程和隔离宿主样本，部分还有内容阅读或判定，但尚未登记为正式效果验收。样本通过不保证适合所有文体，也不证明模型输出长期稳定。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
+<p class="note" style="margin-top:18px">11 个技能中，9 个样本验收通过、2 个暂不可用；对应 13 个技能与槽位组合中有 11 个通过、2 个不可用。样本通过不保证适合所有文体，也不证明模型输出长期稳定。技能、适配文本或契约变化会使旧验收失效；请通过版本更新获取，不要直接修改已安装副本来绕过检查。</p>
 </section>
 <section id="release">
-<h2>07 · 0.4.1 的范围</h2><p><strong>2026-10-19 · 0.4.1</strong>。本次补充来源判断、对照原稿的修订自检，以及只提出真正待决事项的交稿说明。先对齐本篇标准；默认一次 Review、一次修改后交稿，不自动续轮、不自动开定稿卡。独立执行和作者主动再审继续保留。</p><p>0.4.1 指定样本经 Claude 验收通过，证据为 H-synthetic。0.4.0 的组件验证和交稿、作者定稿隔离流程作为既有证据保留；此前有条件验收的限制继续保留：交稿漏再审指引作为已知限制接受；模型内容与格式仍有观察项，作者答复为脚本合成，不代表真实使用效果。<a href="release.html#limits">完整边界 →</a></p><p>目录含 11 个技能。md-report-summary / draft、pyramid-long-form / outline 暂不可用，用到时再补验。Word、演示保持试用；完整成品视觉核验、外部接包和 Desktop 完全退出重启恢复未验收。本次只发布 Codex 包。</p></section>
+<h2>07 · 0.4.2 的范围</h2><p><strong>2026-10-23 · 0.4.2</strong>。本次更新演示页纲、同组数据去重与成品自查规则，并补齐默认选题、框架、Word、演示和成品自查的指定样本验收。先对齐本篇标准；默认一次 Review、一次修改后交稿，不自动续轮、不自动开定稿卡。独立执行和作者主动再审继续保留。</p><p>0.4.2 指定样本经 Claude 验收通过，证据为 H-synthetic。0.4.0 的组件验证和交稿、作者定稿隔离流程作为既有证据保留；此前有条件验收的限制继续保留：交稿漏再审指引作为已知限制接受；模型内容与格式仍有观察项，作者答复为脚本合成，不代表真实使用效果。<a href="release.html#limits">完整边界 →</a></p><p>目录含 11 个技能。md-report-summary / draft、pyramid-long-form / outline 暂不可用，用到时再补验。Word、演示已核对指定成品及其渲染；原生 Office、真实作者使用、外部接包和 Desktop 完全退出重启恢复仍未验收。本次只发布 Codex 包。</p></section>
 <section id="sources">
 <h2>08 · 来源、许可与数据</h2>
 <p>技能快照随包分发，保留原始文本、来源提交与 LICENSE。以下是本版本实际采用的固定来源：</p>
@@ -337,7 +337,7 @@ node scripts/trust-hooks.mjs --review</code>
 </article>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.4.1 / 先定标准，一次自查后交稿 · 2026-10-19</p>
+<p>Human Writer · 0.4.2 / 先定标准，一次自查后交稿 · 2026-10-23</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>

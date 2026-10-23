@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Human Writer：在 Codex 中从题目或已有稿件开始，按素材写作、按意见润色，先对齐本篇标准，由作者确认框架与定稿。">
 <meta name="theme-color" content="#f6f7f9">
-<title>0.4.1 更新说明 · Human Writer</title>
+<title>0.4.2 更新说明 · Human Writer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer>
@@ -23,19 +23,19 @@
 <nav aria-label="主导航">
 <a href="index.html">概览</a>
 <a href="guide.html">使用指南</a>
-<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.4.1 更新</a>
+<a href="architecture.html">架构与边界</a><a href="release.html" aria-current="page">0.4.2 更新</a>
 </nav>
 </div>
 </header>
 <main id="main" class="wrap release-page">
 <section class="release-hero">
 <div>
-<p class="eyebrow">2026-10-19 · Codex 0.4.1</p>
-<h1>改稿保留原意，<br>审查有据可查。</h1>
-<p class="lead">0.4.1 补充修订与审查的依据规则：改动已有事实和关系前核对素材，交稿只提出真正需要你决定的问题。继续沿用先定标准、一次自查后交稿的流程。</p>
-<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.4.1 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
+<p class="eyebrow">2026-10-23 · Codex 0.4.2</p>
+<h1>成品保留数据，<br>自查区分问题。</h1>
+<p class="lead">0.4.2 更新演示页纲与成品自查：保留必要数据与条件，减少同组数据的重复呈现，分清需要改方案还是重做图。继续沿用先定标准、一次自查后交稿的流程。</p>
+<div class="actions"><a class="button" href="downloads/human-writer-codex.zip" download>下载 0.4.2 · ZIP ↓</a><a href="guide.html#install">安装与更新 →</a>
 </div>
-<p class="note">发布包修订 2 · 已移除内部样本与个人记录；业务版本仍为 0.4.1。<br>附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
+<p class="note">0.4.2 · 继续排除内部样本与个人记录。<br>附同版离线指南 · <a href="downloads/human-writer-codex.zip.sha256">SHA-256</a> · <a href="release.json">版本清单</a>
 </p>
 </div>
 <div class="handoff-preview">
@@ -62,9 +62,9 @@
 <nav class="release-jumps" aria-label="本页目录"><a href="#auto-revision">一次自查</a><a href="#execution">两种分工</a><a href="#handoff">交接怎么做</a><a href="#record">谁做的，看得见</a><a href="#upgrade">升级与数据</a><a href="#limits">验证边界</a><a href="#history">此前更新</a>
 </nav>
 <section id="patch" class="release-section">
-<h2>这次修正三件事。</h2>
-<div class="upgrade-grid"><div><h3>来源判断有依据</h3><p>说内容无出处、新增或偏离素材，要说明实际对照了哪份来源。素材没找到或没读全时，写“未能核实”。</p></div><div><h3>修订保留原意</h3><p>改动已有事实、角色和关系前先核对依据；已证明错误的内容按素材纠正，缺失的正确内容留待补。修改后对照原稿检查条件和关系。</p></div></div>
-<p><strong>交稿只提出真正的待决事项。</strong>素材已说明审查意见不成立时，交代未改及依据，不再把被驳回的意见改成作者选项；真实的分工疑问仍会交给作者。</p>
+<h2>这次更新成品规则与样本验收。</h2>
+<div class="upgrade-grid"><div><h3>页面围绕标题表达</h3><p>主要呈现支撑标题判断，条件跟着结论走。必须保持的数据完整保留，避免同组数据同时出现在两种独立呈现里。</p></div><div><h3>自查说清问题改在哪里</h3><p>区分改方案、重做图和渲染问题；不能渲染时仍检查图源字体与宽度，并明确哪些判断来自源码、哪些来自实际看图。</p></div></div>
+<p><strong>补齐默认技能的指定样本验收。</strong>选题、框架、Word 方案与制作、演示页纲与制作、成品自查均已登记本轮对应证据。保留此前修订保真与来源判断规则。</p>
 </section>
 <section id="auto-revision" class="release-section">
 <h2>先把这篇的标准说清楚。</h2>
@@ -156,8 +156,8 @@
 </section>
 <section id="limits" class="release-section">
 <h2>已验证到哪里</h2>
-<p>11 个技能：4 个样本验收通过，5 个试用且效果待验，2 个因旧记录失效暂不可用。试用技能已有工程和隔离宿主样本，部分有内容阅读或判定；这些证据不能替代真实使用。<a href="guide.html#skills">逐项状态与含义 →</a></p>
-<p>0.4.1 的指定修订与来源判断样本已通过 Claude 验收，证据为隔离宿主的 H-synthetic；历史失败记录保留，不代表真实写作中的稳定性。默认流程沿用 0.4.0，其有条件验收中的提示遗漏继续作为限制保留。</p>
+<p>11 个技能：9 个样本验收通过，2 个非默认技能因旧记录失效暂不可用。样本通过不能替代真实使用。<a href="guide.html#skills">逐项状态与含义 →</a></p>
+<p>0.4.2 的指定选题、框架、Word、演示与成品自查样本已通过 Claude 验收，证据为隔离宿主的 H-synthetic；历史失败记录保留，不代表真实写作中的稳定性。默认流程沿用 0.4.0，其有条件验收中的提示遗漏继续作为限制保留。</p>
 <div class="table-scroll">
 <table>
 <thead>
@@ -175,7 +175,7 @@
 </table>
 </div>
 <p class="note"><strong>已知限制：</strong>本次交稿漏了再审 / 独立审阅提示；可主动用 <code>go review</code> 或 <code>use report-check</code>。待补内容的处理和改动记录格式仍有模型偏差，重复准备仍有宿主观察项。md-report-summary 写稿与 pyramid-long-form 框架暂不可用，旧记录因契约更新失效，补验前不能使用。</p>
-<p class="note">已有成品自查样本通过内容复核；固定宽度问题仍是观察项，完整成品视觉核验未完成。Desktop 完全退出重启恢复仍未验证。Word 和演示继续开放试用。<a href="architecture.html#evidence">完整验证边界 →</a>
+<p class="note">本轮演示制作、旧缺陷件自查与 Word 回归均通过。成品渲染证据仅覆盖指定样本；原生 Office、真实作者使用和 Desktop 完全退出重启恢复仍未验证。<a href="architecture.html#evidence">完整验证边界 →</a>
 </p>
 </section>
 <section id="history" class="release-section">
@@ -183,6 +183,7 @@
 <p>路线展示、反馈记录、Word、演示、修订与重组继续保留。技能目录仍为 11 个技能、10 个可执行槽位。</p>
 <details class="release-history">
 <summary>展开 0.3.5、0.3.4 与此前能力</summary>
+<p>0.4.1 补充修订保真、来源判断及交稿中的未决事项说明，其发布包修订 2 清理了内部样本和个人记录。</p>
 <p>0.3.5 曾提供最多两轮自动修订；0.4.0 已停用该新执行路径，旧执行保留兼容。</p>
 <p>0.3.4 明确 Devin CLI 本机交接与修复产出目录；0.3.3 增加子 agent 执行、离线交接包与执行者记录。上述能力继续保留。</p>
 <section id="new">
@@ -207,7 +208,7 @@
 </tbody>
 </table>
 </div>
-<p>成品自查继续开放试用。具体意见仍需作者判断，不能把“检查过”当成所有版面问题都已发现。</p>
+<p>成品自查的指定样本已通过验收。具体意见仍需作者判断，不能把“检查过”当成所有版面问题都已发现。</p>
 </section>
 <section id="fixes">
 <h2>同时带入 0.3.1 的三项修复</h2><ul>
@@ -226,7 +227,7 @@
 </section>
 </main>
 <footer class="wrap">
-<p>Human Writer · 0.4.1 / 先定标准，一次自查后交稿 · 2026-10-19</p>
+<p>Human Writer · 0.4.2 / 先定标准，一次自查后交稿 · 2026-10-23</p>
 <div>
 <a href="guide.html#sources">来源与许可</a> · <a href="https://github.com/ww880412/human-writer-guide">发布仓库 ↗</a> · <a href="release.json">版本清单</a>
 </div>
